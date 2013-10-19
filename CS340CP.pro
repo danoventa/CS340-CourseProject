@@ -7,3 +7,6 @@ HEADERS += \
     world.h \
     characters.h \
     worldmap.h
+
+OTHER_FILES += \
+    README.md
