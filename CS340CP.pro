@@ -1,6 +1,7 @@
 SOURCES += \
     characters.cpp \
-    worldmap.cpp
+    worldmap.cpp \
+    main.cpp
 
 HEADERS += \
     world.h \
