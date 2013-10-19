@@ -76,9 +76,15 @@ About this project:
     "New Game", "Continue" (which will be grayed out if
     there are no saved games), "Options" [** assuming we 
     have any], "Load" (to load a specific save file) and
-    "Exit". [*June* there was also talk of having a game
+    "Exit". [*JUNE* there was also talk of having a game
     plus option, which can be hidden, or grayed depending
-    on how it's implemented. May or may not be an option]
+    on how it's implemented. May or may not be an option].
+    {** if we get to multiple worlds, then we'll have 
+    parts of the story in the middle.] The story board
+    section will then end the game, show the credits and 
+    return to the main menu. 
+    
+[Important Notes? Bugs? Issues?]
     
 
 
