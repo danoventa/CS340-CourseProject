@@ -2,9 +2,13 @@
 #define PAUSE_H
 
 class pause
-{
-public:
-    pause();
-};
+ {
+    protected vector<Character> Pokemon;
+    protected vector<Bag> items;
+    protected vector<TrainerCard> stat;
+    protected vector<Save> save;
 
-#endif // PAUSE_H
+
+ public:
+     pause();
+ };
