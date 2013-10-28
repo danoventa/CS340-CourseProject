@@ -5,7 +5,8 @@ SOURCES += \
     pause.cpp \
     story.cpp \
     battle.cpp \
-    filemanager.cpp
+    filemanager.cpp \
+    mapdisplay.cpp
 
 HEADERS += \
     world.h \
@@ -14,7 +15,11 @@ HEADERS += \
     pause.h \
     story.h \
     battle.h \
-    filemanager.h
+    filemanager.h \
+    mapdisplay.h
 
 OTHER_FILES += \
     README.md
+
+FORMS += \
+    mapdisplay.ui
