@@ -1,13 +1,13 @@
 #ifndef MAPDISPLAY_H
 #define MAPDISPLAY_H
 
-#include <QWidget>
+#include <QDialog>
 
 namespace Ui {
 class mapdisplay;
 }
 
-class mapdisplay : public QWidget
+class mapdisplay : public QDialog
 {
     Q_OBJECT
 
