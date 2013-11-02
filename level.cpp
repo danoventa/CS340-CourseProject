@@ -1,6 +1,6 @@
-#include "level1.h"
+#include "level.h"
 
-Level1::Level1()
+Level::Level()
 {
     WorldMap lvlMap = new WorldMap();
     lvlMap.WorldMap(); /* either a pointer to this, or part of it...
