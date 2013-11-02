@@ -9,8 +9,8 @@ SOURCES += \
     mapdisplay.cpp \
     mapnode.cpp \
     level.cpp \
-    perry.cpp \
-    assistants.cpp
+    assistants.cpp \
+    rosie.cpp
 
 HEADERS += \
     world.h \
@@ -23,8 +23,8 @@ HEADERS += \
     mapdisplay.h \
     mapnode.h \
     level.h \
-    perry.h \
-    assistants.h
+    assistants.h \
+    rosie.h
 
 OTHER_FILES += \
     README.md
