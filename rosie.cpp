@@ -1,7 +1,8 @@
 #include "Rosie.h"
 
-Rosie::Rosie(){
+Rosie::Rosie(string name){
     assistant = new Assistants();
+    myName = name;
 }
 
 void Rosie::greet()
@@ -12,7 +13,7 @@ void Rosie::greet()
 
 void Rosie::affirm()
 {
-    cout << "Let me see what I can do for you," << lastName << "? ;)" << endl;
+    cout << "Let me see what I can do for you," << lastName << "? :)" << endl;
 }
 
 void Rosie::reportError(string s, int n)
@@ -25,7 +26,5 @@ void Rosie::reportError(string s, int n)
 
 int Rosie::RandomR()
 {
-
-
     return 0;
 }

@@ -1,10 +1,9 @@
 #ifndef ROSIE_H
 #define ROSIE_H
 
-//#include <iostream>
 #include "Assistants.h"
 
-// using namespace std;
+using namespace std;
 
 class Rosie {
 public:
@@ -16,7 +15,8 @@ public:
 
 private:
     Assistants *assistant;
-    std::string lastName;
+    string lastName;
+    string myName;
 };
 
 #endif //ROSIE_H
