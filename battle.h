@@ -1,7 +1,7 @@
 #ifndef BATTLE_H
 #define BATTLE_H
 
-class battle
+class battle:pause  //inherit pause class
 {
 public:
     battle();

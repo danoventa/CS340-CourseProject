@@ -1,14 +1,20 @@
 #ifndef PAUSE_H
 #define PAUSE_H
+#include <QObject>
 
-class pause
+class pause : public QObject
  {
-    protected vector<Character> Pokemon;
-    protected vector<Bag> items;
-    protected vector<TrainerCard> stat;
-    protected vector<Save> save;
-
+    Q_OBJECT
 
  public:
-     pause();
- };
+     pause(Character info, QObject *parent = 0);
+     Character getInfo();
+
+ public slots:
+
+
+ signals:
+
+};
+
+#endif

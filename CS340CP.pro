@@ -5,7 +5,8 @@ SOURCES += \
     pause.cpp \
     story.cpp \
     battle.cpp \
-    filemanager.cpp
+    filemanager.cpp \
+    pauseprofile.cpp
 
 HEADERS += \
     world.h \
@@ -14,7 +15,8 @@ HEADERS += \
     pause.h \
     story.h \
     battle.h \
-    filemanager.h
+    filemanager.h \
+    pauseprofile.h
 
 OTHER_FILES += \
     README.md
