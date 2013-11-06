@@ -6,7 +6,9 @@ SOURCES += \
     story.cpp \
     battle.cpp \
     filemanager.cpp \
-<<<<<<< HEAD
+<<<<<<< HEAD \
+    pouch.cpp \
+    item.cpp
     pauseprofile.cpp
 =======
     mapdisplay.cpp \
@@ -24,7 +26,9 @@ HEADERS += \
     story.h \
     battle.h \
     filemanager.h \
-<<<<<<< HEAD
+<<<<<<< HEAD \
+    pouch.h \
+    item.h
     pauseprofile.h
 
 OTHER_FILES += \
