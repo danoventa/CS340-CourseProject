@@ -40,5 +40,6 @@ OTHER_FILES += \
     README.md
 
 FORMS += \
-    mapdisplay.ui
+    mapdisplay.ui \
+    pause.ui
 >>>>>>> 09f6a9479c0108a56957e9ddb4c0822824a34d60

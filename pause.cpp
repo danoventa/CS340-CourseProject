@@ -1,5 +1,14 @@
 #include "pause.h"
+#include "ui_pause.h"
 
-pause::pause()
+Pause::Pause(QWidget *parent) :
+    QMainWindow(parent),
+    ui(new Ui::Pause)
 {
+    ui->setupUi(this);
+}
+
+Pause::~Pause()
+{
+    delete ui;
 }
