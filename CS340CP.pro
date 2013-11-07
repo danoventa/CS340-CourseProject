@@ -67,5 +67,6 @@ OTHER_FILES += \
 
 FORMS += \
     mapdisplay.ui \
-    pause.ui
+    pause.ui \
+    ../battle.ui
 >>>>>>> 09f6a9479c0108a56957e9ddb4c0822824a34d60

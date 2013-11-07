@@ -12,3 +12,13 @@ Pause::~Pause()
 {
     delete ui;
 }
+
+void Pause::on_Resume_clicked()
+{
+
+}
+
+void Pause::on_Exit_clicked()
+{
+
+}
