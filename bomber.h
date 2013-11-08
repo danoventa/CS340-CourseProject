@@ -13,6 +13,7 @@ public:
   void switchSide();
   void dropBomb(Character *Hero);
   int getCtr();
+  virtual QImage getPic();
 };
 
 #endif // BOMBER_H

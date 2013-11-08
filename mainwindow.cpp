@@ -24,13 +24,22 @@ MainWindow::MainWindow(QWidget *parent) :
   Hero=new Character(100,0,10,2);
   //Enemies = (Enemy*)malloc(sizeof(Enemy*)*3);
   //Enemies[0]=new Bomber(20,0,0);
-  Enemies[0]=new Hunter(20,0,0,false);
+  /*battledata* bd=new battledata('h',25,1,1,'c',50,2,2,'0',1,1,1,50);
+  Enemy** elist=bd->retEnemies();
+  Enemies[0]=elist[0];
+  Enemies[1]=elist[1];
+  Enemies[2]=elist[2];
+  */
+  //Enemies=bd->retEnemies();
+  //Enemies[0]=new Hunter(20,0,0,false);
+  Enemies[0]=new Bomber(20,0,0);
   //Enemies[1]=new Enemy(20,1,1);
   Enemies[1]=new Cannon(20,1,1);
   Enemies[2]=new Enemy(20,2,2);
   Enemies[0]->setAlive(true);
   Enemies[1]->setAlive(true);
   Enemies[2]->setAlive(false);
+
   //mainAttack=new attackmove(10);
   mainAttack=new attackmove(10);
   aL=new attackList();
@@ -136,6 +145,7 @@ void MainWindow::paintEvent(QPaintEvent *){
     QImage redpic(redfn);
     QImage purppic(purpfn);
     QImage heropic(herofn);
+
     g->drawImage(0,0,bgpic);
 
     int x;
@@ -147,16 +157,16 @@ void MainWindow::paintEvent(QPaintEvent *){
             g->drawImage(x,y,sandpic);
             if(i==Enemies[0]->getY() && j==Enemies[0]->getX()){
                //Tiles[i][j]->setPixmap(QPixmap::fromImage(redpic));
-                g->drawImage(x,y,redpic);
+                g->drawImage(x,y,Enemies[0]->getPic());
 
 
               }else if(i==Enemies[1]->getY() && j==Enemies[1]->getX()){
                //Tiles[i][j]->setPixmap(QPixmap::fromImage(purppic));
-                g->drawImage(x,y,purppic);
+                g->drawImage(x,y,Enemies[1]->getPic());
 
               }else if(i==Enemies[2]->getY() && j==Enemies[2]->getX()){
              // Tiles[i][j]->setPixmap(QPixmap::fromImage(purppic));
-                g->drawImage(x,y,redpic);
+                g->drawImage(x,y,Enemies[2]->getPic());
             }
                        //else{
                  //Tiles[i][j]->setPixmap(QPixmap::fromImage(sandpic));

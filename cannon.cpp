@@ -20,3 +20,6 @@ void Cannon::doTurn(Character *Hero)
     }
 
 }
+QImage Cannon::getPic(){
+    return QImage("images/cann.png");
+}

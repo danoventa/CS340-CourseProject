@@ -31,6 +31,7 @@ void Bomber::switchSide(){
       xpos=0;
     }
 }
+
 void Bomber::dropBomb(Character *Hero){
   if(xpos==0){
       if(Hero->getPanel()==0 || Hero->getPanel()==1){
@@ -41,4 +42,7 @@ void Bomber::dropBomb(Character *Hero){
           Hero->getDamaged(5);
         }
     }
+}
+QImage Bomber::getPic(){
+    return QImage("images/bomb.png");
 }

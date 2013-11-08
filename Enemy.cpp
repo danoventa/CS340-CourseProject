@@ -16,6 +16,7 @@ Enemy::Enemy(int startHP, int cx, int cy)
   inTurn=false;
   canmove=false;
   Alive=false;
+  //pic.
 
 
 
@@ -23,6 +24,10 @@ Enemy::Enemy(int startHP, int cx, int cy)
 
 Enemy::~Enemy(){
 
+}
+
+QImage Enemy::getPic(){
+    return QImage("images/red.png");
 }
 
 void Enemy::setX(int cx){

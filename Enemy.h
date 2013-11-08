@@ -4,6 +4,7 @@
 
 #include "QObject"
 #include "Character.h"
+#include "QImage"
 
 class Enemy: public QObject
 {
@@ -25,6 +26,7 @@ public:
   virtual void doTurn(Character *Hero);
   bool getDamaged(int damage);
   void getRestored(int recovery);
+  virtual QImage getPic();
 //signals:
   //void Died();
 //public slots:
@@ -38,6 +40,7 @@ protected:
   int inTurn;
   int canmove;
   bool Alive;
+  //QImage pic;
 
 
 };

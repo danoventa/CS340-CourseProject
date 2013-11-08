@@ -10,6 +10,7 @@ public:
   Cannon(int startHP, int cx, int cy);
   virtual void doTurn(Character *Hero);
   int getCtr();
+  virtual QImage getPic();
 };
 
 #endif // CANNON_H

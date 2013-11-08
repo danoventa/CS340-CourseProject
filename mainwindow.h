@@ -13,6 +13,7 @@
 #include "hunter.h"
 #include "attacklist.h"
 #include "QTimer"
+#include "battledata.h"
 
 namespace Ui {
   class MainWindow;
@@ -46,6 +47,7 @@ private:
   Character* Hero;
   Character* setUpHero();
   //Character* getHero();
+  //Enemy* Enemies[3];
   Enemy* Enemies[3];
   //QLabel* Tiles[3][3];
   attackmove* mainAttack;
