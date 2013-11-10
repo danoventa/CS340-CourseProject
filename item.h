@@ -5,6 +5,7 @@ class Item
 {
 public:
     Item(int attackIn, int defenseIn);
+    ~Item();
     void modifyItem(int attackIn, int defenseIn);
 private:
     int attack;

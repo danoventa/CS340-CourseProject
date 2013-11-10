@@ -13,6 +13,8 @@ void Pouch::addItem(Item itemIn)
 void Pouch::dropItem(int itemNum)
 {
     /* no longer display in menu */
+    /* delete a specific */
+    /* set item[itemNum] -> point) */
     item[itemNum].~Item();
 }
 

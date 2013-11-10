@@ -6,6 +6,12 @@ Item::Item(int attackIN, int defenseIn)
     defense = defenseIN;
 }
 
+Item::~Item()
+{
+    delete[] attack;
+    delete[] defense;
+}
+
 void Item::modifyItem(int incAttack, int incDefense)
 {
     attack += incAttack;
