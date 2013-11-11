@@ -1,4 +1,5 @@
 #include "world.h"
+#include "pause.h"
 
 int main (int argc, char **argv)
 {

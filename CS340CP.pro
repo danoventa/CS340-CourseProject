@@ -20,7 +20,8 @@ SOURCES += \
     cannon.cpp \
     bomber.cpp \
     attackmove.cpp \
-    attacklist.cpp
+    attacklist.cpp \
+    battlepause.cpp
     pauseprofile.cpp
 =======
     mapdisplay.cpp \
@@ -50,7 +51,8 @@ HEADERS += \
     cannon.h \
     bomber.h \
     attackmove.h \
-    attacklist.h
+    attacklist.h \
+    battlepause.h
     pauseprofile.h
 
 OTHER_FILES += \
@@ -68,5 +70,6 @@ OTHER_FILES += \
 FORMS += \
     mapdisplay.ui \
     pause.ui \
-    ../battle.ui
+    ../battle.ui \
+    battlepause.ui
 >>>>>>> 09f6a9479c0108a56957e9ddb4c0822824a34d60
