@@ -11,10 +11,10 @@
  </tileset>
  <layer name="Tile Layer 1" width="20" height="18">
   <data encoding="base64" compression="zlib">
-   eJzT5WVg0KUBlgxDxQ5aCDlkNjLGJY5NDsYH0cgY3V6Y3YTsRKcJuRNdDt2f1DAPnztJNQ+ZD3Mrtc0jJZ7xmYdLL6nmoWNqm4ctnRGb/qjtPmIwvcwzlSPsV1yYGPeR41Zc5pHrd1z+o8QcbBgAM9NoTA==
+   eJytU8ENADEI6iQ3V+d0nhvmXk0uRgJoH7xELFLjWSsu4928fqD0//kICq/S7HjKvc4bKi7SzzXmxdFD2lO/zj7yLMc3moc8sd1UvYqek7Xjl/GUPNQZSE/RZF6VXNnNoX/fyaRzo5P3TfEB8OxvkA==
   </data>
  </layer>
- <objectgroup name="Object Layer 1" width="20" height="18">
+ <objectgroup name="Object Layer 1" width="20" height="18" visible="0">
   <object gid="19833" x="63" y="96"/>
   <object gid="19833" x="128" y="130"/>
   <object gid="19833" x="288" y="60"/>
