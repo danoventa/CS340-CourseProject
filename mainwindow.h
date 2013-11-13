@@ -53,9 +53,16 @@ private:
   attackmove* mainAttack;
   attackList* aL;
   QLabel* Labels[3];
+  bool inBattle;
+  bool inOver;
+  bool inStory;
+
   void paintEvent(QPaintEvent *);
   //QTimer* mainclock;
   //QTextBrowser*** Tiles;
+
+  void startBattle();
+
   void doAttack();
   void updateArena();
   void startHeroTurn();
@@ -67,6 +74,7 @@ private:
   void doSpecialAttack();
   void endBattle();
   bool on_enemyDead();
+  void drawBattle(QPainter* g);
 
 
 protected:

@@ -7,6 +7,8 @@
 #include "QKeyEvent"
 #include "QImage"
 #include "QPainter"
+#include "QButtonGroup"
+//#in
 #include "QLabel"
 #include "QDebug"
 #include <string.h>
@@ -32,13 +34,16 @@ MainWindow::MainWindow(QWidget *parent) :
   */
   //Enemies=bd->retEnemies();
   //Enemies[0]=new Hunter(20,0,0,false);
+
+
+  /*-------------enemy----------------
   Enemies[0]=new Bomber(20,0,0);
-  //Enemies[1]=new Enemy(20,1,1);
   Enemies[1]=new Cannon(20,1,1);
   Enemies[2]=new Enemy(20,2,2);
   Enemies[0]->setAlive(true);
   Enemies[1]->setAlive(true);
   Enemies[2]->setAlive(false);
+  */
 
   //mainAttack=new attackmove(10);
   mainAttack=new attackmove(10);
@@ -61,10 +66,11 @@ MainWindow::MainWindow(QWidget *parent) :
   for(int i=0;i<3;i++){
      Labels[i]->setStyleSheet("QLabel {color : white; }");
     Labels[i]->setFont(serifFont);
+    Labels[i]->setVisible(false);
   }
   ui->HeroHealthBar->setFont(serifFont);
   ui->HeroHealthBar->setStyleSheet("QProgressBar {color : white; }");
-
+    ui->HeroHealthBar->setVisible(false);
   //Labels[0]->setPalette();
 
   //after
@@ -72,12 +78,16 @@ MainWindow::MainWindow(QWidget *parent) :
 ui->HeroHealthBar->setValue(Hero->getHP());
   //ui->setupUi(this);
 //ui->gDisplay->setText(QDir::currentPath());
-ui->gDisplay->setVisible(true);
+ui->gDisplay->setVisible(false);
   qApp->installEventFilter( this );
 
-  updateArena();
-  startHeroTurn();
 
+  //updateArena();
+  //startHeroTurn();
+    //startBattle();
+  inOver=true;
+  inBattle=false;
+  inStory=false;
 
   //paintEvent;
   repaint();
@@ -93,7 +103,8 @@ MainWindow::~MainWindow()
 
 
 void MainWindow::keyReleaseEvent(QKeyEvent *ke){
-   std::cout << ke->key() << "\n";
+   //std::cout << ke->key() << "\n";
+    if(inBattle){
    if(ke->key()==16777236){
        moveCharRight();
        endHeroTurn();
@@ -129,23 +140,132 @@ void MainWindow::keyReleaseEvent(QKeyEvent *ke){
 
 
      }
+    }else if(inOver){
+        if(ke->key()==32){
+            startBattle();
+            repaint();
+        }
+
+    }
 
 }
+void MainWindow::startBattle(){
+    inBattle=true;
+    inOver=false;
+    inStory=false;
+    int i;
+
+    //ui->
+    Enemies[0]=new Bomber(20,0,0);
+    Enemies[1]=new Cannon(20,1,1);
+    Enemies[2]=new Enemy(20,2,2);
+    Enemies[0]->setAlive(true);
+    Enemies[1]->setAlive(true);
+    Enemies[2]->setAlive(false);
+    for(i=0;i<3;i++){
+        if(Enemies[i]->getAlive()){
+            Labels[i]->setVisible(true);
+
+         }
+    }
+    ui->HeroHealthBar->setVisible(true);
+
+    startHeroTurn();
+}
+
 void MainWindow::paintEvent(QPaintEvent *){
     QPainter* g = new QPainter(this);
 
+
     QString bgfn="images/bg.jpg";
     //QString sandfn="images/sand.png";
-    QString sandfn="images/sandt.jpg";
-    QString redfn="images/red.png";
-    QString purpfn="images/cann.png";
-    QString herofn="images/pirate.gif";
+    QString sandfn="images/sandpanel.png";
+    //QString redfn="images/red.png";
+    //QString purpfn="images/cann.png";
+    //QString herofn="images/pirate.gif";
+    QString herofn="images/piratebat.png";
     QImage bgpic(bgfn);
     QImage sandpic(sandfn);
-    QImage redpic(redfn);
-    QImage purppic(purpfn);
+    //QImage redpic(redfn);
+    //QImage purppic(purpfn);
     QImage heropic(herofn);
+    if(inBattle){
+        drawBattle(g);
+        /*
+    g->drawImage(0,0,bgpic);
 
+    int x;
+    int y;
+    for(int i=0;i<3;i++){
+        for(int j=0;j<3;j++){
+            x=90+j*72;
+            y=180-i*66;
+            g->drawImage(x,y,sandpic);
+            if(i==Enemies[0]->getY() && j==Enemies[0]->getX()){
+               //Tiles[i][j]->setPixmap(QPixmap::fromImage(redpic));
+                g->drawImage(x,y,Enemies[0]->getPic());
+
+
+              }else if(i==Enemies[1]->getY() && j==Enemies[1]->getX()){
+               //Tiles[i][j]->setPixmap(QPixmap::fromImage(purppic));
+                g->drawImage(x,y,Enemies[1]->getPic());
+
+              }else if(i==Enemies[2]->getY() && j==Enemies[2]->getX()){
+             // Tiles[i][j]->setPixmap(QPixmap::fromImage(purppic));
+                g->drawImage(x,y,Enemies[2]->getPic());
+            }
+                       //else{
+                 //Tiles[i][j]->setPixmap(QPixmap::fromImage(sandpic));
+               // g->drawImage(x,y,sandpic);
+              //}
+          }
+      }
+    //rbgpic.
+    /*
+    g->drawImage(100,250,sandpic);
+    g->drawImage(140,250,heropic);
+    g->drawImage(180,250,sandpic);
+
+
+    g->drawImage(90,250,sandpic);
+    g->drawImage(162,250,sandpic);
+    g->drawImage(234,250,sandpic);
+    if(Hero->getPanel()==0){
+        g->drawImage(100,230,heropic);
+    }else if(Hero->getPanel()==1){
+
+        g->drawImage(172,230,heropic);
+
+    }else if(Hero->getPanel()==2){
+
+        g->drawImage(244,230,heropic);
+    }*/
+    }else if(inOver){//end if in battle
+        //draws over world
+       // g->setBrush(Qt::BrushStyle->);
+
+        g->drawRect(100,100,100,100);
+        g->drawText(110,140,"Click to");
+        g->drawText(110,160,"Start Battle");
+    }
+
+
+    //g->end();
+    g->end();
+}
+void MainWindow::drawBattle(QPainter* g){
+    QString bgfn="images/bg.jpg";
+    //QString sandfn="images/sand.png";
+    QString sandfn="images/sandpanel.png";
+    //QString redfn="images/red.png";
+    //QString purpfn="images/cann.png";
+    //QString herofn="images/pirate.gif";
+    QString herofn="images/piratebat.png";
+    QImage bgpic(bgfn);
+    QImage sandpic(sandfn);
+    //QImage redpic(redfn);
+    //QImage purppic(purpfn);
+    QImage heropic(herofn);
     g->drawImage(0,0,bgpic);
 
     int x;
@@ -185,21 +305,16 @@ void MainWindow::paintEvent(QPaintEvent *){
     g->drawImage(162,250,sandpic);
     g->drawImage(234,250,sandpic);
     if(Hero->getPanel()==0){
-        g->drawImage(70,230,heropic);
+        g->drawImage(100,230,heropic);
     }else if(Hero->getPanel()==1){
 
-        g->drawImage(142,230,heropic);
+        g->drawImage(172,230,heropic);
 
     }else if(Hero->getPanel()==2){
 
-        g->drawImage(214,230,heropic);
+        g->drawImage(244,230,heropic);
     }
-
-
-
-    //g->end();
 }
-
 
 void MainWindow::updateArena(){
 
@@ -236,10 +351,11 @@ void MainWindow::updateArena(){
 
 }
 void MainWindow::startHeroTurn(){
- ui->gDisplay->append("HeroTurn ");
+ /*ui->gDisplay->append("HeroTurn ");
  ui->gDisplay->append(QString::number(Enemies[0]->getHP()));
 ui->gDisplay->append(QString::number(Enemies[1]->getHP()));
- Hero->setCanMove(true);
+ */
+Hero->setCanMove(true);
   Hero->setTurn(true);
   //ui->leftButton->setDisabled(false);
   //ui->leftButton->setDisabled(false);
@@ -260,7 +376,7 @@ void MainWindow::endHeroTurn(){
 }
 
 void MainWindow::startEnemyTurn(){
-  ui->gDisplay->append("Enemyturn ");
+  //ui->gDisplay->append("Enemyturn ");
 
   //connect(mainclock, SIGNAL(timeout()), this, SLOT(update()));
   //mainclock->start(1000);
@@ -382,7 +498,14 @@ bool MainWindow::eventFilter(QObject *obj, QEvent *event)
     }
     */
     // pass the event on to the parent class
-
+    if(inOver && event->type()==QEvent::MouseButtonRelease){
+        //if(event->)
+        //event->
+        if(((QMouseEvent*)event)->x()>100 && ((QMouseEvent*)event)->x()<200 &&((QMouseEvent*)event)->y()>100 && ((QMouseEvent*)event)->x()<200){
+            startBattle();
+            repaint();
+        }
+    }
 
 
     return QMainWindow::eventFilter(obj, event);
@@ -470,9 +593,19 @@ void MainWindow::endBattle(){
   ui->rightButton->setVisible(false);
   ui->rightButton->setEnabled(false);
   */
-  ui->gDisplay->setVisible(true);
-  ui->gDisplay->setText("You Win!");
 
+  //ui->gDisplay->setVisible(true);
+  //ui->gDisplay->setText("You Win!\nGained n XP");
+    for(int i=0;i<3;i++){
+
+      Labels[i]->setVisible(false);
+    }
+
+      ui->HeroHealthBar->setVisible(false);
+
+  inBattle=false;
+  inOver=true;
+  inStory=false;
 }
 
 
