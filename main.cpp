@@ -1,13 +1,36 @@
-#include "world.h"
-#include "pause.h"
+#include "mainwindow.h"
+#include "ui_mainwindow.h"
+#include <QApplication>
+/*#include <QProgressBar>
+#include "Character.h"
+#include "attackmove.h"
+#include "attacklist.h"
+*/
+#include <iostream>
 
-int main (int argc, char **argv)
+
+int main(int argc, char *argv[])
 {
-    Story begin = new Story();
-    Level1 lvl1 = new Level1();
-
-    begin->Start();
-    lvl1->Run(); /* will call the worldmap to create */
 
 
+  QApplication a(argc, argv);
+  MainWindow w;
+  //w.show();
+  
+
+
+  //Character *E=new Character(50,1,0,1000);
+
+  //HeroHealthBar->setValue(H->getHP());
+
+  //HeroHealthBar->maximum=H->getmaxHP();
+  //HeroHealthBar->value=H->getHP();
+  //EnemyHealthBar->maximum=E->getmaxHP();
+  //EnemyHealthBar->value=E->getHP();
+  w.show();
+  //w.close();
+
+
+
+  return a.exec();
 }

@@ -44,7 +44,14 @@ attackmove* attackList::getAttack(){
     }
 
 }
+void attackList::reset(){
+    curr=full-1;
+}
+
 attackmove* attackList::getAttackAt(int pos){
     return alist[pos];
 
+}
+int attackList::getCurr(){
+    return curr;
 }

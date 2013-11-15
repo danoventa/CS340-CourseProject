@@ -7,7 +7,10 @@ class shotgun: public attackmove
 {
 public:
   shotgun(int dam);
+  virtual QString getString();
   virtual void doAttack(int hpanel, Enemy *Enemies[]);
 };
+
+
 
 #endif // SHOTGUN_H

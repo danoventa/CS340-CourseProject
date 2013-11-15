@@ -52,3 +52,10 @@ void xgun::doAttack(int hpanel, Enemy *Enemies[]){
 
 
 }
+
+QString xgun::getString(){
+    QString ret ="Xgun: ";
+
+    ret.append(QString::number(damage));
+    return ret;
+}

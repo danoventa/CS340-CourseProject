@@ -3,7 +3,12 @@
 Enemy::Enemy(int startHP, int cx, int cy)
 {
   currentHP=startHP;
-  maxHP=startHP;
+  if(startHP<0){
+      maxHP=0;
+  }else{
+      maxHP=startHP;
+  }
+
 
   //level=slevel;
   //exp=sexp;
@@ -61,6 +66,7 @@ int Enemy::getHP(){
 }
 int Enemy::getmaxHP(){
   return maxHP;
+
 }
 bool Enemy::getAlive(){
   return Alive;

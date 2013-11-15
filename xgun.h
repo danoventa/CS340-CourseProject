@@ -6,6 +6,7 @@ class xgun:public attackmove
 {
 public:
   xgun(int dam);
+  virtual QString getString();
   virtual void doAttack(int hpanel, Enemy *Enemies[]);
 };
 

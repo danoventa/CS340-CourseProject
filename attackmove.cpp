@@ -3,6 +3,7 @@
 //#include <stdlib.h>
 
 
+
 attackmove::attackmove(int dam)
 {
   damage=dam;
@@ -12,6 +13,12 @@ attackmove::~attackmove(){
 
 }
 
+QString attackmove::getString(){
+    QString ret ="Gun: ";
+
+    ret.append(QString::number(damage));
+    return ret;
+}
 
 
 

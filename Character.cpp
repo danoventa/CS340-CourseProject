@@ -13,6 +13,7 @@ Character::Character(int startHP, int sexp, int cdam, int cpanel)
   canmove=false;
   heropanel=cpanel;
   inTurn=false;
+  gold=0;
   //mainAttack=new attackmove(10);
 
 
@@ -44,7 +45,13 @@ void Character::getRestored(int recovery){
 }
 
 
+int Character::getGold(){
+    return gold;
 
+}
+void Character::incGold(int amt){
+    gold+=amt;
+}
 
 int Character::getHP(){
   return currentHP;

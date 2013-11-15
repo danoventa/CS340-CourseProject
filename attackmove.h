@@ -18,6 +18,7 @@ public:
 
   void setDam(int dam);
   virtual void doAttack(int hpanel,Enemy* Enemies[3]);
+  virtual QString getString();
 
 };
 

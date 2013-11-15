@@ -15,6 +15,8 @@ public:
   attackmove* getAttack();
   attackmove* getAttackAt(int pos);
   void addMove(attackmove* am);
+  int getCurr();
+  void reset();
 
 };
 

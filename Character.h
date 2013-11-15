@@ -15,6 +15,7 @@ private:
   bool canmove;
   int heropanel;
   bool inTurn;
+  int gold;
  // attackmove* mainAttack;
 
 
@@ -42,6 +43,8 @@ public:
    bool isTurn();
    void setDam(int cdam);
    int getDam();
+   int getGold();
+   void incGold(int amt);
    //attackmove* getAttack();
 
 };

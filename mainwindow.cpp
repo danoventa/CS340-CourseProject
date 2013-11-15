@@ -142,26 +142,81 @@ void MainWindow::keyReleaseEvent(QKeyEvent *ke){
      }
     }else if(inOver){
         if(ke->key()==32){
-            startBattle();
+            //startBattle();
             repaint();
         }
 
     }
 
 }
-void MainWindow::startBattle(){
+void MainWindow::startBattle(char etype1, int ehp1, int ex1, int ey1,char etype2, int ehp2, int ex2, int ey2, char etype3, int ehp3, int ex3, int ey3){
     inBattle=true;
     inOver=false;
     inStory=false;
     int i;
+    aL->reset();
 
     //ui->
+    /*
     Enemies[0]=new Bomber(20,0,0);
     Enemies[1]=new Cannon(20,1,1);
     Enemies[2]=new Enemy(20,2,2);
     Enemies[0]->setAlive(true);
     Enemies[1]->setAlive(true);
     Enemies[2]->setAlive(false);
+    */
+
+    //----------create enemies-------
+    if(etype1=='h'){
+            Enemies[0]=new Hunter(ehp1,ex1,ey1,true);
+            Enemies[0]->setAlive(true);
+    }else if(etype1=='b'){
+            Enemies[0]=new Bomber(ehp1,ex1,ey1);
+            Enemies[0]->setAlive(true);
+    }else if(etype1=='c'){
+            Enemies[0]=new Cannon(ehp1,ex1,ey1);
+            Enemies[0]->setAlive(true);
+    }else if(etype1=='e'){
+            Enemies[0]=new Enemy(ehp1,ex1,ey1);
+            Enemies[0]->setAlive(true);
+    }else if(etype1=='0'){
+            Enemies[0]=new Enemy(-1,-1,-1);
+            Enemies[0]->setAlive(false);
+    }
+    if(etype2=='h'){
+            Enemies[1]=new Hunter(ehp2,ex2,ey2,true);
+            Enemies[1]->setAlive(true);
+    }else if(etype2=='b'){
+            Enemies[1]=new Bomber(ehp2,ex2,ey2);
+            Enemies[1]->setAlive(true);
+    }else if(etype2=='c'){
+            Enemies[1]=new Cannon(ehp2,ex2,ey2);
+            Enemies[1]->setAlive(true);
+    }else if(etype2=='e'){
+            Enemies[1]=new Enemy(ehp2,ex2,ey2);
+            Enemies[1]->setAlive(true);
+    }else if(etype2=='0'){
+            Enemies[1]=new Enemy(-1,-1,-1);
+            Enemies[1]->setAlive(false);
+    }
+    if(etype3=='h'){
+            Enemies[2]=new Hunter(ehp3,ex3,ey3,true);
+            Enemies[2]->setAlive(true);
+    }else if(etype3=='b'){
+            Enemies[2]=new Bomber(ehp3,ex3,ey3);
+            Enemies[2]->setAlive(true);
+    }else if(etype3=='c'){
+            Enemies[2]=new Cannon(ehp3,ex3,ey3);
+            Enemies[2]->setAlive(true);
+    }else if(etype3=='e'){
+            Enemies[2]=new Enemy(ehp3,ex3,ey3);
+            Enemies[2]->setAlive(true);
+    }else if(etype3=='0'){
+            Enemies[2]=new Enemy(-1,-1,-1);
+            Enemies[2]->setAlive(false);
+    }
+    //---------------------end create enemies-------
+
     for(i=0;i<3;i++){
         if(Enemies[i]->getAlive()){
             Labels[i]->setVisible(true);
@@ -169,7 +224,7 @@ void MainWindow::startBattle(){
          }
     }
     ui->HeroHealthBar->setVisible(true);
-
+    updateArena();
     startHeroTurn();
 }
 
@@ -243,7 +298,9 @@ void MainWindow::paintEvent(QPaintEvent *){
     }else if(inOver){//end if in battle
         //draws over world
        // g->setBrush(Qt::BrushStyle->);
-
+        QString goldt="Gold:";
+        goldt.append(QString::number(Hero->getGold()));
+        g->drawText(20,50,goldt);
         g->drawRect(100,100,100,100);
         g->drawText(110,140,"Click to");
         g->drawText(110,160,"Start Battle");
@@ -260,7 +317,7 @@ void MainWindow::drawBattle(QPainter* g){
     //QString redfn="images/red.png";
     //QString purpfn="images/cann.png";
     //QString herofn="images/pirate.gif";
-    QString herofn="images/piratebat.png";
+    QString herofn="images/herobat.png";
     QImage bgpic(bgfn);
     QImage sandpic(sandfn);
     //QImage redpic(redfn);
@@ -314,6 +371,31 @@ void MainWindow::drawBattle(QPainter* g){
 
         g->drawImage(244,230,heropic);
     }
+    //g->fil
+    /*QBrush grey;
+    grey.setColor(Qt::red);
+    //grey.st
+    g->fillRect(300,0,200,500,grey.style());
+    */
+    drawAttackList(g);
+}
+
+
+void MainWindow::drawAttackList(QPainter* g){
+   // QBrush grey;
+    //grey.setColor(Qt::red);
+        //grey.st
+    g->fillRect(325,0,200,500,Qt::gray);
+
+    int i=0;
+    for(i=0;i<5;i++){
+        //g->fillRect();
+        if(aL->getCurr()>=i){
+            g->drawText(350,30+i*30,aL->getAttackAt(i)->getString());
+        }else{
+            g->drawText(350,30+i*30,"None");
+        }
+    }
 }
 
 void MainWindow::updateArena(){
@@ -321,7 +403,7 @@ void MainWindow::updateArena(){
 
     if(Enemies[0]->getY()>=0 && Enemies[0]->getY()<=2&&Enemies[0]->getAlive()){
         Labels[0]->setText(QString::number(Enemies[0]->getHP()));
-        Labels[0]->setGeometry(40*Enemies[0]->getX()+110,30*(2-Enemies[0]->getY())+174,31,17);
+        Labels[0]->setGeometry(70*Enemies[0]->getX()+110,30*(2-Enemies[0]->getY())+174,31,17);
       }else{
         Labels[0]->setText(QString::number(Enemies[0]->getHP()));
         //Labels[0]->setBaseSize(0,0);
@@ -329,7 +411,7 @@ void MainWindow::updateArena(){
       }
     if(Enemies[1]->getY()>=0 && Enemies[1]->getY()<=2&&Enemies[1]->getAlive()){
         Labels[1]->setText(QString::number(Enemies[1]->getHP()));
-         Labels[1]->setGeometry(40*Enemies[1]->getX()+110,30*(2-Enemies[1]->getY())+174,31,17);
+         Labels[1]->setGeometry(70*Enemies[1]->getX()+110,30*(2-Enemies[1]->getY())+174,31,17);
       }else{
         Labels[1]->setText(QString::number(Enemies[1]->getHP()));
        // Labels[1]->setBaseSize(0,0);
@@ -337,7 +419,7 @@ void MainWindow::updateArena(){
       }
     if(Enemies[2]->getY()>=0 && Enemies[2]->getY()<=2 &&Enemies[2]->getAlive()){
         Labels[2]->setText(QString::number(Enemies[2]->getHP()));
-         Labels[2]->setGeometry(40*Enemies[2]->getX()+110,30*(2-Enemies[2]->getY())+174,31,17);
+         Labels[2]->setGeometry(70*Enemies[2]->getX()+110,30*(2-Enemies[2]->getY())+174,31,17);
       }else{
           Labels[2]->setText(QString::number(Enemies[0]->getHP()));
         //Labels[2]->setGeometry(-100,-100,10,10);
@@ -502,7 +584,7 @@ bool MainWindow::eventFilter(QObject *obj, QEvent *event)
         //if(event->)
         //event->
         if(((QMouseEvent*)event)->x()>100 && ((QMouseEvent*)event)->x()<200 &&((QMouseEvent*)event)->y()>100 && ((QMouseEvent*)event)->x()<200){
-            startBattle();
+            startBattle('b',15,0,0,'c',20,1,1,'0',10,2,2);
             repaint();
         }
     }
@@ -596,11 +678,16 @@ void MainWindow::endBattle(){
 
   //ui->gDisplay->setVisible(true);
   //ui->gDisplay->setText("You Win!\nGained n XP");
+    int amtg=0;
+
     for(int i=0;i<3;i++){
 
       Labels[i]->setVisible(false);
-    }
+      amtg+=Enemies[i]->getmaxHP();
+      //amtg+=Enemies[i]->getDamage();
 
+    }
+    Hero->incGold(amtg);
       ui->HeroHealthBar->setVisible(false);
 
   inBattle=false;

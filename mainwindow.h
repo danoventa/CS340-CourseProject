@@ -61,7 +61,8 @@ private:
   //QTimer* mainclock;
   //QTextBrowser*** Tiles;
 
-  void startBattle();
+  //void startBattle();
+  void startBattle(char etype1, int ehp1, int ex1, int ey1,char etype2, int ehp2, int ex2, int ey2, char etype3, int ehp3, int ex3, int ey3);
 
   void doAttack();
   void updateArena();
@@ -75,6 +76,7 @@ private:
   void endBattle();
   bool on_enemyDead();
   void drawBattle(QPainter* g);
+  void drawAttackList(QPainter* g);
 
 
 protected:

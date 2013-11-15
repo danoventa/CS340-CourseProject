@@ -29,3 +29,10 @@ void shotgun::doAttack(int hpanel, Enemy *Enemies[]){
 
 
 }
+
+QString shotgun::getString(){
+    QString ret ="Shotgun: ";
+
+    ret.append(QString::number(damage));
+    return ret;
+}
