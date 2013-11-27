@@ -1,7 +1,7 @@
 
 #ifndef ENEMY_H
 #define ENEMY_H
-
+#include "QPainter"
 #include "QObject"
 #include "Character.h"
 #include "QImage"
@@ -9,7 +9,7 @@
 class Enemy: public QObject
 {
 public:
-  Enemy(int startHP, int cx, int cy);
+  Enemy(int clev, int cx, int cy);
   virtual ~Enemy();
   void setX(int cx);
   void setY(int cy);
@@ -27,6 +27,7 @@ public:
   bool getDamaged(int damage);
   void getRestored(int recovery);
   virtual QImage getPic();
+  virtual void drawSelf(QPainter* g, int gx, int gy);
 //signals:
   //void Died();
 //public slots:
@@ -40,6 +41,8 @@ protected:
   int inTurn;
   int canmove;
   bool Alive;
+  int level;
+  int damage;
   //QImage pic;
 
 

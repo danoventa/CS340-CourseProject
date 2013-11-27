@@ -9,15 +9,24 @@ void shotgun::doAttack(int hpanel, Enemy *Enemies[]){
   Enemy *closest=  NULL;
   Enemy *behind= NULL;
   for(int i=0;i<3;i++){
+
       if(Enemies[i]->getX()==hpanel){
-          closest=Enemies[i];
+          if(closest==NULL){
+              closest=Enemies[i];
+          }else{
+              if(Enemies[i]->getY()<closest->getY()){
+                  closest=Enemies[i];
+              }
+          }
+
+
         }
     }
   if(closest==NULL){
       return;
     }
   for(int i=0;i<3;i++){
-      if(closest!=Enemies[i] &&Enemies[i]->getX()==closest->getX() &&Enemies[i]->getY()==closest->getY()-1){
+      if(closest!=Enemies[i] &&Enemies[i]->getX()==closest->getX() &&Enemies[i]->getY()==closest->getY()+1){
           behind=Enemies[i];
         }
     }
@@ -36,3 +45,11 @@ QString shotgun::getString(){
     ret.append(QString::number(damage));
     return ret;
 }
+
+
+QImage shotgun::getImage(){
+     return QImage("images/shotgun.png");
+}
+
+
+

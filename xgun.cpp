@@ -13,9 +13,15 @@ void xgun::doAttack(int hpanel, Enemy *Enemies[]){
   Enemy *downR= NULL;
   for(int i=0;i<3;i++){
       if(Enemies[i]->getX()==hpanel){
-          closest=Enemies[i];
-        }
+          if(closest==NULL){
+              closest=Enemies[i];
+          }else{
+              if(Enemies[i]->getY()<closest->getY()){
+                  closest=Enemies[i];
+              }
+          }
     }
+  }
   if(closest==NULL){
       return;
     }
@@ -52,6 +58,12 @@ void xgun::doAttack(int hpanel, Enemy *Enemies[]){
 
 
 }
+
+QImage xgun::getImage(){
+     return QImage("images/crossgun.png");
+}
+
+
 
 QString xgun::getString(){
     QString ret ="Xgun: ";
