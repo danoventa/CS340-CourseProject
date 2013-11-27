@@ -71,5 +71,6 @@ FORMS += \
     mapdisplay.ui \
     pause.ui \
     ../battle.ui \
-    battlepause.ui
+    battlepause.ui \
+    worldmap.ui
 >>>>>>> 09f6a9479c0108a56957e9ddb4c0822824a34d60

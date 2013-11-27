@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="20" height="18" tilewidth="32" tileheight="32">
+ <tileset firstgid="1" name="ten2" tilewidth="32" tileheight="32">
+  <image source="../../../../../../Pictures/Mobile Photos/i_2013082122495490.jpg" trans="ffefd2" width="3264" height="2448"/>
+ </tileset>
+ <tileset firstgid="7753" name="ten3" tilewidth="32" tileheight="32">
+  <image source="../../../../../../Pictures/Mobile Photos/i_2013082122500136.jpg" trans="ffefd2" width="3264" height="2448"/>
+ </tileset>
+ <tileset firstgid="15505" name="stf" tilewidth="32" tileheight="32">
+  <image source="../PirateAdventure/Works/TileA2asd.png" trans="ffefd2" width="512" height="384"/>
+ </tileset>
+ <objectgroup name="Object Layer 3" width="20" height="18" visible="0"/>
+ <layer name="Tile Layer 1" width="20" height="18">
+  <data encoding="base64" compression="zlib">
+   eJytkrsNgDAMRBmMRTMJtKGxW9gAJiFFLJ2scz6I4olERC8+O2ldlvQzuaANMhD9V+fr4b0M82nn/lZNSny2l8Fa7exZuMDJ8mrgZv28C8+gD51CvF/zMn+GrLhGn3cJ8WFNllVgHfn8vFk2n9vnjXwzb3Mkb/RlPe3NY+SOoxK9l57Ts0Hmlg97uAewXqfqkPXbTGZmZ2dn6/uTF96aXC4=
+  </data>
+ </layer>
+ <layer name="Tile Layer 2" width="20" height="18">
+  <data encoding="base64" compression="zlib">
+   eJytk1EKgDAMQ3ewHnO/Peb+xY9hCUkXmIEy0fmauDpjjPlzvVqhq0o9X8A7CblMm1f3dj6Zp/ou+nM8sL37muWtvfE++54uT7Fv8zK+Es4L46jcrIfiqcxdbpfn6MRDX2xlvU/n4fZQPIeJyvjWNOe5++eSeGSz754J8jrhrLj+biqhHqv7rNo=
+  </data>
+ </layer>
+</map>

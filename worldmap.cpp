@@ -1,16 +1,26 @@
 #include "worldmap.h"
+#include "ui_worldmap.h"
 
-WorldMap::WorldMap(){
-    Console.WriteLine("World has been created");
-    MapNode **level = new (MapNode*)MapNode(MapNode);
+worldmap::worldmap(QWidget *parent) :
+    QDialog(parent),
+    ui(new Ui::worldmap)
+{
+    ui->setupUi(this);
 
+    scene = new QGraphicsScene(this);
+    ui->graphicsView->setScene(scene);
+
+    QBrush redBrush(Qt::red);
+    QBrush blueBrush(Qt::blue);
+    QPen blackPen(Qt::black);
+
+    blackpen.setWidth(6);
+
+    ellipse = scene->addEllipse(10, 10, 100, 100, blackpen, redBrush);
 
 }
 
-WorldMap::~WorldMap(){
-    Console.WriteLine("World has been completed.")
-    foreach(MapNode node in level){
-        delete(node);
-    }
-    delete(level);
+worldmap::~worldmap()
+{
+    delete ui;
 }
