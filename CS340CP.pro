@@ -6,14 +6,12 @@ SOURCES += \
     story.cpp \
     battle.cpp \
     filemanager.cpp \
-<<<<<<< HEAD \
     pouch.cpp \
     item.cpp \
     xgun.cpp \
     test.cpp \
     shotgun.cpp \
     pauseprofile.cpp \
-    main (2).cpp \
     hunter.cpp \
     Enemy.cpp \
     Character.cpp \
@@ -21,15 +19,13 @@ SOURCES += \
     bomber.cpp \
     attackmove.cpp \
     attacklist.cpp \
-    battlepause.cpp
-    pauseprofile.cpp
-=======
+    battlepause.cpp\
+    pauseprofile.cpp\
     mapdisplay.cpp \
     mapnode.cpp \
     level.cpp \
     assistants.cpp \
     rosie.cpp
->>>>>>> 09f6a9479c0108a56957e9ddb4c0822824a34d60
 
 HEADERS += \
     world.h \
@@ -39,7 +35,6 @@ HEADERS += \
     story.h \
     battle.h \
     filemanager.h \
-<<<<<<< HEAD \
     pouch.h \
     item.h \
     xgun.h \
@@ -56,8 +51,7 @@ HEADERS += \
     pauseprofile.h
 
 OTHER_FILES += \
-    README.md
-=======
+    README.md\
     mapdisplay.h \
     mapnode.h \
     level.h \
@@ -70,7 +64,6 @@ OTHER_FILES += \
 FORMS += \
     mapdisplay.ui \
     pause.ui \
-    ../battle.ui \
+    battle.ui \
     battlepause.ui \
     worldmap.ui
->>>>>>> 09f6a9479c0108a56957e9ddb4c0822824a34d60
