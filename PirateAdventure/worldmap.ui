@@ -104,8 +104,22 @@
     <pixmap>Works/level1.png</pixmap>
    </property>
   </widget>
+  <widget class="QPushButton" name="pushButton">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>550</y>
+     <width>31</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Exit</string>
+   </property>
+  </widget>
   <zorder>label</zorder>
   <zorder>graphicsView</zorder>
+  <zorder>pushButton</zorder>
  </widget>
  <resources/>
  <connections/>
