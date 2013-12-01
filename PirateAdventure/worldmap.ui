@@ -88,22 +88,6 @@
     <enum>QGraphicsView::AnchorViewCenter</enum>
    </property>
   </widget>
-  <widget class="QLabel" name="label">
-   <property name="geometry">
-    <rect>
-     <x>0</x>
-     <y>0</y>
-     <width>641</width>
-     <height>581</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string/>
-   </property>
-   <property name="pixmap">
-    <pixmap>Works/level1.png</pixmap>
-   </property>
-  </widget>
   <widget class="QPushButton" name="pushButton">
    <property name="geometry">
     <rect>
@@ -117,9 +101,6 @@
     <string>Exit</string>
    </property>
   </widget>
-  <zorder>label</zorder>
-  <zorder>graphicsView</zorder>
-  <zorder>pushButton</zorder>
  </widget>
  <resources/>
  <connections/>
