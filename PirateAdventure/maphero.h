@@ -15,7 +15,7 @@ protected:
     virtual void keyPressEvent(QKeyEvent *event);
 
 private:
-    QPainter *heroImage;
+    int heroImage;
 };
 
 #endif //MAPHERO_H
