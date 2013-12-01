@@ -14,14 +14,18 @@ worldmap::worldmap(QWidget *parent) :
     hero = new MapHero;
     scene->addItem(hero);
     hero->setFocus();
+    QBrush redbrush(Qt::red);
+    QPen blackpen(Qt::black);
+    blackpen.setWidth(6);
+    rect = scene->addRect(10, 10, 100, 100, blackpen, redbrush);
 }
 
 worldmap::~worldmap()
 {
     delete ui;
+    delete hero;
 }
 void worldmap::on_pushButton_clicked()
 {
-    delete(hero);
     this->hide();
 }

@@ -16,8 +16,8 @@ MainWindow::~MainWindow()
 void MainWindow::on_pushButton_clicked()
 {
     wm.setModal(true);
-    wm.exec(); //things remain the same as when the window was closed.
-   // wm.show();
+    // wm.exec(); //things remain the same as when the window was closed.
+    wm.show();
 }
 
 void MainWindow::on_pushButton_4_clicked()
