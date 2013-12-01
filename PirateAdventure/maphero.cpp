@@ -1,6 +1,8 @@
 #include "maphero.h"
 #include <QtGui>
 
+#define SMALLEST 0.00000000000000000000000000000000000000000000000000000000000001
+
 MapHero::MapHero(QGraphicsItem *parent) : QGraphicsItem(parent)
 {
     setFlag(QGraphicsItem::ItemIsFocusable);
@@ -32,39 +34,42 @@ void MapHero::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, Q
 void MapHero::keyPressEvent(QKeyEvent *event){
     switch(  event->key() ) {
     case Qt::Key_Right:
-        if( !(collidingItems().size() > 0)) { //.size() >= 0
+        if( (collidingItems().size() >= SMALLEST)) { //.size() >= 0
+            moveBy(-9, 0);
+        }
+        else{
             moveBy(9, 0);
             heroImage = 3;
         }
-        else{
-            moveBy(-9, 0);
-        }
         break;
     case Qt::Key_Left:
-        if( !(collidingItems().size() > 0)) { //.size() > 0
-        moveBy(-9, 0);
-        heroImage = 1;
+        if( (collidingItems().size() >= SMALLEST)) { //.size() > 0
+        moveBy(9, 0);
+
         }
         else{
-            moveBy(9, 0);
+            moveBy(-9, 0);
+            heroImage = 1;
         }
         break;
     case Qt::Key_Up:
-        if( !(collidingItems().size() > 0)) {//.size() >= 0
-            moveBy(0, -9);
-            heroImage = 2;
+        if( (collidingItems().size() >= SMALLEST)) {//.size() >= 0
+            moveBy(0, 9);
         }
         else{
-            moveBy(0, 9);
+            moveBy(0, -9);
+            heroImage = 2;
+
         }
         break;
     case Qt::Key_Down:
-        if( !(collidingItems().size() > 0)) { //.size() >= 0
-            moveBy(0, 9);
-            heroImage = 0;
+        if( (collidingItems().size() >= SMALLEST)) { //.size() >= 0
+            moveBy(0, -9);
+
         }
         else{
-            moveBy(0, -9);
+            moveBy(0, 9);
+            heroImage = 0;
         }
         break;
     }

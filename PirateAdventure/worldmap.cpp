@@ -17,7 +17,7 @@ worldmap::worldmap(QWidget *parent) :
     QBrush redbrush(Qt::red);
     QPen blackpen(Qt::black);
     blackpen.setWidth(6);
-    rect = scene->addRect(10, 10, 100, 100, blackpen, redbrush);
+    rect = scene->addRect(10, 10, 81, 81, blackpen, redbrush);
 }
 
 worldmap::~worldmap()
