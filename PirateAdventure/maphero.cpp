@@ -9,6 +9,7 @@ MapHero::MapHero(QGraphicsItem *parent) : QGraphicsItem(parent)
     setFlag(QGraphicsItem::ItemIsFocusable);
     heroImage = 3;
 }
+
 QRectF MapHero::boundingRect() const{
     return QRectF(0, 520, 15, 24);
 }

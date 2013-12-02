@@ -12,7 +12,9 @@ worldmap::worldmap(QWidget *parent) :
 
     ui->graphicsView->setScene(scene);
     hero = new MapHero;
+    enemy = new MapEnemy;
     scene->addItem(hero);
+    scene->addItem(enemy);
     hero->setFocus();
     QBrush unBrush(Qt::red);
     QPen unPen(Qt::transparent);
