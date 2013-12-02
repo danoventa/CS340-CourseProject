@@ -15,14 +15,49 @@ TEMPLATE = app
 SOURCES += main.cpp\
         mainwindow.cpp \
     worldmap.cpp \
-    maphero.cpp
+    maphero.cpp \
+    attacklist.cpp \
+    attackmove.cpp \
+    bomber.cpp \
+    brokengun.cpp \
+    brokenshot.cpp \
+    cannon.cpp \
+    character.cpp \
+    enemy.cpp \
+    hookslash.cpp \
+    hunter.cpp \
+    swordslash.cpp \
+    swordsman.cpp \
+    xgun.cpp \
+    pause.cpp \
+    battlepause.cpp
+
+
 
 HEADERS  += mainwindow.h \
     worldmap.h \
-    maphero.h
+    maphero.h \
+    attacklist.h \
+    attackmove.h \
+    bomber.h \
+    brokengun.h \
+    brokenshot.h \
+    cannon.h \
+    character.h \
+    enemy.h \
+    hookslash.h \
+    hunter.h \
+    swordslash.h \
+    swordsman.h \
+    xgun.h \
+    pause.h \
+    battlepause.h \
 
 FORMS    += mainwindow.ui \
-    worldmap.ui
+    worldmap.ui \
+    pause.ui \
+    battlepause.ui \
+
 
 RESOURCES += \
     images.qrc

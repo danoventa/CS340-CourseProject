@@ -15,6 +15,9 @@ public:
     explicit BattlePause(QWidget *parent = 0);
     ~BattlePause();
     
+private slots:
+    void on_pushButton_clicked();
+
 private:
     Ui::BattlePause *ui;
 };

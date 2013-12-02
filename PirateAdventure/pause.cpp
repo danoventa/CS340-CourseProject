@@ -32,10 +32,3 @@ void Pause::on_Exit_clicked()
     exit(-1);
 }
 
-
-void Pause::on_ShotGun_clicked()
-{
-
-}
-
-

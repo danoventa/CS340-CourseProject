@@ -1,8 +1,6 @@
 #ifndef PAUSE_H
 #define PAUSE_H
 #include "Character.h"
-#include "pouch.h"
-#include "battle.h"
 #include "worldmap.h"
 #include <QtGui>
 #include <QMainWindow>
