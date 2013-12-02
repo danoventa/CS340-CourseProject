@@ -9,15 +9,18 @@
  <tileset firstgid="15505" name="stf" tilewidth="32" tileheight="32">
   <image source="../PirateAdventure/Works/TileA2asd.png" trans="ffefd2" width="512" height="384"/>
  </tileset>
+ <tileset firstgid="15697" name="tiles" tilewidth="32" tileheight="32">
+  <image source="../PirateAdventure/Works/tiles.png" trans="ffefd2" width="704" height="384"/>
+ </tileset>
  <objectgroup name="Object Layer 3" width="20" height="18" visible="0"/>
  <layer name="Tile Layer 1" width="20" height="18">
   <data encoding="base64" compression="zlib">
-   eJytkrsNgDAMRBmMRTMJtKGxW9gAJiFFLJ2scz6I4olERC8+O2ldlvQzuaANMhD9V+fr4b0M82nn/lZNSny2l8Fa7exZuMDJ8mrgZv28C8+gD51CvF/zMn+GrLhGn3cJ8WFNllVgHfn8vFk2n9vnjXwzb3Mkb/RlPe3NY+SOoxK9l57Ts0Hmlg97uAewXqfqkPXbTGZmZ2dn6/uTF96aXC4=
+   eJytk8ENwjAMRTsCA7VTcsokcA0c7CtsAJPgSliyvr4bt+rhqYkavfjHSZunqZ1MN3SDHsj+K/hGoJfhPh3sv1WTEp/PpVirr30Z7+BkeTVxs/P8GN+iLzqFeI/mZf4essZx9KFLiC/W5FkljDMf9ptlw9yYN/PtuZuVvNmXnemoH5U9rsYj8VWcyM24LPn7xb4+jXuCr1t9Tvs7ZD7WE/RV+ra3vjP5AaBlVSE=
   </data>
  </layer>
  <layer name="Tile Layer 2" width="20" height="18">
   <data encoding="base64" compression="zlib">
-   eJytk1EKgDAMQ3ewHnO/Peb+xY9hCUkXmIEy0fmauDpjjPlzvVqhq0o9X8A7CblMm1f3dj6Zp/ou+nM8sL37muWtvfE++54uT7Fv8zK+Es4L46jcrIfiqcxdbpfn6MRDX2xlvU/n4fZQPIeJyvjWNOe5++eSeGSz754J8jrhrLj+biqhHqv7rNo=
+   eJytlEsKhDAQRD1YjhmYVdZ9QvfDgGLxqEpmRguaBNN5/VN727b+sH20t2wqd17HqryVyHU6eeo7y9PldO6V95Ka649898DTs1nfEpv9K/Ev1FWoUWOwXrJWdSXxfXF5uucpRuK5vXI4W9c/Mr6ds95NPGWy7uRHns7R+bp50999by7+TKNd65jwXO/df2LgfodPgbcSeUmcxS/53bEBewOJgcdU
   </data>
  </layer>
 </map>

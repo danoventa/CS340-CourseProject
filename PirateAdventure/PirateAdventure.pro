@@ -14,10 +14,12 @@ TEMPLATE = app
 
 SOURCES += main.cpp\
         mainwindow.cpp \
-    worldmap.cpp
+    worldmap.cpp \
+    maphero.cpp
 
 HEADERS  += mainwindow.h \
-    worldmap.h
+    worldmap.h \
+    maphero.h
 
 FORMS    += mainwindow.ui \
     worldmap.ui

@@ -7,6 +7,8 @@
 #include <QGraphicsView>
 #include <QGraphicsItem>
 
+#include "maphero.h"
+
 namespace Ui {
 class worldmap;
 }
@@ -19,11 +21,15 @@ public:
     explicit worldmap(QWidget *parent = 0);
     ~worldmap();
 
+private slots:
+    void on_pushButton_clicked();
+
 private:
     Ui::worldmap *ui;
     QGraphicsScene *scene;
     QGraphicsEllipseItem *ellipse;
     QGraphicsRectItem *rectangle;
+    MapHero *hero;
 };
 
 #endif // WORLDMAP_H

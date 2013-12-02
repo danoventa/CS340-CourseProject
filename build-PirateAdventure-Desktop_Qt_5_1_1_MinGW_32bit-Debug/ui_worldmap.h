@@ -17,6 +17,7 @@
 #include <QtWidgets/QGraphicsView>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
+#include <QtWidgets/QPushButton>
 
 QT_BEGIN_NAMESPACE
 
@@ -25,6 +26,7 @@ class Ui_worldmap
 public:
     QGraphicsView *graphicsView;
     QLabel *label;
+    QPushButton *pushButton;
 
     void setupUi(QDialog *worldmap)
     {
@@ -57,8 +59,12 @@ public:
         label->setObjectName(QStringLiteral("label"));
         label->setGeometry(QRect(0, 0, 641, 581));
         label->setPixmap(QPixmap(QString::fromUtf8("Works/level1.png")));
+        pushButton = new QPushButton(worldmap);
+        pushButton->setObjectName(QStringLiteral("pushButton"));
+        pushButton->setGeometry(QRect(10, 550, 31, 21));
         label->raise();
         graphicsView->raise();
+        pushButton->raise();
 
         retranslateUi(worldmap);
 
@@ -69,6 +75,7 @@ public:
     {
         worldmap->setWindowTitle(QApplication::translate("worldmap", "Dialog", 0));
         label->setText(QString());
+        pushButton->setText(QApplication::translate("worldmap", "Exit", 0));
     } // retranslateUi
 
 };
