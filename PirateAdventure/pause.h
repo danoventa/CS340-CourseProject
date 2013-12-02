@@ -1,8 +1,6 @@
 #ifndef PAUSE_H
 #define PAUSE_H
-#include "Character.h"
-#include "pouch.h"
-#include "battle.h"
+#include "character.h"
 #include "worldmap.h"
 #include <QtGui>
 #include <QMainWindow>
@@ -34,7 +32,7 @@ private slots:
 
 private:
     Ui::Pause *ui;
-    //Character character;
+    //character pirate;
 };
 
 #endif // PAUSE_H

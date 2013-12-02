@@ -9,9 +9,7 @@ Pause::Pause(QWidget *parent) :
     ui(new Ui::Pause)
 {
     ui->setupUi(this);
-    //I need the pointer to Hero so I can extract his health
-
-    //save Parent Pointer
+    ui->NumericHP->connect()
 }
 
 Pause::~Pause()
@@ -31,11 +29,4 @@ void Pause::on_Exit_clicked()
 {
     exit(-1);
 }
-
-
-void Pause::on_ShotGun_clicked()
-{
-
-}
-
 
