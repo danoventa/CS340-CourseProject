@@ -34,42 +34,35 @@ void MapHero::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, Q
 void MapHero::keyPressEvent(QKeyEvent *event){
     switch(  event->key() ) {
     case Qt::Key_Right:
-        if( (collidingItems().size() >= SMALLEST)) { //.size() >= 0
-            moveBy(-9, 0);
-        }
-        else{
-            moveBy(9, 0);
-            heroImage = 3;
-        }
-        break;
-    case Qt::Key_Left:
-        if( (collidingItems().size() >= SMALLEST)) { //.size() > 0
         moveBy(9, 0);
-
-        }
-        else{
+        heroImage = 3;
+        if ( (collidingItems().size() > 0)){
             moveBy(-9, 0);
             heroImage = 1;
         }
         break;
-    case Qt::Key_Up:
-        if( (collidingItems().size() >= SMALLEST)) {//.size() >= 0
-            moveBy(0, 9);
+    case Qt::Key_Left:
+        moveBy(-9, 0);
+        heroImage = 1;
+        if ( (collidingItems().size() > 0)){
+            moveBy(9, 0);
+            heroImage = 3;
         }
-        else{
-            moveBy(0, -9);
-            heroImage = 2;
-
+        break;
+    case Qt::Key_Up:
+        moveBy(0, -9);
+        heroImage = 2;
+        if ( (collidingItems().size() > 0)){
+            moveBy(0, 9);
+            heroImage = 0;
         }
         break;
     case Qt::Key_Down:
-        if( (collidingItems().size() >= SMALLEST)) { //.size() >= 0
+        moveBy(0, 9);
+        heroImage = 0;
+        if ( (collidingItems().size() > 0)){
             moveBy(0, -9);
-
-        }
-        else{
-            moveBy(0, 9);
-            heroImage = 0;
+            heroImage = 2;
         }
         break;
     }
