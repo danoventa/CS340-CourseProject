@@ -1,5 +1,6 @@
 #include "pouch.h"
 
+
 Pouch::Pouch()
 {
 
@@ -21,12 +22,14 @@ void Pouch::dropItem(int itemNum)
 void Pouch::equipItem(Item itemEquip)
 {
     /* add to hero stats */
+    items.push_back(itemEquip);
 }
 
 void Pouch::unequipItem(int itemNum)
 {
    /* equip this item */
    /* remove stats from here */
+    items.erase(items.begin() + itemNUm);//remove from pouch
 }
 
 void Pouch::changeEquip(int itemNum1, int itemNum2)

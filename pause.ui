@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
-    <height>600</height>
+    <width>630</width>
+    <height>416</height>
    </rect>
   </property>
   <property name="minimumSize">
@@ -16,10 +16,25 @@
     <height>0</height>
    </size>
   </property>
+  <property name="maximumSize">
+   <size>
+    <width>630</width>
+    <height>416</height>
+   </size>
+  </property>
   <property name="font">
    <font>
-    <family>Arial Narrow</family>
+    <family>Helvetica</family>
+    <pointsize>14</pointsize>
+    <weight>9</weight>
+    <italic>false</italic>
+    <bold>false</bold>
    </font>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">font: 75 14pt &quot;Helvetica&quot;;
+background-color: qconicalgradient(cx:0.5, cy:0.5, angle:265, stop:0 rgba(219, 214, 194, 255));
+</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QPushButton" name="Resume">
@@ -30,6 +45,10 @@
       <width>110</width>
       <height>32</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(0, 0, 0, 255), stop:1 rgba(255, 255, 255, 255));
+selection-color: rgba(255, 0, 0, 115);</string>
     </property>
     <property name="text">
      <string>Resume</string>
@@ -44,6 +63,10 @@
       <height>32</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(0, 0, 0, 255), stop:1 rgba(255, 255, 255, 255));
+font: 75 14pt &quot;Helvetica&quot;;</string>
+    </property>
     <property name="text">
      <string>Exit</string>
     </property>
@@ -52,9 +75,9 @@
     <property name="geometry">
      <rect>
       <x>200</x>
-      <y>90</y>
+      <y>110</y>
       <width>91</width>
-      <height>20</height>
+      <height>21</height>
      </rect>
     </property>
     <property name="value">
@@ -65,10 +88,13 @@
     <property name="geometry">
      <rect>
       <x>200</x>
-      <y>70</y>
+      <y>66</y>
       <width>38</width>
-      <height>16</height>
+      <height>20</height>
      </rect>
+    </property>
+    <property name="autoFillBackground">
+     <bool>false</bool>
     </property>
     <property name="text">
      <string>HP</string>
@@ -90,22 +116,86 @@
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap>images/RealHero.png</pixmap>
+     <pixmap>images/piratebat.png</pixmap>
     </property>
     <property name="scaledContents">
      <bool>true</bool>
     </property>
    </widget>
-  </widget>
-  <widget class="QMenuBar" name="menubar">
-   <property name="geometry">
-    <rect>
-     <x>0</x>
-     <y>0</y>
-     <width>800</width>
-     <height>22</height>
-    </rect>
-   </property>
+   <widget class="QLCDNumber" name="NumericHP">
+    <property name="geometry">
+     <rect>
+      <x>200</x>
+      <y>90</y>
+      <width>64</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Helvetica</family>
+      <pointsize>14</pointsize>
+      <weight>9</weight>
+      <italic>false</italic>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="layoutDirection">
+     <enum>Qt::LeftToRight</enum>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(255, 255, 255);
+font: 75 14pt &quot;Helvetica&quot;;</string>
+    </property>
+    <property name="numDigits">
+     <number>1</number>
+    </property>
+    <property name="digitCount">
+     <number>1</number>
+    </property>
+    <property name="segmentStyle">
+     <enum>QLCDNumber::Flat</enum>
+    </property>
+   </widget>
+   <widget class="QTabWidget" name="HeroOptions">
+    <property name="geometry">
+     <rect>
+      <x>50</x>
+      <y>170</y>
+      <width>154</width>
+      <height>99</height>
+     </rect>
+    </property>
+    <property name="currentIndex">
+     <number>0</number>
+    </property>
+    <widget class="QWidget" name="Weapons">
+     <attribute name="title">
+      <string>Weapons</string>
+     </attribute>
+     <layout class="QVBoxLayout" name="verticalLayout">
+      <item>
+       <widget class="QPushButton" name="ShotGun">
+        <property name="text">
+         <string>ShotGun</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="Gun">
+        <property name="text">
+         <string>Gun</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+    <widget class="QWidget" name="Health_2">
+     <attribute name="title">
+      <string>Health</string>
+     </attribute>
+    </widget>
+   </widget>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>

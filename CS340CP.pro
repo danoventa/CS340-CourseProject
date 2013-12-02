@@ -77,7 +77,6 @@ FORMS += \
 >>>>>>> 09f6a9479c0108a56957e9ddb4c0822824a34d60
 =======
 SOURCES += \
-    characters.cpp \
     worldmap.cpp \
     main.cpp \
     pause.cpp \
@@ -89,7 +88,6 @@ SOURCES += \
     xgun.cpp \
     test.cpp \
     shotgun.cpp \
-    pauseprofile.cpp \
     hunter.cpp \
     Enemy.cpp \
     Character.cpp \
@@ -98,16 +96,12 @@ SOURCES += \
     attackmove.cpp \
     attacklist.cpp \
     battlepause.cpp\
-    pauseprofile.cpp\
-    mapdisplay.cpp \
     mapnode.cpp \
     level.cpp \
-    assistants.cpp \
-    rosie.cpp
+    assistants.cpp
 
 HEADERS += \
     world.h \
-    characters.h \
     worldmap.h \
     pause.h \
     story.h \
@@ -117,7 +111,6 @@ HEADERS += \
     item.h \
     xgun.h \
     shotgun.h \
-    pauseprofile.h \
     hunter.h \
     Enemy.h \
     Character.h \
@@ -126,7 +119,6 @@ HEADERS += \
     attackmove.h \
     attacklist.h \
     battlepause.h
-    pauseprofile.h
 
 OTHER_FILES += \
     README.md\

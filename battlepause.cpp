@@ -12,3 +12,8 @@ BattlePause::~BattlePause()
 {
     delete ui;
 }
+
+void BattlePause::on_pushButton_clicked()
+{
+    this->hide ();
+}

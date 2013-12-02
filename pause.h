@@ -1,11 +1,15 @@
 #ifndef PAUSE_H
 #define PAUSE_H
-#include "characters.h"
+#include "Character.h"
+#include "pouch.h"
 #include "battle.h"
 #include "worldmap.h"
-
-
+#include <QtGui>
 #include <QMainWindow>
+#include <QKeyEvent>
+#include <QEvent>
+
+#include "attacklist.h"
 
 namespace Ui {
 class Pause;
@@ -14,9 +18,10 @@ class Pause;
 class Pause : public QMainWindow
 {
     Q_OBJECT
+
     
 public:
-    explicit Pause(QWidget *parent = 0);
+    explicit Pause(QWidget *parent = 0);//I think this is not suppose to be zero
     ~Pause();
     
 private slots:
@@ -24,8 +29,12 @@ private slots:
 
     void on_Exit_clicked();
 
+    void on_ShotGun_clicked();
+
+
 private:
     Ui::Pause *ui;
+    //Character character;
 };
 
 #endif // PAUSE_H

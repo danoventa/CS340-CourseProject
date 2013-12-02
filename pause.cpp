@@ -1,6 +1,8 @@
 #include "pause.h"
 #include "ui_pause.h"
-#incldue "Character.h"
+#include "Character.h"
+
+
 
 Pause::Pause(QWidget *parent) :
     QMainWindow(parent),
@@ -8,7 +10,8 @@ Pause::Pause(QWidget *parent) :
 {
     ui->setupUi(this);
     //I need the pointer to Hero so I can extract his health
-    ui->numericHealth->connect()
+
+    //save Parent Pointer
 }
 
 Pause::~Pause()
@@ -19,10 +22,20 @@ Pause::~Pause()
 
 void Pause::on_Resume_clicked()
 {
+   //hides window and main game should resume at same point
+    this->hide();
 
 }
 
-//void Pause::on_Exit_clicked()
-//{
+void Pause::on_Exit_clicked()
+{
+    exit(-1);
+}
 
-//}
+
+void Pause::on_ShotGun_clicked()
+{
+
+}
+
+
