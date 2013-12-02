@@ -26,4 +26,3 @@ private:
 };
 
 #endif // MAINWINDOW_H
->>>>>>> 87dd27675240c67b0ea9a10611c9d6c5bf4dfb0d

@@ -25,4 +25,3 @@ void MainWindow::on_pushButton_4_clicked()
     wm.~worldmap();
     exit(0);
 }
->>>>>>> 87dd27675240c67b0ea9a10611c9d6c5bf4dfb0d
