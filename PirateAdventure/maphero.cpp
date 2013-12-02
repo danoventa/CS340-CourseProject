@@ -1,5 +1,6 @@
 #include "maphero.h"
 #include <QtGui>
+#include <iostream>
 
 #define SMALLEST 0.00000000000000000000000000000000000000000000000000000000000001
 
@@ -32,12 +33,14 @@ void MapHero::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, Q
 }
 
 void MapHero::keyPressEvent(QKeyEvent *event){
+    double cSize;
     switch(  event->key() ) {
     case Qt::Key_Right:
         moveBy(9, 0);
         heroImage = 3;
-        if ( (collidingItems().size() > 0)){
-            moveBy(-9, 0);
+        if ( (cSize = collidingItems().size()) > 0){
+            std::cout << cSize;
+            moveBy((cSize*-1)-1, 0);
             heroImage = 1;
         }
         break;
