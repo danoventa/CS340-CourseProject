@@ -1,8 +1,7 @@
 #include "maphero.h"
+#include "worldmap.h"
 #include <QtGui>
 #include <iostream>
-
-#define SMALLEST 0.00000000000000000000000000000000000000000000000000000000000001
 
 MapHero::MapHero(QGraphicsItem *parent) : QGraphicsItem(parent)
 {
@@ -69,6 +68,9 @@ void MapHero::keyPressEvent(QKeyEvent *event){
             heroImage = 2;
         }
         break;
+    case Qt::Key_P:
+        pause.setModal(true);
+        pause.show();
     }
         update();
 }

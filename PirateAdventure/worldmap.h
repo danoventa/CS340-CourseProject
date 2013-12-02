@@ -31,6 +31,7 @@ private:
     QGraphicsRectItem *rect;
     MapHero *hero;
     MapEnemy *enemy;
+
 };
 
 #endif // WORLDMAP_H
