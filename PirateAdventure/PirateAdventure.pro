@@ -16,7 +16,8 @@ SOURCES += main.cpp\
         mainwindow.cpp \
     worldmap.cpp \
     maphero.cpp \
-<<<<<<< HEAD
+<<<<<<< HEAD \
+    pause.cpp
     attacklist.cpp \
     attackmove.cpp \
     bomber.cpp \
@@ -42,7 +43,8 @@ SOURCES += main.cpp\
 HEADERS  += mainwindow.h \
     worldmap.h \
     maphero.h \
-<<<<<<< HEAD
+<<<<<<< HEAD \
+    pause.h
     attacklist.h \
     attackmove.h \
     bomber.h \
