@@ -2,8 +2,7 @@
 #define PAUSE_H
 
 #include <QDialog>
-#include "character.h"
-#include "worldmap.h"
+// #include "character.h"
 #include <QtGui>
 #include <QDialog>
 #include <QtCore>
@@ -24,6 +23,11 @@ public:
     explicit Pause(QWidget *parent = 0);
     ~Pause();
     
+private slots:
+    void on_resume_clicked();
+
+    void on_exit_clicked();
+
 private:
     Ui::Pause *ui;
 };

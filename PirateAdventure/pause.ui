@@ -28,9 +28,6 @@
    <property name="text">
     <string/>
    </property>
-   <property name="pixmap">
-    <pixmap>../images/pirate.gif</pixmap>
-   </property>
    <property name="scaledContents">
     <bool>true</bool>
    </property>
@@ -192,7 +189,7 @@
     </widget>
    </widget>
   </widget>
-  <widget class="QWidget" name="">
+  <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
      <x>100</x>

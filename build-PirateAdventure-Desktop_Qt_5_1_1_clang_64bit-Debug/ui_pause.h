@@ -41,7 +41,7 @@ public:
     QWidget *tab_2;
     QPushButton *restoreHealth;
     QPushButton *incHealth;
-    QWidget *widget;
+    QWidget *layoutWidget;
     QHBoxLayout *horizontalLayout;
     QPushButton *resume;
     QSpacerItem *horizontalSpacer;
@@ -56,7 +56,6 @@ public:
         pirate = new QLabel(Pause);
         pirate->setObjectName(QStringLiteral("pirate"));
         pirate->setGeometry(QRect(10, 10, 201, 151));
-        pirate->setPixmap(QPixmap(QString::fromUtf8("../images/pirate.gif")));
         pirate->setScaledContents(true);
         progressBar = new QProgressBar(Pause);
         progressBar->setObjectName(QStringLiteral("progressBar"));
@@ -103,13 +102,13 @@ public:
         incHealth->setGeometry(QRect(80, 60, 381, 32));
         incHealth->setStyleSheet(QStringLiteral("background-color: qconicalgradient(cx:0.5, cy:0.5, angle:176.9, stop:0 rgba(194, 255, 255, 255));"));
         tabWidget->addTab(tab_2, QString());
-        widget = new QWidget(Pause);
-        widget->setObjectName(QStringLiteral("widget"));
-        widget->setGeometry(QRect(100, 330, 289, 32));
-        horizontalLayout = new QHBoxLayout(widget);
+        layoutWidget = new QWidget(Pause);
+        layoutWidget->setObjectName(QStringLiteral("layoutWidget"));
+        layoutWidget->setGeometry(QRect(100, 330, 289, 32));
+        horizontalLayout = new QHBoxLayout(layoutWidget);
         horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
         horizontalLayout->setContentsMargins(0, 0, 0, 0);
-        resume = new QPushButton(widget);
+        resume = new QPushButton(layoutWidget);
         resume->setObjectName(QStringLiteral("resume"));
 
         horizontalLayout->addWidget(resume);
@@ -118,7 +117,7 @@ public:
 
         horizontalLayout->addItem(horizontalSpacer);
 
-        exit = new QPushButton(widget);
+        exit = new QPushButton(layoutWidget);
         exit->setObjectName(QStringLiteral("exit"));
 
         horizontalLayout->addWidget(exit);

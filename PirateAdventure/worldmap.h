@@ -9,6 +9,7 @@
 
 #include "maphero.h"
 #include "mapenemy.h"
+#include "pause.h"
 
 namespace Ui {
 class worldmap;
@@ -21,15 +22,18 @@ class worldmap : public QDialog
 public:
     explicit worldmap(QWidget *parent = 0);
     ~worldmap();
+    // Pause *pause;
 
 private slots:
     void on_pushButton_clicked();
+    virtual void keyPressEvent(QKeyEvent *event);
 
 private:
     Ui::worldmap *ui;
     QGraphicsScene *scene;
     MapHero *hero;
     MapEnemy *enemy;
+    Pause *pause;
 
 };
 

@@ -13,9 +13,10 @@
 #include <QtWidgets/QAction>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QButtonGroup>
+#include <QtWidgets/QCommandLinkButton>
+#include <QtWidgets/QDialog>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
-#include <QtWidgets/QMainWindow>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QWidget>
 
@@ -27,8 +28,9 @@ public:
     QWidget *centralwidget;
     QLabel *Pirate;
     QPushButton *pushButton;
+    QCommandLinkButton *commandLinkButton;
 
-    void setupUi(QMainWindow *BattlePause)
+    void setupUi(QDialog *BattlePause)
     {
         if (BattlePause->objectName().isEmpty())
             BattlePause->setObjectName(QStringLiteral("BattlePause"));
@@ -47,18 +49,21 @@ public:
         pushButton->setObjectName(QStringLiteral("pushButton"));
         pushButton->setGeometry(QRect(90, 290, 110, 32));
         pushButton->setStyleSheet(QStringLiteral("color: qconicalgradient(cx:0.5, cy:0.5, angle:176.9, stop:0 rgba(255, 255, 255, 255));"));
-        BattlePause->setCentralWidget(centralwidget);
+        commandLinkButton = new QCommandLinkButton(centralwidget);
+        commandLinkButton->setObjectName(QStringLiteral("commandLinkButton"));
+        commandLinkButton->setGeometry(QRect(20, 300, 197, 41));
 
         retranslateUi(BattlePause);
 
         QMetaObject::connectSlotsByName(BattlePause);
     } // setupUi
 
-    void retranslateUi(QMainWindow *BattlePause)
+    void retranslateUi(QDialog *BattlePause)
     {
-        BattlePause->setWindowTitle(QApplication::translate("BattlePause", "MainWindow", 0));
+        BattlePause->setWindowTitle(QApplication::translate("BattlePause", "Dialog", 0));
         Pirate->setText(QString());
         pushButton->setText(QApplication::translate("BattlePause", "Resume", 0));
+        commandLinkButton->setText(QApplication::translate("BattlePause", "CommandLinkButton", 0));
     } // retranslateUi
 
 };

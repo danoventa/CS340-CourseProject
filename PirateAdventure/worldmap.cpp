@@ -89,3 +89,12 @@ void worldmap::on_pushButton_clicked()
 {
     this->hide();
 }
+
+void worldmap::keyPressEvent(QKeyEvent *event){
+    switch(  event->key() ) {
+        case Qt::Key_P:
+        pause->setModal(true);
+        pause->show();
+    }
+        update();
+}

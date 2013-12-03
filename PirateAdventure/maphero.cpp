@@ -6,6 +6,7 @@
 MapHero::MapHero(QGraphicsItem *parent) : QGraphicsItem(parent)
 {
     setFlag(QGraphicsItem::ItemIsFocusable);
+    pause = new Pause();
     heroImage = 3;
 }
 
@@ -68,9 +69,11 @@ void MapHero::keyPressEvent(QKeyEvent *event){
             heroImage = 2;
         }
         break;
+    case Qt::Key_P:
+        pause->setModal(true);
+        pause->exec();
+        break;
     default:
-        //pause.setModal(true);
-        //pause.show();
         break;
     }
         update();
