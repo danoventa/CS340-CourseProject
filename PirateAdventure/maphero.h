@@ -3,12 +3,15 @@
 
 #include <QGraphicsItem>
 #include "pause.h"
+#include "mapenemy.h"
 
 class MapHero : public QGraphicsItem
 {
 public:
     MapHero(QGraphicsItem *parent = 0); // NULL
     Pause *pause;
+    MapEnemy *enemon;
+    void pointToEnemy(MapEnemy *enemy);
 
 protected:
     void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget);

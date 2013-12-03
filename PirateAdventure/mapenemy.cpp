@@ -7,14 +7,18 @@ MapEnemy::MapEnemy(QGraphicsItem *parent) : QGraphicsItem(parent)
     // setFlag(QGraphicsItem::ItemIsFocusable);
     enemyImage = 3;
 }
+MapEnemy::~MapEnemy()
+{
+    this->hide();
+}
 
 QRectF MapEnemy::boundingRect() const{
-    return QRectF(600, 480, 30, 60);
+    return QRectF(600, 480, 30, 50);
 }
 
 void MapEnemy::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget)
 {
-    painter->drawPixmap(600, 480, 30, 60, QPixmap(":/images/bison"));
+    painter->drawPixmap(600, 480, 30, 50, QPixmap(":/images/bison"));
 }
 
 void MapEnemy::collisionEvent(){

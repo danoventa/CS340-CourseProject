@@ -26,7 +26,7 @@ public:
 
 private slots:
     void on_pushButton_clicked();
-    virtual void keyPressEvent(QKeyEvent *event);
+    // virtual void keyPressEvent(QKeyEvent *event);
 
 private:
     Ui::worldmap *ui;
@@ -34,7 +34,6 @@ private:
     MapHero *hero;
     MapEnemy *enemy;
     Pause *pause;
-
 };
 
 #endif // WORLDMAP_H

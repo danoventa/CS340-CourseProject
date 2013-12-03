@@ -20,6 +20,7 @@ worldmap::worldmap(QWidget *parent) :
     QBrush unBrush(Qt::red);
     QPen unPen(Qt::transparent);
     unPen.setWidth(1);
+    hero->pointToEnemy(enemy);
 
     scene->addRect(0, 0, 32, 510, unPen, unBrush);
     scene->addRect(0, 0, 638, 30, unPen, unBrush);
@@ -90,11 +91,18 @@ void worldmap::on_pushButton_clicked()
     this->hide();
 }
 
+/*
 void worldmap::keyPressEvent(QKeyEvent *event){
     switch(  event->key() ) {
-        case Qt::Key_P:
+    case Qt::Key_P:
         pause->setModal(true);
         pause->show();
+        break;
+    case Qt::Key_L:
+        enemy->~MapEnemy();
+        delete enemy;
+        break;
     }
         update();
 }
+*/

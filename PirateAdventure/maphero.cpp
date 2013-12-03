@@ -9,6 +9,10 @@ MapHero::MapHero(QGraphicsItem *parent) : QGraphicsItem(parent)
     pause = new Pause();
     heroImage = 3;
 }
+void MapHero::pointToEnemy(MapEnemy *enemy)
+{
+    enemon = enemy;
+}
 
 QRectF MapHero::boundingRect() const{
     return QRectF(0, 520, 15, 24);
@@ -72,6 +76,9 @@ void MapHero::keyPressEvent(QKeyEvent *event){
     case Qt::Key_P:
         pause->setModal(true);
         pause->exec();
+        break;
+    case Qt::Key_L:
+        enemon->hide();
         break;
     default:
         break;
