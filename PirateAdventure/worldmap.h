@@ -8,6 +8,7 @@
 #include <QGraphicsItem>
 
 #include "maphero.h"
+#include "mapenemy.h"
 
 namespace Ui {
 class worldmap;
@@ -29,6 +30,8 @@ private:
     QGraphicsScene *scene;
     QGraphicsRectItem *rect;
     MapHero *hero;
+    MapEnemy *enemy;
+
 };
 
 #endif // WORLDMAP_H

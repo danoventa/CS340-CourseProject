@@ -8,7 +8,7 @@
         <file alias="level1.png">Works/level1.png</file>
         <file>Works/level1_2 - Copy.psd</file>
         <file>Works/level1_3 - Copy.psd</file>
-        <file>Works/SSF2T_M._Bison - Copy.gif</file>
+        <file alias="bison">Works/SSF2T_M._Bison - Copy.gif</file>
         <file>Works/SSF2T_sMall._Bison - Copy.gif</file>
         <file alias="untitled2.png">Works/untitled2.png</file>
     </qresource>
