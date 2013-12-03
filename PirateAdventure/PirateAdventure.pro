@@ -16,7 +16,8 @@ SOURCES += main.cpp\
         mainwindow.cpp \
     worldmap.cpp \
     maphero.cpp \
-<<<<<<< HEAD
+<<<<<<< HEAD \
+    pause.cpp
 <<<<<<< HEAD \
     pause.cpp
     attacklist.cpp \
@@ -40,7 +41,8 @@ SOURCES += main.cpp\
 HEADERS  += mainwindow.h \
     worldmap.h \
     maphero.h \
-<<<<<<< HEAD
+<<<<<<< HEAD \
+    pause.h
 <<<<<<< HEAD \
     pause.h
     attacklist.h \
@@ -66,7 +68,8 @@ HEADERS  += mainwindow.h \
 >>>>>>> c3ea0e39c156ce019f70fd3fc90007429d5aa605
 
 FORMS    += mainwindow.ui \
-<<<<<<< HEAD
+<<<<<<< HEAD \
+    ../../../../Desktop/pause.ui
     worldmap.ui \
     pause.ui \
     battlepause.ui
