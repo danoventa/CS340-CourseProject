@@ -2,7 +2,7 @@
 #define MAPHERO_H
 
 #include <QGraphicsItem>
-#include "pause.h"
+//#include "pause.h"
 
 class MapHero : public QGraphicsItem
 {
@@ -17,7 +17,7 @@ protected:
 
 private:
     int heroImage;
-    Pause pause;
+   // Pause pause;
 };
 
 #endif //MAPHERO_H

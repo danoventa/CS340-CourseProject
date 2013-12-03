@@ -11,6 +11,7 @@ worldmap::worldmap(QWidget *parent) :
     scene->setBackgroundBrush(Qt::transparent);
 
     ui->graphicsView->setScene(scene);
+
     hero = new MapHero;
     enemy = new MapEnemy;
     scene->addItem(hero);
@@ -83,6 +84,7 @@ worldmap::~worldmap()
     delete ui;
     delete hero;
 }
+
 void worldmap::on_pushButton_clicked()
 {
     this->hide();
