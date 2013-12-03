@@ -33,15 +33,9 @@ SOURCES += main.cpp\
     swordsman.cpp \
     xgun.cpp \
     pause.cpp \
-    battlepause.cpp
-
-
-=======
-    pause.cpp
-=======
->>>>>>> 9f3e80f7f57c8da55947a08f95ce7de759b80837
+    battlepause.cpp\
+    pause.cpp\
     mapenemy.cpp
->>>>>>> c3ea0e39c156ce019f70fd3fc90007429d5aa605
 
 HEADERS  += mainwindow.h \
     worldmap.h \
