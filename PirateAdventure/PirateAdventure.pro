@@ -16,6 +16,7 @@ SOURCES += main.cpp\
         mainwindow.cpp \
     worldmap.cpp \
     maphero.cpp \
+<<<<<<< HEAD
     attacklist.cpp \
     attackmove.cpp \
     bomber.cpp \
@@ -33,10 +34,15 @@ SOURCES += main.cpp\
     battlepause.cpp
 
 
+=======
+    pause.cpp
+    mapenemy.cpp
+>>>>>>> c3ea0e39c156ce019f70fd3fc90007429d5aa605
 
 HEADERS  += mainwindow.h \
     worldmap.h \
     maphero.h \
+<<<<<<< HEAD
     attacklist.h \
     attackmove.h \
     bomber.h \
@@ -52,6 +58,10 @@ HEADERS  += mainwindow.h \
     xgun.h \
     pause.h \
     battlepause.h
+=======
+    pause.h
+    mapenemy.h
+>>>>>>> c3ea0e39c156ce019f70fd3fc90007429d5aa605
 
 FORMS    += mainwindow.ui \
     worldmap.ui \
