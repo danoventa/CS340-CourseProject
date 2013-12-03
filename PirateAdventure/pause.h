@@ -1,38 +1,22 @@
 #ifndef PAUSE_H
 #define PAUSE_H
-#include "character.h"
-#include "worldmap.h"
-#include <QtGui>
-#include <QMainWindow>
-#include <QKeyEvent>
-#include <QEvent>
 
-#include "attacklist.h"
+#include <QDialog>
 
 namespace Ui {
 class Pause;
 }
 
-class Pause : public QMainWindow
+class Pause : public QDialog
 {
     Q_OBJECT
-
     
 public:
-    explicit Pause(QWidget *parent = 0);//I think this is not suppose to be zero
+    explicit Pause(QWidget *parent = 0);
     ~Pause();
     
-private slots:
-    void on_Resume_clicked();
-
-    void on_Exit_clicked();
-
-    void on_ShotGun_clicked();
-
-
 private:
     Ui::Pause *ui;
-    //character pirate;
 };
 
 #endif // PAUSE_H

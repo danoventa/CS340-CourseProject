@@ -30,8 +30,7 @@ SOURCES += main.cpp\
     swordsman.cpp \
     xgun.cpp \
     pause.cpp \
-    battlepause.cpp \
-    form.cpp
+    battlepause.cpp
 
 
 
@@ -52,14 +51,12 @@ HEADERS  += mainwindow.h \
     swordsman.h \
     xgun.h \
     pause.h \
-    battlepause.h \
-    form.h
+    battlepause.h
 
 FORMS    += mainwindow.ui \
     worldmap.ui \
     pause.ui \
-    battlepause.ui \
-    form.ui
+    battlepause.ui
 
 
 RESOURCES += \

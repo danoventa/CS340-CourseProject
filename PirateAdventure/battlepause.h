@@ -1,13 +1,13 @@
 #ifndef BATTLEPAUSE_H
 #define BATTLEPAUSE_H
 
-#include <QMainWindow>
+#include <QDialog>
 
 namespace Ui {
 class BattlePause;
 }
 
-class BattlePause : public QMainWindow
+class BattlePause : public QDialog
 {
     Q_OBJECT
     

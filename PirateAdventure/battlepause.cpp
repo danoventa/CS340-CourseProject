@@ -1,8 +1,9 @@
 #include "battlepause.h"
 #include "ui_battlepause.h"
+#include <QDialog>
 
 BattlePause::BattlePause(QWidget *parent) :
-    QMainWindow(parent),
+    QDialog(parent),
     ui(new Ui::BattlePause)
 {
     ui->setupUi(this);

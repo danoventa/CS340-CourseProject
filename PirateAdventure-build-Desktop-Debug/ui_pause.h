@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'pause.ui'
 **
-** Created: Mon Dec 2 11:49:22 2013
+** Created: Mon Dec 2 15:55:19 2013
 **      by: Qt User Interface Compiler version 4.8.4
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
@@ -39,10 +39,14 @@ public:
     QLCDNumber *NumericHP;
     QTabWidget *HeroOptions;
     QWidget *Weapons;
+    QWidget *layoutWidget;
     QVBoxLayout *verticalLayout;
     QPushButton *ShotGun;
     QPushButton *Gun;
+    QPushButton *pushButton;
+    QPushButton *pushButton_2;
     QWidget *Health_2;
+    QPushButton *pushButton_3;
     QStatusBar *statusbar;
 
     void setupUi(QMainWindow *Pause)
@@ -66,12 +70,12 @@ public:
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         Resume = new QPushButton(centralwidget);
         Resume->setObjectName(QString::fromUtf8("Resume"));
-        Resume->setGeometry(QRect(100, 300, 110, 32));
+        Resume->setGeometry(QRect(80, 350, 110, 32));
         Resume->setStyleSheet(QString::fromUtf8("background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(0, 0, 0, 255), stop:1 rgba(255, 255, 255, 255));\n"
 "selection-color: rgba(255, 0, 0, 115);"));
         Exit = new QPushButton(centralwidget);
         Exit->setObjectName(QString::fromUtf8("Exit"));
-        Exit->setGeometry(QRect(280, 300, 110, 32));
+        Exit->setGeometry(QRect(290, 350, 110, 32));
         Exit->setStyleSheet(QString::fromUtf8("background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(0, 0, 0, 255), stop:1 rgba(255, 255, 255, 255));\n"
 "font: 75 14pt \"Helvetica\";"));
         progressBar = new QProgressBar(centralwidget);
@@ -100,24 +104,41 @@ public:
         NumericHP->setSegmentStyle(QLCDNumber::Flat);
         HeroOptions = new QTabWidget(centralwidget);
         HeroOptions->setObjectName(QString::fromUtf8("HeroOptions"));
-        HeroOptions->setGeometry(QRect(50, 170, 154, 99));
+        HeroOptions->setGeometry(QRect(20, 140, 231, 151));
         Weapons = new QWidget();
         Weapons->setObjectName(QString::fromUtf8("Weapons"));
-        verticalLayout = new QVBoxLayout(Weapons);
+        layoutWidget = new QWidget(Weapons);
+        layoutWidget->setObjectName(QString::fromUtf8("layoutWidget"));
+        layoutWidget->setGeometry(QRect(10, 8, 201, 98));
+        verticalLayout = new QVBoxLayout(layoutWidget);
         verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
-        ShotGun = new QPushButton(Weapons);
+        verticalLayout->setContentsMargins(0, 0, 0, 0);
+        ShotGun = new QPushButton(layoutWidget);
         ShotGun->setObjectName(QString::fromUtf8("ShotGun"));
 
         verticalLayout->addWidget(ShotGun);
 
-        Gun = new QPushButton(Weapons);
+        Gun = new QPushButton(layoutWidget);
         Gun->setObjectName(QString::fromUtf8("Gun"));
 
         verticalLayout->addWidget(Gun);
 
+        pushButton = new QPushButton(layoutWidget);
+        pushButton->setObjectName(QString::fromUtf8("pushButton"));
+
+        verticalLayout->addWidget(pushButton);
+
+        pushButton_2 = new QPushButton(layoutWidget);
+        pushButton_2->setObjectName(QString::fromUtf8("pushButton_2"));
+
+        verticalLayout->addWidget(pushButton_2);
+
         HeroOptions->addTab(Weapons, QString());
         Health_2 = new QWidget();
         Health_2->setObjectName(QString::fromUtf8("Health_2"));
+        pushButton_3 = new QPushButton(Health_2);
+        pushButton_3->setObjectName(QString::fromUtf8("pushButton_3"));
+        pushButton_3->setGeometry(QRect(10, 10, 201, 32));
         HeroOptions->addTab(Health_2, QString());
         Pause->setCentralWidget(centralwidget);
         statusbar = new QStatusBar(Pause);
@@ -140,9 +161,12 @@ public:
         Exit->setText(QApplication::translate("Pause", "Exit", 0, QApplication::UnicodeUTF8));
         Health->setText(QApplication::translate("Pause", "HP", 0, QApplication::UnicodeUTF8));
         Hero->setText(QString());
-        ShotGun->setText(QApplication::translate("Pause", "ShotGun", 0, QApplication::UnicodeUTF8));
-        Gun->setText(QApplication::translate("Pause", "Gun", 0, QApplication::UnicodeUTF8));
+        ShotGun->setText(QApplication::translate("Pause", "Increase Shot Gun Damage", 0, QApplication::UnicodeUTF8));
+        Gun->setText(QApplication::translate("Pause", "Increase Broken Gun Damge", 0, QApplication::UnicodeUTF8));
+        pushButton->setText(QApplication::translate("Pause", "Increase Hook Slash Damage", 0, QApplication::UnicodeUTF8));
+        pushButton_2->setText(QApplication::translate("Pause", "Increase Sword Slash Damage", 0, QApplication::UnicodeUTF8));
         HeroOptions->setTabText(HeroOptions->indexOf(Weapons), QApplication::translate("Pause", "Weapons", 0, QApplication::UnicodeUTF8));
+        pushButton_3->setText(QApplication::translate("Pause", "Get Full Health", 0, QApplication::UnicodeUTF8));
         HeroOptions->setTabText(HeroOptions->indexOf(Health_2), QApplication::translate("Pause", "Health", 0, QApplication::UnicodeUTF8));
         Q_UNUSED(Pause);
     } // retranslateUi
