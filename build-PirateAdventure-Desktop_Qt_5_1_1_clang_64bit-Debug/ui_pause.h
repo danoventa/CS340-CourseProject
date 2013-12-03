@@ -13,15 +13,15 @@
 #include <QtWidgets/QAction>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QButtonGroup>
+#include <QtWidgets/QDialog>
+#include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLCDNumber>
 #include <QtWidgets/QLabel>
-#include <QtWidgets/QMainWindow>
 #include <QtWidgets/QProgressBar>
 #include <QtWidgets/QPushButton>
-#include <QtWidgets/QStatusBar>
+#include <QtWidgets/QSpacerItem>
 #include <QtWidgets/QTabWidget>
-#include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -29,145 +29,123 @@ QT_BEGIN_NAMESPACE
 class Ui_Pause
 {
 public:
-    QWidget *centralwidget;
-    QPushButton *Resume;
-    QPushButton *Exit;
+    QLabel *pirate;
     QProgressBar *progressBar;
-    QLabel *Health;
-    QLabel *Hero;
-    QLCDNumber *NumericHP;
-    QTabWidget *HeroOptions;
-    QWidget *Weapons;
+    QLCDNumber *lcdNumber;
+    QTabWidget *tabWidget;
+    QWidget *tab;
+    QPushButton *incSwordDamage;
+    QPushButton *incGunDamage;
+    QPushButton *incHookDamage;
+    QPushButton *incBrokenGunDamage;
+    QWidget *tab_2;
+    QPushButton *restoreHealth;
+    QPushButton *incHealth;
     QWidget *widget;
-    QVBoxLayout *verticalLayout;
-    QPushButton *ShotGun;
-    QPushButton *Gun;
-    QPushButton *pushButton;
-    QPushButton *pushButton_2;
-    QWidget *Health_2;
-    QPushButton *pushButton_3;
-    QStatusBar *statusbar;
+    QHBoxLayout *horizontalLayout;
+    QPushButton *resume;
+    QSpacerItem *horizontalSpacer;
+    QPushButton *exit;
 
-    void setupUi(QMainWindow *Pause)
+    void setupUi(QDialog *Pause)
     {
         if (Pause->objectName().isEmpty())
             Pause->setObjectName(QStringLiteral("Pause"));
-        Pause->resize(630, 416);
-        Pause->setMinimumSize(QSize(0, 0));
-        Pause->setMaximumSize(QSize(630, 416));
-        QFont font;
-        font.setFamily(QStringLiteral("Helvetica"));
-        font.setPointSize(14);
-        font.setBold(false);
-        font.setItalic(false);
-        font.setWeight(9);
-        Pause->setFont(font);
-        Pause->setStyleSheet(QLatin1String("font: 75 14pt \"Helvetica\";\n"
-"background-color: qconicalgradient(cx:0.5, cy:0.5, angle:265, stop:0 rgba(219, 214, 194, 255));\n"
-""));
-        centralwidget = new QWidget(Pause);
-        centralwidget->setObjectName(QStringLiteral("centralwidget"));
-        Resume = new QPushButton(centralwidget);
-        Resume->setObjectName(QStringLiteral("Resume"));
-        Resume->setGeometry(QRect(80, 350, 110, 32));
-        Resume->setStyleSheet(QLatin1String("background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(0, 0, 0, 255), stop:1 rgba(255, 255, 255, 255));\n"
-"selection-color: rgba(255, 0, 0, 115);"));
-        Exit = new QPushButton(centralwidget);
-        Exit->setObjectName(QStringLiteral("Exit"));
-        Exit->setGeometry(QRect(290, 350, 110, 32));
-        Exit->setStyleSheet(QLatin1String("background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(0, 0, 0, 255), stop:1 rgba(255, 255, 255, 255));\n"
-"font: 75 14pt \"Helvetica\";"));
-        progressBar = new QProgressBar(centralwidget);
+        Pause->resize(565, 407);
+        Pause->setStyleSheet(QStringLiteral("background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(0, 0, 0, 255), stop:1 rgba(255, 255, 255, 255));"));
+        pirate = new QLabel(Pause);
+        pirate->setObjectName(QStringLiteral("pirate"));
+        pirate->setGeometry(QRect(10, 10, 201, 151));
+        pirate->setPixmap(QPixmap(QString::fromUtf8("../images/pirate.gif")));
+        pirate->setScaledContents(true);
+        progressBar = new QProgressBar(Pause);
         progressBar->setObjectName(QStringLiteral("progressBar"));
-        progressBar->setGeometry(QRect(200, 110, 91, 21));
-        progressBar->setValue(24);
-        Health = new QLabel(centralwidget);
-        Health->setObjectName(QStringLiteral("Health"));
-        Health->setGeometry(QRect(200, 66, 38, 20));
-        Health->setAutoFillBackground(false);
-        Health->setAlignment(Qt::AlignCenter);
-        Hero = new QLabel(centralwidget);
-        Hero->setObjectName(QStringLiteral("Hero"));
-        Hero->setGeometry(QRect(0, 0, 191, 111));
-        Hero->setPixmap(QPixmap(QString::fromUtf8("../images/piratebat.png")));
-        Hero->setScaledContents(true);
-        NumericHP = new QLCDNumber(centralwidget);
-        NumericHP->setObjectName(QStringLiteral("NumericHP"));
-        NumericHP->setGeometry(QRect(200, 90, 64, 23));
-        NumericHP->setFont(font);
-        NumericHP->setLayoutDirection(Qt::LeftToRight);
-        NumericHP->setStyleSheet(QLatin1String("background-color: rgb(255, 255, 255);\n"
-"font: 75 14pt \"Helvetica\";"));
-        NumericHP->setDigitCount(1);
-        NumericHP->setDigitCount(1);
-        NumericHP->setSegmentStyle(QLCDNumber::Flat);
-        HeroOptions = new QTabWidget(centralwidget);
-        HeroOptions->setObjectName(QStringLiteral("HeroOptions"));
-        HeroOptions->setGeometry(QRect(20, 140, 231, 151));
-        Weapons = new QWidget();
-        Weapons->setObjectName(QStringLiteral("Weapons"));
-        widget = new QWidget(Weapons);
+        progressBar->setGeometry(QRect(270, 90, 118, 23));
+        progressBar->setMaximum(22);
+        progressBar->setValue(0);
+        lcdNumber = new QLCDNumber(Pause);
+        lcdNumber->setObjectName(QStringLiteral("lcdNumber"));
+        lcdNumber->setGeometry(QRect(270, 50, 64, 23));
+        lcdNumber->setFrameShadow(QFrame::Raised);
+        lcdNumber->setDigitCount(3);
+        lcdNumber->setSegmentStyle(QLCDNumber::Outline);
+        lcdNumber->setProperty("intValue", QVariant(0));
+        tabWidget = new QTabWidget(Pause);
+        tabWidget->setObjectName(QStringLiteral("tabWidget"));
+        tabWidget->setGeometry(QRect(10, 170, 551, 151));
+        tab = new QWidget();
+        tab->setObjectName(QStringLiteral("tab"));
+        incSwordDamage = new QPushButton(tab);
+        incSwordDamage->setObjectName(QStringLiteral("incSwordDamage"));
+        incSwordDamage->setGeometry(QRect(14, 8, 241, 21));
+        incSwordDamage->setStyleSheet(QStringLiteral("background-color: qconicalgradient(cx:0.5, cy:0.5, angle:176.9, stop:0 rgba(194, 255, 255, 255));"));
+        incGunDamage = new QPushButton(tab);
+        incGunDamage->setObjectName(QStringLiteral("incGunDamage"));
+        incGunDamage->setGeometry(QRect(10, 60, 251, 23));
+        incGunDamage->setStyleSheet(QStringLiteral("background-color: qconicalgradient(cx:0.5, cy:0.5, angle:176.9, stop:0 rgba(194, 255, 255, 255));"));
+        incHookDamage = new QPushButton(tab);
+        incHookDamage->setObjectName(QStringLiteral("incHookDamage"));
+        incHookDamage->setGeometry(QRect(300, 10, 221, 23));
+        incHookDamage->setStyleSheet(QStringLiteral("background-color: qconicalgradient(cx:0.5, cy:0.5, angle:176.9, stop:0 rgba(194, 255, 255, 255));"));
+        incBrokenGunDamage = new QPushButton(tab);
+        incBrokenGunDamage->setObjectName(QStringLiteral("incBrokenGunDamage"));
+        incBrokenGunDamage->setGeometry(QRect(300, 60, 221, 23));
+        incBrokenGunDamage->setStyleSheet(QStringLiteral("background-color: qconicalgradient(cx:0.5, cy:0.5, angle:176.9, stop:0 rgba(194, 255, 255, 255));"));
+        tabWidget->addTab(tab, QString());
+        tab_2 = new QWidget();
+        tab_2->setObjectName(QStringLiteral("tab_2"));
+        restoreHealth = new QPushButton(tab_2);
+        restoreHealth->setObjectName(QStringLiteral("restoreHealth"));
+        restoreHealth->setGeometry(QRect(80, 10, 381, 32));
+        restoreHealth->setStyleSheet(QStringLiteral("background-color: qconicalgradient(cx:0.5, cy:0.5, angle:176.9, stop:0 rgba(194, 255, 255, 255));"));
+        incHealth = new QPushButton(tab_2);
+        incHealth->setObjectName(QStringLiteral("incHealth"));
+        incHealth->setGeometry(QRect(80, 60, 381, 32));
+        incHealth->setStyleSheet(QStringLiteral("background-color: qconicalgradient(cx:0.5, cy:0.5, angle:176.9, stop:0 rgba(194, 255, 255, 255));"));
+        tabWidget->addTab(tab_2, QString());
+        widget = new QWidget(Pause);
         widget->setObjectName(QStringLiteral("widget"));
-        widget->setGeometry(QRect(10, 8, 201, 98));
-        verticalLayout = new QVBoxLayout(widget);
-        verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
-        verticalLayout->setContentsMargins(0, 0, 0, 0);
-        ShotGun = new QPushButton(widget);
-        ShotGun->setObjectName(QStringLiteral("ShotGun"));
+        widget->setGeometry(QRect(100, 330, 289, 32));
+        horizontalLayout = new QHBoxLayout(widget);
+        horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
+        horizontalLayout->setContentsMargins(0, 0, 0, 0);
+        resume = new QPushButton(widget);
+        resume->setObjectName(QStringLiteral("resume"));
 
-        verticalLayout->addWidget(ShotGun);
+        horizontalLayout->addWidget(resume);
 
-        Gun = new QPushButton(widget);
-        Gun->setObjectName(QStringLiteral("Gun"));
+        horizontalSpacer = new QSpacerItem(118, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
-        verticalLayout->addWidget(Gun);
+        horizontalLayout->addItem(horizontalSpacer);
 
-        pushButton = new QPushButton(widget);
-        pushButton->setObjectName(QStringLiteral("pushButton"));
+        exit = new QPushButton(widget);
+        exit->setObjectName(QStringLiteral("exit"));
 
-        verticalLayout->addWidget(pushButton);
+        horizontalLayout->addWidget(exit);
 
-        pushButton_2 = new QPushButton(widget);
-        pushButton_2->setObjectName(QStringLiteral("pushButton_2"));
-
-        verticalLayout->addWidget(pushButton_2);
-
-        HeroOptions->addTab(Weapons, QString());
-        Health_2 = new QWidget();
-        Health_2->setObjectName(QStringLiteral("Health_2"));
-        pushButton_3 = new QPushButton(Health_2);
-        pushButton_3->setObjectName(QStringLiteral("pushButton_3"));
-        pushButton_3->setGeometry(QRect(10, 10, 201, 32));
-        HeroOptions->addTab(Health_2, QString());
-        Pause->setCentralWidget(centralwidget);
-        statusbar = new QStatusBar(Pause);
-        statusbar->setObjectName(QStringLiteral("statusbar"));
-        Pause->setStatusBar(statusbar);
 
         retranslateUi(Pause);
-        QObject::connect(Exit, SIGNAL(clicked()), Pause, SLOT(close()));
-        QObject::connect(progressBar, SIGNAL(valueChanged(int)), Pause, SLOT(show()));
 
-        HeroOptions->setCurrentIndex(0);
+        tabWidget->setCurrentIndex(0);
 
 
         QMetaObject::connectSlotsByName(Pause);
     } // setupUi
 
-    void retranslateUi(QMainWindow *Pause)
+    void retranslateUi(QDialog *Pause)
     {
-        Resume->setText(QApplication::translate("Pause", "Resume", 0));
-        Exit->setText(QApplication::translate("Pause", "Exit", 0));
-        Health->setText(QApplication::translate("Pause", "HP", 0));
-        Hero->setText(QString());
-        ShotGun->setText(QApplication::translate("Pause", "Increase Shot Gun Damage", 0));
-        Gun->setText(QApplication::translate("Pause", "Increase Broken Gun Damge", 0));
-        pushButton->setText(QApplication::translate("Pause", "Increase Hook Slash Damage", 0));
-        pushButton_2->setText(QApplication::translate("Pause", "Increase Sword Slash Damage", 0));
-        HeroOptions->setTabText(HeroOptions->indexOf(Weapons), QApplication::translate("Pause", "Weapons", 0));
-        pushButton_3->setText(QApplication::translate("Pause", "Get Full Health", 0));
-        HeroOptions->setTabText(HeroOptions->indexOf(Health_2), QApplication::translate("Pause", "Health", 0));
-        Q_UNUSED(Pause);
+        Pause->setWindowTitle(QApplication::translate("Pause", "Dialog", 0));
+        pirate->setText(QString());
+        incSwordDamage->setText(QApplication::translate("Pause", "Increase Sword Slasher Damage", 0));
+        incGunDamage->setText(QApplication::translate("Pause", "Increase Gun Damage", 0));
+        incHookDamage->setText(QApplication::translate("Pause", "Increase Hook Slash Damage", 0));
+        incBrokenGunDamage->setText(QApplication::translate("Pause", "Increase Broken Gun Damage", 0));
+        tabWidget->setTabText(tabWidget->indexOf(tab), QApplication::translate("Pause", "Tab 1", 0));
+        restoreHealth->setText(QApplication::translate("Pause", "Restore Health", 0));
+        incHealth->setText(QApplication::translate("Pause", "Increase Health", 0));
+        tabWidget->setTabText(tabWidget->indexOf(tab_2), QApplication::translate("Pause", "Tab 2", 0));
+        resume->setText(QApplication::translate("Pause", "Resume", 0));
+        exit->setText(QApplication::translate("Pause", "Exit", 0));
     } // retranslateUi
 
 };

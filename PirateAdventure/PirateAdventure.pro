@@ -16,10 +16,7 @@ SOURCES += main.cpp\
         mainwindow.cpp \
     worldmap.cpp \
     maphero.cpp \
-<<<<<<< HEAD \
-    pause.cpp
-<<<<<<< HEAD \
-    pause.cpp
+    pause.cpp\
     attacklist.cpp \
     attackmove.cpp \
     bomber.cpp \
@@ -41,10 +38,7 @@ SOURCES += main.cpp\
 HEADERS  += mainwindow.h \
     worldmap.h \
     maphero.h \
-<<<<<<< HEAD \
-    pause.h
-<<<<<<< HEAD \
-    pause.h
+    pause.h\
     attacklist.h \
     attackmove.h \
     bomber.h \
@@ -59,24 +53,13 @@ HEADERS  += mainwindow.h \
     swordsman.h \
     xgun.h \
     pause.h \
-    battlepause.h
-=======
-    pause.h
-=======
->>>>>>> 9f3e80f7f57c8da55947a08f95ce7de759b80837
+    battlepause.h\
     mapenemy.h
->>>>>>> c3ea0e39c156ce019f70fd3fc90007429d5aa605
 
 FORMS    += mainwindow.ui \
-<<<<<<< HEAD \
-    ../../../../Desktop/pause.ui
     worldmap.ui \
     pause.ui \
     battlepause.ui
-
-=======
-    worldmap.ui
->>>>>>> 9f3e80f7f57c8da55947a08f95ce7de759b80837
 
 RESOURCES += \
     images.qrc

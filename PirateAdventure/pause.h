@@ -1,9 +1,7 @@
 #ifndef PAUSE_H
 #define PAUSE_H
-<<<<<<< HEAD
 
 #include <QDialog>
-=======
 #include "character.h"
 #include "worldmap.h"
 #include <QtGui>
@@ -13,7 +11,6 @@
 #include <QEvent>
 
 // #include "attacklist.h"
->>>>>>> 9f3e80f7f57c8da55947a08f95ce7de759b80837
 
 namespace Ui {
 class Pause;
