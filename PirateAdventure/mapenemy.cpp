@@ -18,6 +18,8 @@ QRectF MapEnemy::boundingRect() const{
 
 void MapEnemy::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget)
 {
+    widget;
+    option;
     painter->drawPixmap(600, 480, 30, 50, QPixmap(":/images/bison"));
 }
 

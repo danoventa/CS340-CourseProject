@@ -5,7 +5,8 @@
 class attackList
 {
 private:
-  attackmove* alist[4];
+  attackmove* alist[5];
+  bool used[5];
   int curr;
   int full;
 public:
@@ -17,6 +18,9 @@ public:
   void addMove(attackmove* am);
   int getCurr();
   void reset();
+  attackmove* takeMoveAt(int pos);
+  bool isUsedAt(int pos);
+  int getFull();
 
 };
 

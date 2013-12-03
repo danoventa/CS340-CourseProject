@@ -16,7 +16,10 @@
 #include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QMainWindow>
+#include <QtWidgets/QMenuBar>
 #include <QtWidgets/QPushButton>
+#include <QtWidgets/QStatusBar>
+#include <QtWidgets/QToolBar>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -25,13 +28,16 @@ class Ui_MainWindow
 {
 public:
     QWidget *centralWidget;
-    QWidget *layoutWidget;
+    QWidget *widget;
     QHBoxLayout *horizontalLayout_2;
     QPushButton *pushButton;
     QHBoxLayout *horizontalLayout;
     QPushButton *pushButton_3;
     QPushButton *pushButton_2;
     QPushButton *pushButton_4;
+    QMenuBar *menuBar;
+    QToolBar *mainToolBar;
+    QStatusBar *statusBar;
 
     void setupUi(QMainWindow *MainWindow)
     {
@@ -42,15 +48,15 @@ public:
         MainWindow->setMaximumSize(QSize(500, 400));
         centralWidget = new QWidget(MainWindow);
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
-        layoutWidget = new QWidget(centralWidget);
-        layoutWidget->setObjectName(QStringLiteral("layoutWidget"));
-        layoutWidget->setGeometry(QRect(20, 300, 322, 27));
-        horizontalLayout_2 = new QHBoxLayout(layoutWidget);
+        widget = new QWidget(centralWidget);
+        widget->setObjectName(QStringLiteral("widget"));
+        widget->setGeometry(QRect(20, 300, 322, 27));
+        horizontalLayout_2 = new QHBoxLayout(widget);
         horizontalLayout_2->setSpacing(6);
         horizontalLayout_2->setContentsMargins(11, 11, 11, 11);
         horizontalLayout_2->setObjectName(QStringLiteral("horizontalLayout_2"));
         horizontalLayout_2->setContentsMargins(0, 0, 0, 0);
-        pushButton = new QPushButton(layoutWidget);
+        pushButton = new QPushButton(widget);
         pushButton->setObjectName(QStringLiteral("pushButton"));
 
         horizontalLayout_2->addWidget(pushButton);
@@ -58,12 +64,12 @@ public:
         horizontalLayout = new QHBoxLayout();
         horizontalLayout->setSpacing(6);
         horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
-        pushButton_3 = new QPushButton(layoutWidget);
+        pushButton_3 = new QPushButton(widget);
         pushButton_3->setObjectName(QStringLiteral("pushButton_3"));
 
         horizontalLayout->addWidget(pushButton_3);
 
-        pushButton_2 = new QPushButton(layoutWidget);
+        pushButton_2 = new QPushButton(widget);
         pushButton_2->setObjectName(QStringLiteral("pushButton_2"));
 
         horizontalLayout->addWidget(pushButton_2);
@@ -71,12 +77,22 @@ public:
 
         horizontalLayout_2->addLayout(horizontalLayout);
 
-        pushButton_4 = new QPushButton(layoutWidget);
+        pushButton_4 = new QPushButton(widget);
         pushButton_4->setObjectName(QStringLiteral("pushButton_4"));
 
         horizontalLayout_2->addWidget(pushButton_4);
 
         MainWindow->setCentralWidget(centralWidget);
+        menuBar = new QMenuBar(MainWindow);
+        menuBar->setObjectName(QStringLiteral("menuBar"));
+        menuBar->setGeometry(QRect(0, 0, 500, 21));
+        MainWindow->setMenuBar(menuBar);
+        mainToolBar = new QToolBar(MainWindow);
+        mainToolBar->setObjectName(QStringLiteral("mainToolBar"));
+        MainWindow->addToolBar(Qt::TopToolBarArea, mainToolBar);
+        statusBar = new QStatusBar(MainWindow);
+        statusBar->setObjectName(QStringLiteral("statusBar"));
+        MainWindow->setStatusBar(statusBar);
 
         retranslateUi(MainWindow);
 

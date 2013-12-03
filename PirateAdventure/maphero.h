@@ -4,6 +4,7 @@
 #include <QGraphicsItem>
 #include "pause.h"
 #include "mapenemy.h"
+#include "attackframe.h"
 
 class MapHero : public QGraphicsItem
 {
@@ -11,6 +12,7 @@ public:
     MapHero(QGraphicsItem *parent = 0); // NULL
     Pause *pause;
     MapEnemy *enemon;
+    attackframe* battle;
     void pointToEnemy(MapEnemy *enemy);
 
 protected:

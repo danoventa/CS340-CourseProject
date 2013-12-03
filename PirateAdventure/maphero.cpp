@@ -8,6 +8,7 @@ MapHero::MapHero(QGraphicsItem *parent) : QGraphicsItem(parent)
     setFlag(QGraphicsItem::ItemIsFocusable);
     pause = new Pause();
     heroImage = 3;
+    battle= new attackframe();
 }
 void MapHero::pointToEnemy(MapEnemy *enemy)
 {
@@ -20,6 +21,8 @@ QRectF MapHero::boundingRect() const{
 
 void MapHero::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget)
 {
+    option;
+    widget;
     switch(  heroImage )
     {
         case 0:
@@ -76,6 +79,14 @@ void MapHero::keyPressEvent(QKeyEvent *event){
     case Qt::Key_P:
         pause->setModal(true);
         pause->exec();
+        break;
+    case Qt::Key_B:
+        std::cout<<"b";
+        //battle->setModal(true);
+        battle->setModal(true);
+        battle->startBattle('e',2,0,0,'h',2,1,1,'c',1,2,2);
+        //battle->setGeometry(0,0,300,400);
+        battle->exec();
         break;
     case Qt::Key_L:
         enemon->hide();

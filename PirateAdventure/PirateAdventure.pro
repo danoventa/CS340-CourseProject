@@ -33,7 +33,11 @@ SOURCES += main.cpp\
     pause.cpp \
     battlepause.cpp\
     pause.cpp\
-    mapenemy.cpp
+    mapenemy.cpp \
+    attackframe.cpp \
+    skeleton.cpp \
+    shotgun.cpp \
+    animitems.cpp
 
 HEADERS  += mainwindow.h \
     worldmap.h \
@@ -54,12 +58,17 @@ HEADERS  += mainwindow.h \
     xgun.h \
     pause.h \
     battlepause.h\
-    mapenemy.h
+    mapenemy.h \
+    attackframe.h \
+    skeleton.h \
+    shotgun.h \
+    animitems.h
 
 FORMS    += mainwindow.ui \
     worldmap.ui \
     pause.ui \
-    battlepause.ui
+    battlepause.ui \
+    attackframe.ui
 
 RESOURCES += \
     images.qrc

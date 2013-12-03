@@ -4,7 +4,7 @@ brokenshot::brokenshot(int dam):attackmove(dam)
 {
 }
 
-void brokenshot::doAttack(int hpanel, Enemy *Enemies[]){
+void brokenshot::doAttack(int hpanel, Enemy* Enemies[3],animItems* anim){
   Enemy *target=  NULL;
   //Enemy *right= NULL;
   for(int i=0;i<3;i++){
@@ -18,10 +18,33 @@ void brokenshot::doAttack(int hpanel, Enemy *Enemies[]){
   if(target==NULL){
       return;
     }
+  int rigpan=hpanel+1;
+  int lefpan=hpanel-1;
+  anim->reset();
+  if(rigpan<3){
+      anim->setHit(rigpan,1,1);
+  }
+  if(lefpan>=0){
+      anim->setHit(lefpan,1,1);
+  }
   target->getDamaged(damage);
 
 }
 
+void brokenshot::getHover(int hpanel, Enemy* Enemies[3],animItems* anim){
+    Enemies;
+    int rigpan=hpanel+1;
+    int lefpan=hpanel-1;
+    anim->reset();
+    if(rigpan<3){
+        anim->setHit(rigpan,1,1);
+    }
+    if(lefpan>=0){
+        anim->setHit(lefpan,1,1);
+    }
+
+
+}
 QString brokenshot::getString(){
     QString ret ="Broken shotgun: ";
 
