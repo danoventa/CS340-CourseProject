@@ -40,7 +40,7 @@ void MapHero::keyPressEvent(QKeyEvent *event){
         heroImage = 3;
         if ( (cSize = collidingItems().size()) > 0){
             std::cout << cSize;
-            moveBy((cSize*-1)-1, 0);
+            moveBy(-9, 0);
             heroImage = 1;
         }
         break;
@@ -68,9 +68,10 @@ void MapHero::keyPressEvent(QKeyEvent *event){
             heroImage = 2;
         }
         break;
-    case Qt::Key_P:
-        pause.setModal(true);
-        pause.show();
+    default:
+        //pause.setModal(true);
+        //pause.show();
+        break;
     }
         update();
 }

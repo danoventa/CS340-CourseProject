@@ -1,15 +1,14 @@
 #include "pause.h"
 #include "ui_pause.h"
-#include "Character.h"
+//#include "Character.h"
 
 
 
 Pause::Pause(QWidget *parent) :
-    QMainWindow(parent),
+    QDialog(parent),
     ui(new Ui::Pause)
 {
     ui->setupUi(this);
-    ui->NumericHP->connect()
 }
 
 Pause::~Pause()

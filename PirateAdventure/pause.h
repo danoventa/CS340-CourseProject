@@ -3,17 +3,18 @@
 #include "character.h"
 #include "worldmap.h"
 #include <QtGui>
-#include <QMainWindow>
+#include <QDialog>
+#include <QtCore>
 #include <QKeyEvent>
 #include <QEvent>
 
-#include "attacklist.h"
+// #include "attacklist.h"
 
 namespace Ui {
 class Pause;
 }
 
-class Pause : public QMainWindow
+class Pause : public QDialog
 {
     Q_OBJECT
 

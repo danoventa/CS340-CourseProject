@@ -28,7 +28,6 @@ private slots:
 private:
     Ui::worldmap *ui;
     QGraphicsScene *scene;
-    QGraphicsRectItem *rect;
     MapHero *hero;
     MapEnemy *enemy;
 

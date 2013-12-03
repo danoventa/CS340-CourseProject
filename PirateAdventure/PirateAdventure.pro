@@ -16,21 +16,15 @@ SOURCES += main.cpp\
         mainwindow.cpp \
     worldmap.cpp \
     maphero.cpp \
-    pause.cpp
     mapenemy.cpp
 
 HEADERS  += mainwindow.h \
     worldmap.h \
     maphero.h \
-    pause.h
     mapenemy.h
 
 FORMS    += mainwindow.ui \
-    worldmap.ui \
-    pause.ui \
-    battlepause.ui \
-    form.ui
-
+    worldmap.ui
 
 RESOURCES += \
     images.qrc
