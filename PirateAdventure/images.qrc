@@ -11,5 +11,10 @@
         <file alias="bison">Works/SSF2T_M._Bison - Copy.gif</file>
         <file>Works/SSF2T_sMall._Bison - Copy.gif</file>
         <file alias="untitled2.png">Works/untitled2.png</file>
+        <file alias="store">Works/map.png</file>
+        <file alias="end">Works/map3.png</file>
+        <file alias="inStore">Works/map4.png</file>
+        <file alias="pirate">Works/bg1.jpg</file>
+        <file alias="pirates">Works/pirate.gif</file>
     </qresource>
 </RCC>

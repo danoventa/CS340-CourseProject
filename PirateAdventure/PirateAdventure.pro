@@ -30,14 +30,19 @@ SOURCES += main.cpp\
     swordslash.cpp \
     swordsman.cpp \
     xgun.cpp \
-    pause.cpp \
-    battlepause.cpp\
-    pause.cpp\
     mapenemy.cpp \
     attackframe.cpp \
     skeleton.cpp \
     shotgun.cpp \
-    animitems.cpp
+    animitems.cpp \
+    tostore.cpp \
+    instore.cpp \
+    toend.cpp \
+    backfrominstore.cpp \
+    backfromstore.cpp \
+    backfromend.cpp \
+    minienemy.cpp \
+    megaenemy.cpp
 
 HEADERS  += mainwindow.h \
     worldmap.h \
@@ -56,18 +61,23 @@ HEADERS  += mainwindow.h \
     swordslash.h \
     swordsman.h \
     xgun.h \
-    pause.h \
-    battlepause.h\
     mapenemy.h \
     attackframe.h \
     skeleton.h \
     shotgun.h \
-    animitems.h
+    animitems.h \
+    tostore.h \
+    instore.h \
+    toend.h \
+    backfrominstore.h \
+    backfromstore.h \
+    backfromend.h \
+    minienemy.h \
+    megaenemy.h
 
 FORMS    += mainwindow.ui \
     worldmap.ui \
     pause.ui \
-    battlepause.ui \
     attackframe.ui
 
 RESOURCES += \

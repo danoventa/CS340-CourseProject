@@ -33,7 +33,7 @@ void brokengun::doAttack(int hpanel, Enemy* Enemies[3],animItems* anim){
 }
 
 void brokengun::getHover(int hpanel, Enemy* Enemies[3],animItems* anim){
-    Enemies;
+    //Enemies;
 
     int rigpan=hpanel+1;
     int lefpan=hpanel-1;

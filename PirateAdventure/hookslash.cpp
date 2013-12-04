@@ -36,7 +36,7 @@ void Hookslash::doAttack(int hpanel, Enemy* Enemies[3],animItems* anim){
 
 }
 void Hookslash::getHover(int hpanel, Enemy* Enemies[], animItems* anim){
-    Enemies;
+    //Enemies;
     int rigpan=hpanel+1;
     int lefpan=hpanel-1;
     anim->reset();

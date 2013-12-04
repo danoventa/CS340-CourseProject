@@ -5,7 +5,6 @@
 MapEnemy::MapEnemy(QGraphicsItem *parent) : QGraphicsItem(parent)
 {
     // setFlag(QGraphicsItem::ItemIsFocusable);
-    enemyImage = 3;
 }
 MapEnemy::~MapEnemy()
 {
@@ -18,8 +17,8 @@ QRectF MapEnemy::boundingRect() const{
 
 void MapEnemy::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget)
 {
-    widget;
-    option;
+    //widget;
+    //option;
     painter->drawPixmap(600, 480, 30, 50, QPixmap(":/images/bison"));
 }
 

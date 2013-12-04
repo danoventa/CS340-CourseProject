@@ -33,7 +33,7 @@ void swordslash::doAttack(int hpanel, Enemy* Enemies[3],animItems* anim){
 
 }
 void swordslash::getHover(int hpanel, Enemy* Enemies[3],animItems* anim){
-    Enemies;
+    //Enemies;
     anim->reset();
     anim->setHit(hpanel,0,1);
     anim->setHit(hpanel,1,1);

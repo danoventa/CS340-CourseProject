@@ -14,7 +14,7 @@
    <string>Dialog</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(0, 0, 0, 255), stop:1 rgba(255, 255, 255, 255));</string>
+   <string notr="true">background-color: rgb(255, 255, 255);</string>
   </property>
   <widget class="QLabel" name="pirate">
    <property name="geometry">
@@ -27,6 +27,9 @@
    </property>
    <property name="text">
     <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap>../images/pirate.gif</pixmap>
    </property>
    <property name="scaledContents">
     <bool>true</bool>
@@ -42,10 +45,16 @@
     </rect>
    </property>
    <property name="maximum">
-    <number>22</number>
+    <number>100</number>
    </property>
    <property name="value">
-    <number>0</number>
+    <number>50</number>
+   </property>
+   <property name="textVisible">
+    <bool>true</bool>
+   </property>
+   <property name="format">
+    <string>%v%</string>
    </property>
   </widget>
   <widget class="QLCDNumber" name="lcdNumber">
@@ -67,10 +76,10 @@
     <enum>QLCDNumber::Outline</enum>
    </property>
    <property name="intValue" stdset="0">
-    <number>0</number>
+    <number>50</number>
    </property>
   </widget>
-  <widget class="QTabWidget" name="tabWidget">
+  <widget class="QTabWidget" name="Weapons">
    <property name="geometry">
     <rect>
      <x>10</x>
@@ -82,9 +91,9 @@
    <property name="currentIndex">
     <number>0</number>
    </property>
-   <widget class="QWidget" name="tab">
+   <widget class="QWidget" name="getAmmo">
     <attribute name="title">
-     <string>Tab 1</string>
+     <string>Weapons</string>
     </attribute>
     <widget class="QPushButton" name="incSwordDamage">
      <property name="geometry">
@@ -151,9 +160,9 @@
      </property>
     </widget>
    </widget>
-   <widget class="QWidget" name="tab_2">
+   <widget class="QWidget" name="getHealth">
     <attribute name="title">
-     <string>Tab 2</string>
+     <string>Health</string>
     </attribute>
     <widget class="QPushButton" name="restoreHealth">
      <property name="geometry">
@@ -230,5 +239,22 @@
   </widget>
  </widget>
  <resources/>
- <connections/>
+ <connections>
+  <connection>
+   <sender>progressBar</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>lcdNumber</receiver>
+   <slot>display(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>309</x>
+     <y>96</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>300</x>
+     <y>63</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
 </ui>

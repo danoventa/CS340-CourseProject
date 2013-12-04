@@ -45,6 +45,7 @@ attackframe::attackframe(QWidget *parent) :
     //aL->addMove(new Hookslash(30));
    //r aL->addMove(new swordslash(30));
     //connect(&parent,MainWindow::on_enemyDead(),&Enemies[1],Enemy::Died());
+    numPotions=5;
     anim=new animItems();
     //std::cout<<"initialized characters\n";
 
@@ -54,6 +55,8 @@ attackframe::attackframe(QWidget *parent) :
     //inOver=true;
     inBattle=false;
     inStory=false;
+    inPause=false;
+
     startBattle('e',2,0,0,'h',2,1,1,'c',1,2,2);
 
     //startBattle('s',1,0,0,'k',1,1,1,'0',0,2,2);
@@ -67,6 +70,15 @@ attackframe::attackframe(QWidget *parent) :
 attackframe::~attackframe()
 {
     delete ui;
+}
+
+//attackframe* attackframe:: ptr(){//testing
+//    return this;
+//}
+
+//return a pointer to the charcter Hero
+Character* attackframe::getHero(){
+    return Hero;
 }
 
 void attackframe::startBattle(char etype1, int ehp1, int ex1, int ey1,char etype2, int ehp2, int ex2, int ey2, char etype3, int ehp3, int ex3, int ey3){
@@ -251,6 +263,27 @@ void attackframe::drawBattle(QPainter* g){
     drawHits(g);
 }
 
+void attackframe::drawPause (QPainter *g){
+    g->fillRect (100,50,300,250,Qt::white);
+    g->drawRect (100,50,300,250);
+    g->drawText (110,70,"Pause Menu");
+
+    g->fillRect (190,190,90,30,Qt::gray);
+    g->drawRect (190,190,90,30);
+    QString potText="Use Potion: ";
+    potText.append (QString::number (numPotions));
+
+    g->drawText (192,210,potText);
+    //draw a rectangle with an X to exit with mouse
+    g->drawRect(380, 60, 10, 10);
+    g->drawLine(380, 60, 390, 70);
+    g->drawLine(380,70,390,60);
+
+
+}
+
+
+
 void attackframe::drawHits(QPainter* g){
     //anim->setHit(1,0,1);
     for(int i=0;i<3;i++){
@@ -424,7 +457,12 @@ void attackframe::moveCharRight(){
 
 void attackframe::keyReleaseEvent(QKeyEvent *ke){
    //std::cout << ke->key() << "\n";
-    if(inBattle){
+    if(inBattle&&inPause){
+       if(ke->key()==16777220){
+              inPause=!inPause;
+              repaint();
+       }
+   }else if(inBattle && !inPause){
    if(ke->key()==16777236){
        moveCharRight();
        endHeroTurn();
@@ -460,7 +498,11 @@ void attackframe::keyReleaseEvent(QKeyEvent *ke){
                  //repaint();
 
 
-     }
+     }else if(ke->key()==16777220){
+       inPause=!inPause;
+       repaint();
+
+        }
     }/*else if(inOver){
         if(ke->key()==32){
             //startBattle();
@@ -470,11 +512,13 @@ void attackframe::keyReleaseEvent(QKeyEvent *ke){
     }*/
 
 }
+
+
 void attackframe::mousePressEvent(QMouseEvent* event){
 
 
     //362,30+i*30
-    if(inBattle){
+    if(inBattle && !inPause){
         //(event->type()==QEvent::MouseButtonRelease ||event->type()==QEvent::MouseButtonPress ||event->type()==QEvent::MouseButtonDblClick)
         int qx=((QMouseEvent*)event)->x();
         int qy=((QMouseEvent*)event)->y();
@@ -482,7 +526,7 @@ void attackframe::mousePressEvent(QMouseEvent* event){
             int qmove=(qy)/30;
             //std::string::
 
-            std::cout<< std::to_string(qmove) <<std::endl;
+            //std::cout<< std::to_string(qmove) <<std::endl;
                 attackmove* nextmove= aL->takeMoveAt(qmove);
                 doMouseAttack(nextmove);
             //repaint();
@@ -495,6 +539,34 @@ void attackframe::mousePressEvent(QMouseEvent* event){
                 }
         }
     }
+    else if(inPause&&inBattle){
+            int qx=((QMouseEvent*)event)->x();
+            int qy=((QMouseEvent*)event)->y();
+            if(qx>190 && qx < 280 && qy >190 && qy<220 && numPotions>0){
+
+                Hero->getRestored (20);
+                numPotions--;
+            }
+            //have mouse event work here.
+            if(qx>380 && qx < 390 && qy >60 && qy<70){
+
+               inPause=false;
+            }
+        }else if(inPause&&inBattle){
+        int qx=((QMouseEvent*)event)->x();
+        int qy=((QMouseEvent*)event)->y();
+        if(qx>190 && qx < 280 && qy >190 && qy<220 && numPotions>0){
+
+            Hero->getRestored (20);
+            numPotions--;
+        }
+        //have mouse event work here.
+        if(qx>380 && qx < 390 && qy >60 && qy<70){
+
+           inPause=false;
+        }
+    }
+
 
      repaint();
 }
