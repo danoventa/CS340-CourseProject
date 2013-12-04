@@ -12,12 +12,12 @@ MegaEnemy::~MegaEnemy()
 }
 
 QRectF MegaEnemy::boundingRect() const{
-    return QRectF(540, 30, 30, 70);
+    return QRectF(540, 30, 45, 90);
 }
 
 void MegaEnemy::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget)
 {
     //widget;
     //option;
-    painter->drawPixmap(540, 30, 30, 600, QPixmap(":/images/bison"));
+    painter->drawPixmap(540, 30, 45, 90, QPixmap(":/images/bison"));
 }

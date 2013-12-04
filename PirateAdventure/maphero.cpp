@@ -135,6 +135,7 @@ void MapHero::doBattle(){
     battle->setModal(true);
     battle->startBattle('e',2,0,0,'h',2,1,1,'c',1,2,2);
     battle->exec();
+    hero->setFocus();
 
 }
 
@@ -274,6 +275,13 @@ void MapHero::keyPressEvent(QKeyEvent *event){
         break;
     case Qt::Key_L:
         enemon->hide();
+        break;
+    case Qt::Key_Q:
+        if (battle->Hero->gold > 50 && iAmIn == 4)
+        {
+        battle->Hero->gold-=50;
+        battle->numPotions++;
+        }
         break;
     default:
         break;

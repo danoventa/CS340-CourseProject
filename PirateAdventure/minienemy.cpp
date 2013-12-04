@@ -12,12 +12,12 @@ MiniEnemy::~MiniEnemy()
 }
 
 QRectF MiniEnemy::boundingRect() const{
-    return QRectF(490, 230, 15, 40);
+    return QRectF(490, 230, 20, 40);
 }
 
 void MiniEnemy::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget)
 {
     //widget;
     //option;
-    painter->drawPixmap(490, 230, 15, 40, QPixmap(":/images/bison"));
+    painter->drawPixmap(490, 230, 20, 40, QPixmap(":/images/bison"));
 }

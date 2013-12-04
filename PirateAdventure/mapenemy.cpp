@@ -12,14 +12,14 @@ MapEnemy::~MapEnemy()
 }
 
 QRectF MapEnemy::boundingRect() const{
-    return QRectF(600, 480, 30, 50);
+    return QRectF(600, 480, 30, 60);
 }
 
 void MapEnemy::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget)
 {
     //widget;
     //option;
-    painter->drawPixmap(600, 480, 30, 50, QPixmap(":/images/bison"));
+    painter->drawPixmap(600, 480, 30, 60, QPixmap(":/images/bison"));
 }
 
 void MapEnemy::collisionEvent(){

@@ -51,7 +51,7 @@ public:
     Character* getHero();
     int numPotions;
    // attackframe* ptr();//testing
-
+     Character* Hero;
 private slots:
 
   //void on_HeroHealthBar_valueChanged(int value);
@@ -68,7 +68,7 @@ private slots:
 
 private:
   Ui::attackframe *ui;
-  Character* Hero;
+
   Character* setUpHero();
   //Character* getHero();
   //Enemy* Enemies[3];

@@ -15,7 +15,7 @@ private:
   bool canmove;
   int heropanel;
   bool inTurn;
-  int gold;
+
  // attackmove* mainAttack;
 
 
@@ -28,6 +28,7 @@ public:
    int getHP();
    int getexp();
    int getmaxHP();
+   int gold;
    //int getlevel();
    //int getnextexp();
    void setHP(int nhp);
