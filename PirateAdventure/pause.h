@@ -13,7 +13,6 @@
 
 
 namespace Ui {
-
 class Pause;
 }
 
