@@ -19,12 +19,17 @@ class Pause;
 
 class Pause : public QDialog
 {
+    /** \class Pause class.h "inc/class.h"
+     * \brief This is a Pause class.
+     *      This class will build the pause menu on
+     *      some key event.
+     */
     Q_OBJECT
 
 public:
     /**
-     * @brief Pause
-     * @param parent
+     * @brief Pause constructor will create Pause Ui
+     * @param   parent is passed to Pause Ui
      */
     explicit Pause(QWidget *parent = 0);
     ~Pause();
@@ -33,16 +38,16 @@ public:
 
 public slots:
     /**
-     * @brief on_resume_clicked
+     * @brief on_resume_clicked Resume game
      */
     void on_resume_clicked();
     /**
-     * @brief on_exit_clicked
+     * @brief on_exit_clicked Exits game
      */
     void on_exit_clicked();
     /**
-     * @brief on_progressBar_valueChanged
-     * @param value
+     * @brief on_progressBar_valueChanged monitors health status
+     *
      */
     void on_progressBar_valueChanged(int value);
 
