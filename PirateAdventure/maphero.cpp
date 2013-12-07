@@ -3,6 +3,12 @@
 #include <QtGui>
 #include <iostream>
 
+/**
+ * @brief Constructor for the Map Hero, the most awesomest
+ *  and fanciful part of the map section of the program.
+ *  Basically does everything for itself.
+ * @param parent
+ */
 MapHero::MapHero(QGraphicsItem *parent) : QGraphicsItem(parent)
 {
     setFlag(QGraphicsItem::ItemIsFocusable);
@@ -13,9 +19,16 @@ MapHero::MapHero(QGraphicsItem *parent) : QGraphicsItem(parent)
     foMen = 0;
     iAmIn = 1;
     battle= new attackframe();
-    pause->hero=battle->getHero ();
-    pause->on_progressBar_valueChanged (pause->hero->getHP());
+   // pause->hero=battle->getHero ();
+   // pause->on_progressBar_valueChanged (pause->hero->getHP());
 }
+
+/**
+ * @brief Gives me enemy pointers, so hero can set appropriate actions onto the screen.
+ * @param enemy, a pointer to the first level boss.
+ * @param miniEnemy, a mini boss within the game.
+ * @param megaEnemy, a pointer to the final boss.
+ */
 void MapHero::pointToEnemy(MapEnemy *enemy, MiniEnemy *miniEnemy, MegaEnemy *megaEnemy)
 {
     menemy = megaEnemy;
@@ -23,41 +36,83 @@ void MapHero::pointToEnemy(MapEnemy *enemy, MiniEnemy *miniEnemy, MegaEnemy *meg
     enemon = enemy;
 }
 
+/**
+ * @brief gets a pointer to the store
+ * @param storay
+ */
 void MapHero::pointToStore(ToStore *storay)
 {
     stora = storay;
 }
 
+/**
+ * @brief pointer to self.
+ * @param hera
+ */
 void MapHero::pointToMe(MapHero *hera)
 {
     hero = hera;
 }
+
+/**
+ * @brief pointer to go in store.
+ * @param inStoray
+ */
 void MapHero::pointToInStore(InStore *inStoray)
 {
     inStora = inStoray;
 }
 
+/**
+ * @brief points to the pointer that sends you to the last level.
+ * @param toEnd
+ */
 void MapHero::pointToEnd(ToEnd *toEnd)
 {
     mEnd = toEnd;
 }
+
+/**
+ * @brief this is a functino that returns a pointer to the hero set to the store map scene.
+ * @param fromStore
+ */
 void MapHero::pointFromStore(BackFromStore *fromStore)
 {
     oStore = fromStore;
 }
+
+/**
+ * @brief stores a pointer to the map from in store.
+ * @param fromInStore
+ */
 void MapHero::pointFromInStore(BackFromInStore *fromInStore)
 {
     oInStore = fromInStore;
 }
+
+/**
+ * @brief stores a pointer to the end from the
+ * @param fromEnd
+ */
 void MapHero::pointFromEnd(BackFromEnd *fromEnd)
 {
     oEnd = fromEnd;
 }
 
+/**
+ * @brief sets the bouding rect to the hero item.
+ * @return a QRectF
+ */
 QRectF MapHero::boundingRect() const{
     return QRectF(0, 520, 15, 24);
 }
 
+/**
+ * @brief Paints the hero based on what hero image number is placed.
+ * @param painter
+ * @param option
+ * @param widget
+ */
 void MapHero::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget)
 {
     //option;
@@ -79,6 +134,9 @@ void MapHero::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, Q
     }
 }
 
+/**
+ * @brief MapHero::movesToMapStore
+ */
 void MapHero::movesToMapStore(){
     graph->setStyleSheet("background-image: url(:/images/store);");
     mid->addItem(hero);
@@ -88,6 +146,9 @@ void MapHero::movesToMapStore(){
     iAmIn = 2;
 }
 
+/**
+ * @brief MapHero::movesToStore
+ */
 void MapHero::movesToStore(){
     graph->setStyleSheet("background-image: url(:/images/inStore);");
     store->addItem(hero);
@@ -96,6 +157,10 @@ void MapHero::movesToStore(){
     graph->setScene(store);
     iAmIn = 4;
 }
+
+/**
+ * @brief MapHero::movesToEnd
+ */
 void MapHero::movesToEnd(){
     graph->setStyleSheet("background-image: url(:/images/end);");
     end->addItem(hero);
@@ -105,6 +170,9 @@ void MapHero::movesToEnd(){
     iAmIn = 3;
 }
 
+/**
+ * @brief MapHero::returnsFromInStore
+ */
 void MapHero::returnsFromInStore(){
     graph->setStyleSheet("background-image: url(:/images/store);");
     mid->addItem(hero);
@@ -113,6 +181,9 @@ void MapHero::returnsFromInStore(){
     graph->setScene(mid);
     iAmIn = 2;
 }
+/**
+ * @brief MapHero::returnsFromMapStore
+ */
 void MapHero::returnsFromMapStore(){
     graph->setStyleSheet("background-image: url(:/images/untitled2.png);");
     begin->addItem(hero);
@@ -121,7 +192,9 @@ void MapHero::returnsFromMapStore(){
     graph->setScene(begin);
     iAmIn = 1;
 }
-
+/**
+ * @brief MapHero::returnsFromEnd
+ */
 void MapHero::returnsFromEnd(){
     graph->setStyleSheet("background-image: url(:/images/store);");
     mid->addItem(hero);
@@ -130,15 +203,20 @@ void MapHero::returnsFromEnd(){
     graph->setScene(mid);
     iAmIn = 2;
 }
-
-void MapHero::doBattle(char etype1, int ehp1, int ex1, int ey1,char etype2, int ehp2, int ex2, int ey2, char etype3, int ehp3, int ex3, int ey3){
+/**
+ * @brief MapHero::doBattle
+ */
+void MapHero::doBattle(){
     battle->setModal(true);
-    battle->startBattle(etype1, ehp1, ex1, ey1,etype2,ehp2, ex2, ey2, etype3, ehp3, ex3,ey3);
+    battle->startBattle('e',2,0,0,'h',2,1,1,'c',1,2,2);
     battle->exec();
     hero->setFocus();
 
 }
-
+/**
+ * @brief This is where the majority of the collision is taking place.
+ * aram @pevent, is the key that is pressed.
+ */
 void MapHero::keyPressEvent(QKeyEvent *event){
     double cSize;
     switch(  event->key() ) {
@@ -157,21 +235,19 @@ void MapHero::keyPressEvent(QKeyEvent *event){
         {
             enemon->hide();
             foEnem = 1;
-            //doBattle('s',2,0,0,'b', 2,0,1,'e',2,2,2);
-           doBattle('s',1,0,0,'k',1,1,1,'0',0,2,2);
+            doBattle();
         }
         else if (hero->collidesWithItem(minemy) && iAmIn == 1 && foMin == 0)
         {
             minemy->hide();
             foMin = 1;
-            doBattle('e',2,0,0,'h',2,1,1,'c',1,2,2);
+            doBattle();
         }
         else if (hero->collidesWithItem(menemy) && iAmIn == 3 && foMen == 0)
         {
             menemy->hide();
             foMen = 1;
-            //doBattle('s',1,0,0,'k',1,1,1,'0',0,2,2);
-            doBattle('s',2,0,0,'b', 2,0,1,'e',2,2,2);
+            doBattle();
         }
         else if ( (cSize = collidingItems().size()) > 0){
             moveBy(-9, 0);
@@ -193,21 +269,19 @@ void MapHero::keyPressEvent(QKeyEvent *event){
         {
             enemon->hide();
             foEnem = 1;
-           //doBattle('b',2,0,0,'b', 1,0,1,'0',0,2,2);
-            doBattle('s',1,0,0,'k',1,1,1,'0',0,2,2);
+            doBattle();
         }
         else if (hero->collidesWithItem(minemy) && iAmIn == 1 && foMin == 0)
         {
             minemy->hide();
             foMin = 1;
-            doBattle('e',2,0,0,'h',2,1,1,'c',1,2,2);
+            doBattle();
         }
         else if (hero->collidesWithItem(menemy) && iAmIn == 3 && foMen == 0)
         {
             menemy->hide();
             foMen = 1;
-            doBattle('s',2,0,0,'b', 2,0,1,'e',2,2,2);
-
+            doBattle();
         }
         else if ( (collidingItems().size() > 0)){
             moveBy(9, 0);
@@ -219,23 +293,24 @@ void MapHero::keyPressEvent(QKeyEvent *event){
         heroImage = 2;
         if (hero->collidesWithItem(inStora) && iAmIn == 2){
             movesToStore();
-        }else if (hero->collidesWithItem(enemon) && iAmIn == 1 && foEnem == 0)
+        }
+        else if (hero->collidesWithItem(enemon) && iAmIn == 1 && foEnem == 0)
         {
             enemon->hide();
             foEnem = 1;
-            //doBattle('b',2,0,0,'b', 1,0,1,'0',0,2,2);
-            doBattle('s',2,0,0,'b', 2,0,1,'e',2,2,2);
-         }
-         else if (hero->collidesWithItem(minemy) && iAmIn == 1 && foMin == 0)
+            doBattle();
+        }
+        else if (hero->collidesWithItem(minemy) && iAmIn == 1 && foMin == 0)
         {
             minemy->hide();
             foMin = 1;
-            doBattle('e',2,0,0,'h',2,1,1,'c',1,2,2);
-        }else if (hero->collidesWithItem(menemy) && iAmIn == 3 && foMen == 0)
+            doBattle();
+        }
+        else if (hero->collidesWithItem(menemy) && iAmIn == 3 && foMen == 0)
         {
             menemy->hide();
             foMen = 1;
-            doBattle('s',1,0,0,'k',1,1,1,'0',0,2,2);
+            doBattle();
         }
         else if ( (collidingItems().size() > 0)){
             moveBy(0, 9);
@@ -253,23 +328,19 @@ void MapHero::keyPressEvent(QKeyEvent *event){
         {
             enemon->hide();
             foEnem = 1;
-
-            doBattle('s',1,0,0,'k',1,1,1,'0',0,2,2);
-
-            //doBattle('b',2,0,0,'b', 1,0,1,'0',0,2,2);
+            doBattle();
         }
         else if (hero->collidesWithItem(minemy) && iAmIn == 1 && foMin == 0)
         {
             minemy->hide();
             foMin = 1;
-            doBattle('e',2,0,0,'h',2,1,1,'c',1,2,2);
+            doBattle();
         }
         else if (hero->collidesWithItem(menemy) && iAmIn == 3 && foMen == 0)
         {
             menemy->hide();
             foMen = 1;
-            //doBattle('s',1,0,0,'k',1,1,1,'0',0,2,2);
-            doBattle('s',2,0,0,'b', 2,0,1,'e',2,2,2);
+            doBattle();
         }
         else if ( (collidingItems().size() > 0)){
             moveBy(0, -9);
@@ -296,11 +367,22 @@ void MapHero::keyPressEvent(QKeyEvent *event){
         update();
 }
 
+/**
+ * @brief MapHero::getGraphicsView
+ * @param graphs
+ */
 void MapHero::getGraphicsView(QGraphicsView *graphs)
 {
     graph = graphs;
 }
 
+/**
+ * @brief MapHero::getGraphicsScene
+ * @param begs
+ * @param mids
+ * @param ends
+ * @param stores
+ */
 void MapHero::getGraphicsScene(QGraphicsScene *begs, QGraphicsScene *mids,
                                QGraphicsScene *ends, QGraphicsScene *stores)
 {

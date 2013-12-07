@@ -32,13 +32,13 @@ public:
     QLabel *pirate;
     QProgressBar *progressBar;
     QLCDNumber *lcdNumber;
-    QTabWidget *tabWidget;
-    QWidget *tab;
+    QTabWidget *Weapons;
+    QWidget *getAmmo;
     QPushButton *incSwordDamage;
     QPushButton *incGunDamage;
     QPushButton *incHookDamage;
     QPushButton *incBrokenGunDamage;
-    QWidget *tab_2;
+    QWidget *getHealth;
     QPushButton *restoreHealth;
     QPushButton *incHealth;
     QWidget *layoutWidget;
@@ -52,56 +52,58 @@ public:
         if (Pause->objectName().isEmpty())
             Pause->setObjectName(QStringLiteral("Pause"));
         Pause->resize(565, 407);
-        Pause->setStyleSheet(QStringLiteral("background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(0, 0, 0, 255), stop:1 rgba(255, 255, 255, 255));"));
+        Pause->setStyleSheet(QStringLiteral("background-color: rgb(255, 255, 255);"));
         pirate = new QLabel(Pause);
         pirate->setObjectName(QStringLiteral("pirate"));
         pirate->setGeometry(QRect(10, 10, 201, 151));
+        pirate->setPixmap(QPixmap(QString::fromUtf8("../images/pirate.gif")));
         pirate->setScaledContents(true);
         progressBar = new QProgressBar(Pause);
         progressBar->setObjectName(QStringLiteral("progressBar"));
         progressBar->setGeometry(QRect(270, 90, 118, 23));
-        progressBar->setMaximum(22);
-        progressBar->setValue(0);
+        progressBar->setMaximum(100);
+        progressBar->setValue(50);
+        progressBar->setTextVisible(true);
         lcdNumber = new QLCDNumber(Pause);
         lcdNumber->setObjectName(QStringLiteral("lcdNumber"));
         lcdNumber->setGeometry(QRect(270, 50, 64, 23));
         lcdNumber->setFrameShadow(QFrame::Raised);
         lcdNumber->setDigitCount(3);
         lcdNumber->setSegmentStyle(QLCDNumber::Outline);
-        lcdNumber->setProperty("intValue", QVariant(0));
-        tabWidget = new QTabWidget(Pause);
-        tabWidget->setObjectName(QStringLiteral("tabWidget"));
-        tabWidget->setGeometry(QRect(10, 170, 551, 151));
-        tab = new QWidget();
-        tab->setObjectName(QStringLiteral("tab"));
-        incSwordDamage = new QPushButton(tab);
+        lcdNumber->setProperty("intValue", QVariant(50));
+        Weapons = new QTabWidget(Pause);
+        Weapons->setObjectName(QStringLiteral("Weapons"));
+        Weapons->setGeometry(QRect(10, 170, 551, 151));
+        getAmmo = new QWidget();
+        getAmmo->setObjectName(QStringLiteral("getAmmo"));
+        incSwordDamage = new QPushButton(getAmmo);
         incSwordDamage->setObjectName(QStringLiteral("incSwordDamage"));
         incSwordDamage->setGeometry(QRect(14, 8, 241, 21));
         incSwordDamage->setStyleSheet(QStringLiteral("background-color: qconicalgradient(cx:0.5, cy:0.5, angle:176.9, stop:0 rgba(194, 255, 255, 255));"));
-        incGunDamage = new QPushButton(tab);
+        incGunDamage = new QPushButton(getAmmo);
         incGunDamage->setObjectName(QStringLiteral("incGunDamage"));
         incGunDamage->setGeometry(QRect(10, 60, 251, 23));
         incGunDamage->setStyleSheet(QStringLiteral("background-color: qconicalgradient(cx:0.5, cy:0.5, angle:176.9, stop:0 rgba(194, 255, 255, 255));"));
-        incHookDamage = new QPushButton(tab);
+        incHookDamage = new QPushButton(getAmmo);
         incHookDamage->setObjectName(QStringLiteral("incHookDamage"));
         incHookDamage->setGeometry(QRect(300, 10, 221, 23));
         incHookDamage->setStyleSheet(QStringLiteral("background-color: qconicalgradient(cx:0.5, cy:0.5, angle:176.9, stop:0 rgba(194, 255, 255, 255));"));
-        incBrokenGunDamage = new QPushButton(tab);
+        incBrokenGunDamage = new QPushButton(getAmmo);
         incBrokenGunDamage->setObjectName(QStringLiteral("incBrokenGunDamage"));
         incBrokenGunDamage->setGeometry(QRect(300, 60, 221, 23));
         incBrokenGunDamage->setStyleSheet(QStringLiteral("background-color: qconicalgradient(cx:0.5, cy:0.5, angle:176.9, stop:0 rgba(194, 255, 255, 255));"));
-        tabWidget->addTab(tab, QString());
-        tab_2 = new QWidget();
-        tab_2->setObjectName(QStringLiteral("tab_2"));
-        restoreHealth = new QPushButton(tab_2);
+        Weapons->addTab(getAmmo, QString());
+        getHealth = new QWidget();
+        getHealth->setObjectName(QStringLiteral("getHealth"));
+        restoreHealth = new QPushButton(getHealth);
         restoreHealth->setObjectName(QStringLiteral("restoreHealth"));
         restoreHealth->setGeometry(QRect(80, 10, 381, 32));
         restoreHealth->setStyleSheet(QStringLiteral("background-color: qconicalgradient(cx:0.5, cy:0.5, angle:176.9, stop:0 rgba(194, 255, 255, 255));"));
-        incHealth = new QPushButton(tab_2);
+        incHealth = new QPushButton(getHealth);
         incHealth->setObjectName(QStringLiteral("incHealth"));
         incHealth->setGeometry(QRect(80, 60, 381, 32));
         incHealth->setStyleSheet(QStringLiteral("background-color: qconicalgradient(cx:0.5, cy:0.5, angle:176.9, stop:0 rgba(194, 255, 255, 255));"));
-        tabWidget->addTab(tab_2, QString());
+        Weapons->addTab(getHealth, QString());
         layoutWidget = new QWidget(Pause);
         layoutWidget->setObjectName(QStringLiteral("layoutWidget"));
         layoutWidget->setGeometry(QRect(100, 330, 289, 32));
@@ -124,8 +126,9 @@ public:
 
 
         retranslateUi(Pause);
+        QObject::connect(progressBar, SIGNAL(valueChanged(int)), lcdNumber, SLOT(display(int)));
 
-        tabWidget->setCurrentIndex(0);
+        Weapons->setCurrentIndex(0);
 
 
         QMetaObject::connectSlotsByName(Pause);
@@ -135,14 +138,15 @@ public:
     {
         Pause->setWindowTitle(QApplication::translate("Pause", "Dialog", 0));
         pirate->setText(QString());
+        progressBar->setFormat(QApplication::translate("Pause", "%v%", 0));
         incSwordDamage->setText(QApplication::translate("Pause", "Increase Sword Slasher Damage", 0));
         incGunDamage->setText(QApplication::translate("Pause", "Increase Gun Damage", 0));
         incHookDamage->setText(QApplication::translate("Pause", "Increase Hook Slash Damage", 0));
         incBrokenGunDamage->setText(QApplication::translate("Pause", "Increase Broken Gun Damage", 0));
-        tabWidget->setTabText(tabWidget->indexOf(tab), QApplication::translate("Pause", "Tab 1", 0));
+        Weapons->setTabText(Weapons->indexOf(getAmmo), QApplication::translate("Pause", "Weapons", 0));
         restoreHealth->setText(QApplication::translate("Pause", "Restore Health", 0));
         incHealth->setText(QApplication::translate("Pause", "Increase Health", 0));
-        tabWidget->setTabText(tabWidget->indexOf(tab_2), QApplication::translate("Pause", "Tab 2", 0));
+        Weapons->setTabText(Weapons->indexOf(getHealth), QApplication::translate("Pause", "Health", 0));
         resume->setText(QApplication::translate("Pause", "Resume", 0));
         exit->setText(QApplication::translate("Pause", "Exit", 0));
     } // retranslateUi
