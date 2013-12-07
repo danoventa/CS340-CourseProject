@@ -48,5 +48,5 @@ QString swordslash::getString(){
 
 
 QImage swordslash::getImage(){
-     return QImage("images/sword.png");
+     return QImage(":/images/images/sword.png");
 }

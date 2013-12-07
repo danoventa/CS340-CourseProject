@@ -24,6 +24,10 @@
 #include "hookslash.h"
 #include "swordslash.h"
 
+/**
+ * @brief attackframe::attackframe sets up the Hero, Main Attack, Attack List, Animation items and event filter
+ * @param parent
+ */
 attackframe::attackframe(QWidget *parent) :
     QDialog(parent),
     //QWidget(parent),
@@ -57,7 +61,7 @@ attackframe::attackframe(QWidget *parent) :
     inStory=false;
     inPause=false;
 
-    startBattle('e',2,0,0,'h',2,1,1,'c',1,2,2);
+    //startBattle('e',2,0,0,'h',2,1,1,'c',1,2,2);
 
     //startBattle('s',1,0,0,'k',1,1,1,'0',0,2,2);
 
@@ -77,10 +81,29 @@ attackframe::~attackframe()
 //}
 
 //return a pointer to the charcter Hero
+/**
+ * @brief attackframe::getHero
+ * @return the hero pointer
+ */
 Character* attackframe::getHero(){
     return Hero;
 }
 
+/**
+ * @brief attackframe::startBattle takes information on enemies and puts them in the write position/level
+ * @param etype1
+ * @param ehp1
+ * @param ex1
+ * @param ey1
+ * @param etype2
+ * @param ehp2
+ * @param ex2
+ * @param ey2
+ * @param etype3
+ * @param ehp3
+ * @param ex3
+ * @param ey3
+ */
 void attackframe::startBattle(char etype1, int ehp1, int ex1, int ey1,char etype2, int ehp2, int ex2, int ey2, char etype3, int ehp3, int ex3, int ey3){
     inBattle=true;
     //inOver=false;
@@ -177,6 +200,11 @@ void attackframe::paintEvent(QPaintEvent *){
     //g->end();
     g->end();
 }
+
+/**
+ * @brief attackframe::drawOverWorld draws the test world
+ * @param g
+ */
 void attackframe::drawOverWorld(QPainter* g){
     QString goldt="Gold:";
     goldt.append(QString::number(Hero->getGold()));
@@ -189,15 +217,18 @@ void attackframe::drawOverWorld(QPainter* g){
     g->drawText(260,160,"Start 2nd Battle");
 
 }
-
+/**
+ * @brief attackframe::drawBattle paints battle parts
+ * @param g
+ */
 void attackframe::drawBattle(QPainter* g){
-    QString bgfn="images/bg.jpg";
+    QString bgfn=":/images/images/bg.JPG";
     //QString sandfn="images/sand.png";
-    QString sandfn="images/sandpanel.png";
+    QString sandfn=":/images/images/sandpanel.png";
     //QString redfn="images/red.png";
     //QString purpfn="images/cann.png";
     //QString herofn="images/pirate.gif";
-    QString herofn="images/herobat.png";
+    QString herofn=":/images/images/herobat.png";
     QImage bgpic(bgfn);
     QImage sandpic(sandfn);
     //QImage redpic(redfn);
@@ -261,8 +292,15 @@ void attackframe::drawBattle(QPainter* g){
     drawAttackList(g);
     drawHP(g);
     drawHits(g);
+    if(inPause){
+        drawPause(g);
+    }
 }
 
+/**
+ * @brief attackframe::drawPause draws pause menu for battle
+ * @param g
+ */
 void attackframe::drawPause (QPainter *g){
     g->fillRect (100,50,300,250,Qt::white);
     g->drawRect (100,50,300,250);
@@ -283,7 +321,10 @@ void attackframe::drawPause (QPainter *g){
 }
 
 
-
+/**
+ * @brief attackframe::drawHits draws hit animations at the damaged panels
+ * @param g
+ */
 void attackframe::drawHits(QPainter* g){
     //anim->setHit(1,0,1);
     for(int i=0;i<3;i++){
@@ -292,12 +333,16 @@ void attackframe::drawHits(QPainter* g){
             int x=90+j*72;
             int y=180-i*66;
             if(anim->getHit(i,j)==1){
-                g->drawImage(x,y,QImage("images/xhit.png"));
+                g->drawImage(x,y,QImage(":/images/images/xhit.png"));
             }
         }
     }
 }
 
+/**
+ * @brief attackframe::drawHP draws the hp meter
+ * @param g
+ */
 void attackframe::drawHP(QPainter* g){
     //ui->HeroHealthBar->hide();
 
@@ -312,7 +357,10 @@ void attackframe::drawHP(QPainter* g){
 
     g->drawText(11,20,hptext);
 }
-
+/**
+ * @brief attackframe::drawAttackList draws attack list
+ * @param g
+ */
 void attackframe::drawAttackList(QPainter* g){
    // QBrush grey;
     //grey.setColor(Qt::red);
@@ -342,11 +390,16 @@ void attackframe::drawAttackList(QPainter* g){
     g->drawText(362,330,"Rest");
 }
 
+/**
+ * @brief attackframe::startHeroTurn
+ */
 void attackframe::startHeroTurn(){
 Hero->setCanMove(true);
   Hero->setTurn(true);
 }
-
+/**
+ * @brief attackframe::endHeroTurn
+ */
 void attackframe::endHeroTurn(){
   if(on_enemyDead()){
      return;
@@ -360,7 +413,9 @@ void attackframe::endHeroTurn(){
   startEnemyTurn();
 
 }
-
+/**
+ * @brief attackframe::startEnemyTurn
+ */
 void attackframe::startEnemyTurn(){
   //ui->gDisplay->append("Enemyturn ");
 
@@ -387,7 +442,9 @@ void attackframe::startEnemyTurn(){
 
 
 }
-
+/**
+ * @brief attackframe::endEnemyTurn
+ */
 void attackframe::endEnemyTurn(){
   //updateArena();
   repaint();
@@ -397,6 +454,9 @@ void attackframe::endEnemyTurn(){
   }
   startHeroTurn();
 }
+/**
+ * @brief attackframe::lostBattle calls end battle, sends signal that battle is lost
+ */
 void attackframe::lostBattle(){
 
     //anything else for losing a battle goes here
@@ -413,12 +473,17 @@ void attackframe::lostBattle(){
 
 
 
-
+/**
+ * @brief attackframe::restChar end of turn so reset animitems, not attacking so rest char for 10 hp
+ */
 void attackframe::restChar(){
     anim->reset();
     Hero->getRestored(10);
     //endEnemyTurn();
 }
+/**
+ * @brief attackframe::moveCharLeft moves character left one panel
+ */
 void attackframe::moveCharLeft(){
   if(Hero->getCanMove() && Hero->isTurn()){
       anim->reset();
@@ -454,7 +519,11 @@ void attackframe::moveCharRight(){
         }
     }
 }
-
+/**
+ * @brief attackframe::keyReleaseEvent based on keys and battle, does the required action
+ *
+ * @param ke
+ */
 void attackframe::keyReleaseEvent(QKeyEvent *ke){
    //std::cout << ke->key() << "\n";
     if(inBattle&&inPause){
@@ -513,7 +582,10 @@ void attackframe::keyReleaseEvent(QKeyEvent *ke){
 
 }
 
-
+/**
+ * @brief attackframe::mousePressEvent interacts with pause and attack list
+ * @param event
+ */
 void attackframe::mousePressEvent(QMouseEvent* event){
 
 
@@ -570,6 +642,7 @@ void attackframe::mousePressEvent(QMouseEvent* event){
 
      repaint();
 }
+
 bool attackframe::eventFilter(QObject *obj, QEvent *event)
 {
 
@@ -577,6 +650,10 @@ bool attackframe::eventFilter(QObject *obj, QEvent *event)
 
     return QDialog::eventFilter(obj, event);
 }
+
+/**
+ * @brief attackframe::doAttack shoots regular gun for 10 damage
+ */
 void attackframe::doAttack(){
 
   int hpanel=Hero->getPanel();
@@ -607,6 +684,9 @@ void attackframe::doAttack(){
 
 
   }
+/**
+ * @brief attackframe::doSpecialAttack does bottom special attack
+ */
 void attackframe::doSpecialAttack(){
   attackmove* am=aL->getAttack();
   if(am!=NULL){
@@ -617,6 +697,10 @@ void attackframe::doSpecialAttack(){
 
     }
 }
+/**
+ * @brief attackframe::doMouseAttack picks attack based on clicking attack list
+ * @param am
+ */
 void attackframe::doMouseAttack(attackmove* am){
   //attackmove* am=aL->getAttack();
   if(am!=NULL){
@@ -628,6 +712,10 @@ void attackframe::doMouseAttack(attackmove* am){
     }
 }
 
+/**
+ * @brief attackframe::on_enemyDead checks if all enemies are dead
+ * @return if all dead
+ */
 bool attackframe::on_enemyDead(){
   //std::cout<<"onenemydead\n";
   bool alldead=true;
@@ -644,6 +732,9 @@ bool attackframe::on_enemyDead(){
 
 }
 
+/**
+ * @brief attackframe::endBattle resets everything for next battle
+ */
 void attackframe::endBattle(){
   //std::cout<<"onendbattle\n";
   //int i;

@@ -1,6 +1,12 @@
 #include "enemy.h"
 
 //Enemy::Enemy(int startHP, int cx, int cy)
+/**
+ * @brief Enemy::Enemy
+ * @param clev level of character, different for each inheritance
+ * @param cx
+ * @param cy
+ */
 Enemy::Enemy(int clev, int cx, int cy)
 {
   //currentHP=startHP;
@@ -50,8 +56,14 @@ QImage Enemy::getPic(){
     return QImage("images/captain.png");
 }
 
+/**
+ * @brief Enemy::drawSelf draws itself using painter, includes title and hp
+ * @param g
+ * @param gx
+ * @param gy
+ */
 void Enemy::drawSelf(QPainter* g, int gx, int gy){
-    g->drawImage(gx,gy,QImage("images/captain.png"));
+    g->drawImage(gx,gy,QImage(":/images/images/captain.png"));
     g->fillRect(gx+5,gy+45,45,10,Qt::gray);
     QString dText="Captain";
     dText.append(QString::number(currentHP));
@@ -112,6 +124,10 @@ void Enemy::setAlive(bool isAlive){
 
 //void Enemy::doAttack();
 
+/**
+ * @brief Enemy::doTurn based on hero's panel, does it's move.
+ * @param Hero
+ */
 void Enemy::doTurn(Character* Hero){
   if(Alive==false){
       return;

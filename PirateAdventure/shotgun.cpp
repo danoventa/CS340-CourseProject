@@ -91,7 +91,7 @@ QString shotgun::getString(){
 
 
 QImage shotgun::getImage(){
-     return QImage("images/shotgun.png");
+     return QImage(":/images/images/shotgun.png");
 }
 
 

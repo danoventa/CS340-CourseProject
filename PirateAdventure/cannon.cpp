@@ -45,7 +45,7 @@ QImage Cannon::getPic(){
     return QImage("images/cann.png");
 }
 void Cannon::drawSelf(QPainter* g, int gx, int gy){
-    g->drawImage(gx,gy,QImage("images/cann.png"));
+    g->drawImage(gx,gy,QImage(":/images/images/cann.png"));
 
     g->fillRect(gx+5,gy+45,45,10,Qt::gray);
     g->drawText(gx+10,gy,QString::number(ctr));

@@ -4,6 +4,9 @@
 #include <QMainWindow>
 #include "worldmap.h"
 
+#include "wigglywidget.h"
+#include "graphicsview.h"
+
 namespace Ui {
 class MainWindow;
 }
@@ -23,6 +26,7 @@ private slots:
 private:
     Ui::MainWindow *ui;
     worldmap wm;
+    QGraphicsScene scene;
 };
 
 #endif // MAINWINDOW_H

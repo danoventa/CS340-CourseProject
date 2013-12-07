@@ -54,10 +54,10 @@ void Hunter::doTurn(Character *Hero){
 
 }
 QImage Hunter::getPic(){
-    return QImage("images/captain.png");
+    return QImage(":/images/images/captain.png");
 }
 void Hunter::drawSelf(QPainter* g, int gx, int gy){
-    g->drawImage(gx,gy,QImage("images/gunman.png"));
+    g->drawImage(gx,gy,QImage(":/images/images/gunman.png"));
     g->fillRect(gx+5,gy+45,45,10,Qt::gray);
     QString dText="Gunman";
     dText.append(QString::number(currentHP));

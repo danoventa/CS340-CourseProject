@@ -66,11 +66,11 @@ void Bomber::dropBomb(Character *Hero){
     }
 }
 QImage Bomber::getPic(){
-    return QImage("images/bomber.png");
+    return QImage(":images/images/bomber.png");
 }
 
 void Bomber::drawSelf(QPainter* g, int gx, int gy){
-    g->drawImage(gx,gy,QImage("images/bomber.png"));
+    g->drawImage(gx,gy,QImage(":images/images/bomber.png"));
     g->fillRect(gx+5,gy+45,45,10,Qt::gray);
     QString dText="Bomber";
     dText.append(QString::number(currentHP));

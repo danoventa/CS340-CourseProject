@@ -1,10 +1,6 @@
 #include "worldmap.h"
 #include "ui_worldmap.h"
 
-/**
- * @brief worldmap::worldmap
- * @param parent
- */
 worldmap::worldmap(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::worldmap)
@@ -68,27 +64,19 @@ worldmap::worldmap(QWidget *parent) :
     hero->getGraphicsScene(scene1, scene2, scene3, scene4);
     hero->pointToMe(hero);
 }
-/**
- * @brief worldmap::~worldmap
- */
+
 worldmap::~worldmap()
 {
     delete ui;
     delete hero;
     delete enemy;
 }
-/**
- * @brief worldmap::on_pushButton_clicked
- */
+
 void worldmap::on_pushButton_clicked()
 {
     this->hide();
 }
-/**
- * @brief worldmap::makeBeginning
- * @param unPen
- * @param unBrush
- */
+
 void worldmap::makeBeginning(QPen unPen, QBrush unBrush)
 {
     scene1->addRect(0, 0, 32, 510, unPen, unBrush);
@@ -149,31 +137,16 @@ void worldmap::makeBeginning(QPen unPen, QBrush unBrush)
     scene1->addRect(226, 514, 28, 28, unPen, unBrush);
 }
 
-/**
- * @brief worldmap::makeMiddle
- * @param unPen
- * @param unBrush
- */
 void worldmap::makeMiddle(QPen unPen, QBrush unBrush)
 {
 
 }
 
-/**
- * @brief worldmap::makeEnding
- * @param unPen
- * @param unBrush
- */
 void worldmap::makeEnding(QPen unPen, QBrush unBrush)
 {
 
 }
 
-/**
- * @brief worldmap::makeStore
- * @param unPen
- * @param unBrush
- */
 void worldmap::makeStore(QPen unPen, QBrush unBrush)
 {
 

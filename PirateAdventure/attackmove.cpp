@@ -12,7 +12,10 @@ attackmove::attackmove(int dam)
 attackmove::~attackmove(){
 
 }
-
+/**
+ * @brief attackmove::getString
+ * @return string of name, implemented in all inheritences includes damage
+ */
 QString attackmove::getString(){
     QString ret ="Gun: ";
 
@@ -26,6 +29,12 @@ QString attackmove::getString(){
 
 
 //void attackmove::doAttack(int hpanel, Enemy* Enemies[3]){
+/**
+ * @brief attackmove::doAttack does it's attack, implemented for all enemies
+ * @param hpanel, hero's panel
+ * @param Enemies, enemies array
+ * @param anim hit animation grid
+ */
 void attackmove::doAttack(int hpanel, Enemy* Enemies[3],animItems* anim){
   //int hpanel=Hero->getPanel();
   Enemy *closest=  NULL;
@@ -54,6 +63,12 @@ void attackmove::doAttack(int hpanel, Enemy* Enemies[3],animItems* anim){
     }
 }
 
+/**
+ * @brief attackmove::getHover
+ * @param hpanel
+ * @param Enemies
+ * @param anim
+ */
 void attackmove::getHover(int hpanel, Enemy* Enemies[3],animItems* anim){
     Enemy* closest=NULL;
     for(int i=0;i<3;i++){
@@ -78,8 +93,12 @@ void attackmove::getHover(int hpanel, Enemy* Enemies[3],animItems* anim){
     }
 }
 
+/**
+ * @brief attackmove::getImage
+ * @return
+ */
 QImage attackmove::getImage(){
-     return QImage("images/gun.png");
+     return QImage(":/images/images/gun.png");
 }
 
 

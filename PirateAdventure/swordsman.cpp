@@ -57,7 +57,7 @@ QImage swordsman::getPic(){
 }
 
 void swordsman::drawSelf(QPainter* g, int gx, int gy){
-    g->drawImage(gx,gy,QImage("images/swordsman.png"));
+    g->drawImage(gx,gy,QImage(":/images/images/swordsman.png"));
     g->fillRect(gx+2,gy+45,64,10,Qt::gray);
     QString dText="Swordsman";
     dText.append(QString::number(currentHP));

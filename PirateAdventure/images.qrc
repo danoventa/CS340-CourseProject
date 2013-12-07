@@ -16,5 +16,30 @@
         <file alias="inStore">Works/map4.png</file>
         <file alias="pirate">Works/bg1.jpg</file>
         <file alias="pirates">Works/pirate.gif</file>
+        <file>images/bg1.jpg</file>
+        <file>images/bg2.JPG</file>
+        <file>images/bg3.JPG</file>
+        <file>images/flower.jpg</file>
+        <file>Works/bg2.JPG</file>
+        <file>Works/bg3.JPG</file>
+        <file>Works/flower.jpg</file>
+        <file>images/bomber.png</file>
+        <file>images/brokengun.png</file>
+        <file>images/brokenshot.png</file>
+        <file>images/cann.png</file>
+        <file>images/captain.png</file>
+        <file>images/crossgun.png</file>
+        <file>images/gun.png</file>
+        <file>images/gunman.png</file>
+        <file>images/herobat.png</file>
+        <file>images/hook.png</file>
+        <file>images/sandpanel.png</file>
+        <file>images/shotgun.png</file>
+        <file>images/skeleton.png</file>
+        <file>images/sword.png</file>
+        <file>images/swordsman.png</file>
+        <file>images/woodpanel.png</file>
+        <file>images/xhit.png</file>
+        <file>images/bg.JPG</file>
     </qresource>
 </RCC>

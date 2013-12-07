@@ -58,5 +58,5 @@ QString brokengun::getString(){
 
 
 QImage brokengun::getImage(){
-     return QImage("images/brokengun.png");
+     return QImage(":/images/images/brokengun.png");
 }

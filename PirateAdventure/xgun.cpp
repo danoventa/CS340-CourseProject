@@ -111,7 +111,7 @@ void xgun::getHover(int hpanel, Enemy* Enemies[3],animItems* anim){
 
 
 QImage xgun::getImage(){
-     return QImage("images/crossgun.png");
+     return QImage(":/images/images/crossgun.png");
 }
 
 

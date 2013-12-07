@@ -64,7 +64,7 @@ QImage Skeleton::getPic(){
 }
 
 void Skeleton::drawSelf(QPainter* g, int gx, int gy){
-    g->drawImage(gx,gy,QImage("images/skeleton.png"));
+    g->drawImage(gx,gy,QImage(":/images/images/skeleton.png"));
     g->fillRect(gx+5,gy+45,50,10,Qt::gray);
     QString dText="Skeleton";
     dText.append(QString::number(currentHP));

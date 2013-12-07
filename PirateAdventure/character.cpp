@@ -1,6 +1,13 @@
 #include "Character.h"
 #include "attackmove.h"
 
+/**
+ * @brief Character::Character main hero character used in battle
+ * @param startHP
+ * @param sexp
+ * @param cdam
+ * @param cpanel
+ */
 Character::Character(int startHP, int sexp, int cdam, int cpanel)
 {
   currentHP=startHP;
@@ -23,6 +30,11 @@ Character::~Character(){
 
 }
 
+/**
+ * @brief Character::getDamaged
+ * @param damage
+ * @return
+ */
 bool Character::getDamaged(int damage){
   if(currentHP>damage){
       currentHP-=damage;
@@ -34,6 +46,10 @@ bool Character::getDamaged(int damage){
 
 }
 
+/**
+ * @brief Character::getRestored if already at max, stays at max
+ * @param recovery
+ */
 void Character::getRestored(int recovery){
   if(currentHP+recovery>maxHP){
       currentHP=maxHP;
@@ -44,11 +60,19 @@ void Character::getRestored(int recovery){
 
 }
 
-
+/**
+ * @brief Character::getGold
+ * @return gold character has
+ */
 int Character::getGold(){
     return gold;
 
 }
+
+/**
+ * @brief Character::incGold
+ * @param amt of gold to increase
+ */
 void Character::incGold(int amt){
     gold+=amt;
 }

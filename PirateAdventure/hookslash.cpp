@@ -58,5 +58,5 @@ QString Hookslash::getString(){
 
 
 QImage Hookslash::getImage(){
-     return QImage("images/hook.png");
+     return QImage(":/images/images/hook.png");
 }

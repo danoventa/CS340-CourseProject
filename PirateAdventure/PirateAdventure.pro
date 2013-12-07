@@ -42,7 +42,10 @@ SOURCES += main.cpp\
     backfromstore.cpp \
     backfromend.cpp \
     minienemy.cpp \
-    megaenemy.cpp
+    megaenemy.cpp \
+    circlewidget.cpp \
+    wigglywidget.cpp \
+    graphicsview.cpp
 
 HEADERS  += mainwindow.h \
     worldmap.h \
@@ -73,7 +76,10 @@ HEADERS  += mainwindow.h \
     backfromstore.h \
     backfromend.h \
     minienemy.h \
-    megaenemy.h
+    megaenemy.h \
+    circlewidget.h \
+    wigglywidget.h \
+    graphicsview.h
 
 FORMS    += mainwindow.ui \
     worldmap.ui \
