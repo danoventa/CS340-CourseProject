@@ -1,0 +1,128 @@
+\hypertarget{classattackmove}{\section{attackmove Class Reference}
+\label{classattackmove}\index{attackmove@{attackmove}}
+}
+Inheritance diagram for attackmove\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classattackmove}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classattackmove_aeef16b72f9b3b146208a9db33e328b38}{{\bfseries attackmove} (int dam)}\label{classattackmove_aeef16b72f9b3b146208a9db33e328b38}
+
+\item 
+\hypertarget{classattackmove_aa971a4aef1cfb1c2ef54301e67e620a6}{int {\bfseries get\-Dam} ()}\label{classattackmove_aa971a4aef1cfb1c2ef54301e67e620a6}
+
+\item 
+\hypertarget{classattackmove_a103d4b29b142a466d564de825cf21458}{void {\bfseries set\-Dam} (int dam)}\label{classattackmove_a103d4b29b142a466d564de825cf21458}
+
+\item 
+virtual void \hyperlink{classattackmove_a80a498f0903dbe791bb1e0faacb54870}{do\-Attack} (int hpanel, \hyperlink{class_enemy}{Enemy} $\ast$Enemies\mbox{[}3\mbox{]}, \hyperlink{classanim_items}{anim\-Items} $\ast$anim)
+\begin{DoxyCompactList}\small\item\em \hyperlink{classattackmove_a80a498f0903dbe791bb1e0faacb54870}{attackmove\-::do\-Attack} does it's attack, implemented for all enemies \end{DoxyCompactList}\item 
+virtual Q\-String \hyperlink{classattackmove_ada49eedf4b893372c576edd48fe73161}{get\-String} ()
+\begin{DoxyCompactList}\small\item\em \hyperlink{classattackmove_ada49eedf4b893372c576edd48fe73161}{attackmove\-::get\-String} \end{DoxyCompactList}\item 
+virtual Q\-Image \hyperlink{classattackmove_aca59a2343b7a6c195d300dda5c8d952d}{get\-Image} ()
+\begin{DoxyCompactList}\small\item\em \hyperlink{classattackmove_aca59a2343b7a6c195d300dda5c8d952d}{attackmove\-::get\-Image} \end{DoxyCompactList}\item 
+virtual void \hyperlink{classattackmove_a0ff82349551bd72f4d57b3367bb318fa}{get\-Hover} (int hpanel, \hyperlink{class_enemy}{Enemy} $\ast$Enemies\mbox{[}3\mbox{]}, \hyperlink{classanim_items}{anim\-Items} $\ast$anim)
+\begin{DoxyCompactList}\small\item\em \hyperlink{classattackmove_a0ff82349551bd72f4d57b3367bb318fa}{attackmove\-::get\-Hover} \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classattackmove_abeaa53553d9b169032ac273ef2ea7b67}{int {\bfseries damage}}\label{classattackmove_abeaa53553d9b169032ac273ef2ea7b67}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classattackmove_a80a498f0903dbe791bb1e0faacb54870}{\index{attackmove@{attackmove}!do\-Attack@{do\-Attack}}
+\index{do\-Attack@{do\-Attack}!attackmove@{attackmove}}
+\subsubsection[{do\-Attack}]{\setlength{\rightskip}{0pt plus 5cm}void attackmove\-::do\-Attack (
+\begin{DoxyParamCaption}
+\item[{int}]{hpanel, }
+\item[{{\bf Enemy} $\ast$}]{Enemies\mbox{[}3\mbox{]}, }
+\item[{{\bf anim\-Items} $\ast$}]{anim}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classattackmove_a80a498f0903dbe791bb1e0faacb54870}
+
+
+\hyperlink{classattackmove_a80a498f0903dbe791bb1e0faacb54870}{attackmove\-::do\-Attack} does it's attack, implemented for all enemies 
+
+
+\begin{DoxyParams}{Parameters}
+{\em hpanel,hero's} & panel \\
+\hline
+{\em Enemies,enemies} & array \\
+\hline
+{\em anim} & hit animation grid \\
+\hline
+\end{DoxyParams}
+\hypertarget{classattackmove_a0ff82349551bd72f4d57b3367bb318fa}{\index{attackmove@{attackmove}!get\-Hover@{get\-Hover}}
+\index{get\-Hover@{get\-Hover}!attackmove@{attackmove}}
+\subsubsection[{get\-Hover}]{\setlength{\rightskip}{0pt plus 5cm}void attackmove\-::get\-Hover (
+\begin{DoxyParamCaption}
+\item[{int}]{hpanel, }
+\item[{{\bf Enemy} $\ast$}]{Enemies\mbox{[}3\mbox{]}, }
+\item[{{\bf anim\-Items} $\ast$}]{anim}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classattackmove_a0ff82349551bd72f4d57b3367bb318fa}
+
+
+\hyperlink{classattackmove_a0ff82349551bd72f4d57b3367bb318fa}{attackmove\-::get\-Hover} 
+
+
+\begin{DoxyParams}{Parameters}
+{\em hpanel} & \\
+\hline
+{\em Enemies} & \\
+\hline
+{\em anim} & \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \hyperlink{classshotgun_a8334202fd30d71432db7e58fca7a462e}{shotgun}, \hyperlink{classbrokengun_ab2250f29c2057006662e77d7f70796d2}{brokengun}, \hyperlink{classbrokenshot_a1d9aaa51c4a27d8bb68a8f0678430d3a}{brokenshot}, \hyperlink{class_hookslash_ab6a6ca9582c4d8dad26b481292bca6a0}{Hookslash}, and \hyperlink{classswordslash_af40c617c0463f788bda02fe5e8109511}{swordslash}.
+
+\hypertarget{classattackmove_aca59a2343b7a6c195d300dda5c8d952d}{\index{attackmove@{attackmove}!get\-Image@{get\-Image}}
+\index{get\-Image@{get\-Image}!attackmove@{attackmove}}
+\subsubsection[{get\-Image}]{\setlength{\rightskip}{0pt plus 5cm}Q\-Image attackmove\-::get\-Image (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classattackmove_aca59a2343b7a6c195d300dda5c8d952d}
+
+
+\hyperlink{classattackmove_aca59a2343b7a6c195d300dda5c8d952d}{attackmove\-::get\-Image} 
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Reimplemented in \hyperlink{classshotgun_a1336af80f8d3f7d19ac954f2e616a1b0}{shotgun}, \hyperlink{classbrokengun_aceb704b315cbac5e23093637a9b3c0c0}{brokengun}, \hyperlink{classbrokenshot_ab5a534dcbeb99a57362e22bd11598a27}{brokenshot}, \hyperlink{class_hookslash_a65c6e01ac90d1f01139dd08b93aeaa0a}{Hookslash}, \hyperlink{classswordslash_a25cbfa2df6b5718a299eed09cf716822}{swordslash}, and \hyperlink{classxgun_adf5511bd6ed5dfb184a8a3b6b757608a}{xgun}.
+
+\hypertarget{classattackmove_ada49eedf4b893372c576edd48fe73161}{\index{attackmove@{attackmove}!get\-String@{get\-String}}
+\index{get\-String@{get\-String}!attackmove@{attackmove}}
+\subsubsection[{get\-String}]{\setlength{\rightskip}{0pt plus 5cm}Q\-String attackmove\-::get\-String (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classattackmove_ada49eedf4b893372c576edd48fe73161}
+
+
+\hyperlink{classattackmove_ada49eedf4b893372c576edd48fe73161}{attackmove\-::get\-String} 
+
+\begin{DoxyReturn}{Returns}
+string of name, implemented in all inheritences includes damage 
+\end{DoxyReturn}
+
+
+Reimplemented in \hyperlink{classshotgun_a856fa8335ee3c2bb8603e83aa5629e5c}{shotgun}, \hyperlink{classbrokengun_af525de1fc249ff4fadec008b367881e9}{brokengun}, \hyperlink{classbrokenshot_a4834069bb57b3bb17a4816888cc83e43}{brokenshot}, \hyperlink{class_hookslash_aaf31aabb624b138d98f3c94fe1c37fcc}{Hookslash}, \hyperlink{classswordslash_ac58a7e3b969bb957548c55bdfd6a0b05}{swordslash}, and \hyperlink{classxgun_a8d091859d655ff1703630ba7dd88a358}{xgun}.
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+attackmove.\-h\item 
+attackmove.\-cpp\end{DoxyCompactItemize}

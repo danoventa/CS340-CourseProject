@@ -1,0 +1,171 @@
+\hypertarget{classattack_list}{\section{attack\-List Class Reference}
+\label{classattack_list}\index{attack\-List@{attack\-List}}
+}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classattack_list_a5edfbea9eb0790b0b2f4bb8a3f39f843}{\hyperlink{classattack_list_a5edfbea9eb0790b0b2f4bb8a3f39f843}{attack\-List} ()}\label{classattack_list_a5edfbea9eb0790b0b2f4bb8a3f39f843}
+
+\begin{DoxyCompactList}\small\item\em \hyperlink{classattack_list_a5edfbea9eb0790b0b2f4bb8a3f39f843}{attack\-List\-::attack\-List} all alists null \end{DoxyCompactList}\item 
+void \hyperlink{classattack_list_a8bf01a96841205373a2b179c251f6388}{change\-Move} (int pos, \hyperlink{classattackmove}{attackmove} $\ast$am)
+\begin{DoxyCompactList}\small\item\em \hyperlink{classattack_list_a8bf01a96841205373a2b179c251f6388}{attack\-List\-::change\-Move} changes move at pos, used to customise attacks \end{DoxyCompactList}\item 
+\hyperlink{classattackmove}{attackmove} $\ast$ \hyperlink{classattack_list_acc9d91fc5f10690b2516c123f13f0342}{get\-Attack} ()
+\begin{DoxyCompactList}\small\item\em \hyperlink{classattack_list_acc9d91fc5f10690b2516c123f13f0342}{attack\-List\-::get\-Attack} gets bottom attack \end{DoxyCompactList}\item 
+\hyperlink{classattackmove}{attackmove} $\ast$ \hyperlink{classattack_list_a40cb4a49c6403918add3cb4a7043788b}{get\-Attack\-At} (int pos)
+\begin{DoxyCompactList}\small\item\em \hyperlink{classattack_list_a40cb4a49c6403918add3cb4a7043788b}{attack\-List\-::get\-Attack\-At} gets attack for printing the list \end{DoxyCompactList}\item 
+void \hyperlink{classattack_list_af20e3de4d59258a9e582dc121f0c4bf7}{add\-Move} (\hyperlink{classattackmove}{attackmove} $\ast$am)
+\begin{DoxyCompactList}\small\item\em \hyperlink{classattack_list_af20e3de4d59258a9e582dc121f0c4bf7}{attack\-List\-::add\-Move} add attack if theres room \end{DoxyCompactList}\item 
+int \hyperlink{classattack_list_a4efb6e2ae4c3c66b30dbd3e0cc9e330f}{get\-Curr} ()
+\begin{DoxyCompactList}\small\item\em \hyperlink{classattack_list_a4efb6e2ae4c3c66b30dbd3e0cc9e330f}{attack\-List\-::get\-Curr} \end{DoxyCompactList}\item 
+\hypertarget{classattack_list_aef5ebb7304e4f34836a8676398765184}{void \hyperlink{classattack_list_aef5ebb7304e4f34836a8676398765184}{reset} ()}\label{classattack_list_aef5ebb7304e4f34836a8676398765184}
+
+\begin{DoxyCompactList}\small\item\em \hyperlink{classattack_list_aef5ebb7304e4f34836a8676398765184}{attack\-List\-::reset} resets for next battle \end{DoxyCompactList}\item 
+\hyperlink{classattackmove}{attackmove} $\ast$ \hyperlink{classattack_list_aa18c2e5fa916658ca18e2d6c94c6fd25}{take\-Move\-At} (int pos)
+\begin{DoxyCompactList}\small\item\em \hyperlink{classattack_list_aa18c2e5fa916658ca18e2d6c94c6fd25}{attack\-List\-::take\-Move\-At} used for taking moves specifically, should take out moves using used \end{DoxyCompactList}\item 
+bool \hyperlink{classattack_list_a251544ca7d79dcaf59e064e6a48480cc}{is\-Used\-At} (int pos)
+\begin{DoxyCompactList}\small\item\em \hyperlink{classattack_list_a251544ca7d79dcaf59e064e6a48480cc}{attack\-List\-::is\-Used\-At} \end{DoxyCompactList}\item 
+int \hyperlink{classattack_list_a75067d40efdb02cc7011ccd3feb519b9}{get\-Full} ()
+\begin{DoxyCompactList}\small\item\em \hyperlink{classattack_list_a75067d40efdb02cc7011ccd3feb519b9}{attack\-List\-::get\-Full} \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classattack_list_af20e3de4d59258a9e582dc121f0c4bf7}{\index{attack\-List@{attack\-List}!add\-Move@{add\-Move}}
+\index{add\-Move@{add\-Move}!attackList@{attack\-List}}
+\subsubsection[{add\-Move}]{\setlength{\rightskip}{0pt plus 5cm}void attack\-List\-::add\-Move (
+\begin{DoxyParamCaption}
+\item[{{\bf attackmove} $\ast$}]{am}
+\end{DoxyParamCaption}
+)}}\label{classattack_list_af20e3de4d59258a9e582dc121f0c4bf7}
+
+
+\hyperlink{classattack_list_af20e3de4d59258a9e582dc121f0c4bf7}{attack\-List\-::add\-Move} add attack if theres room 
+
+
+\begin{DoxyParams}{Parameters}
+{\em am} & \\
+\hline
+\end{DoxyParams}
+\hypertarget{classattack_list_a8bf01a96841205373a2b179c251f6388}{\index{attack\-List@{attack\-List}!change\-Move@{change\-Move}}
+\index{change\-Move@{change\-Move}!attackList@{attack\-List}}
+\subsubsection[{change\-Move}]{\setlength{\rightskip}{0pt plus 5cm}void attack\-List\-::change\-Move (
+\begin{DoxyParamCaption}
+\item[{int}]{pos, }
+\item[{{\bf attackmove} $\ast$}]{am}
+\end{DoxyParamCaption}
+)}}\label{classattack_list_a8bf01a96841205373a2b179c251f6388}
+
+
+\hyperlink{classattack_list_a8bf01a96841205373a2b179c251f6388}{attack\-List\-::change\-Move} changes move at pos, used to customise attacks 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pos} & \\
+\hline
+{\em am} & \\
+\hline
+\end{DoxyParams}
+\hypertarget{classattack_list_acc9d91fc5f10690b2516c123f13f0342}{\index{attack\-List@{attack\-List}!get\-Attack@{get\-Attack}}
+\index{get\-Attack@{get\-Attack}!attackList@{attack\-List}}
+\subsubsection[{get\-Attack}]{\setlength{\rightskip}{0pt plus 5cm}{\bf attackmove} $\ast$ attack\-List\-::get\-Attack (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classattack_list_acc9d91fc5f10690b2516c123f13f0342}
+
+
+\hyperlink{classattack_list_acc9d91fc5f10690b2516c123f13f0342}{attack\-List\-::get\-Attack} gets bottom attack 
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\hypertarget{classattack_list_a40cb4a49c6403918add3cb4a7043788b}{\index{attack\-List@{attack\-List}!get\-Attack\-At@{get\-Attack\-At}}
+\index{get\-Attack\-At@{get\-Attack\-At}!attackList@{attack\-List}}
+\subsubsection[{get\-Attack\-At}]{\setlength{\rightskip}{0pt plus 5cm}{\bf attackmove} $\ast$ attack\-List\-::get\-Attack\-At (
+\begin{DoxyParamCaption}
+\item[{int}]{pos}
+\end{DoxyParamCaption}
+)}}\label{classattack_list_a40cb4a49c6403918add3cb4a7043788b}
+
+
+\hyperlink{classattack_list_a40cb4a49c6403918add3cb4a7043788b}{attack\-List\-::get\-Attack\-At} gets attack for printing the list 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pos} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\hypertarget{classattack_list_a4efb6e2ae4c3c66b30dbd3e0cc9e330f}{\index{attack\-List@{attack\-List}!get\-Curr@{get\-Curr}}
+\index{get\-Curr@{get\-Curr}!attackList@{attack\-List}}
+\subsubsection[{get\-Curr}]{\setlength{\rightskip}{0pt plus 5cm}int attack\-List\-::get\-Curr (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classattack_list_a4efb6e2ae4c3c66b30dbd3e0cc9e330f}
+
+
+\hyperlink{classattack_list_a4efb6e2ae4c3c66b30dbd3e0cc9e330f}{attack\-List\-::get\-Curr} 
+
+\begin{DoxyReturn}{Returns}
+current attack position 
+\end{DoxyReturn}
+\hypertarget{classattack_list_a75067d40efdb02cc7011ccd3feb519b9}{\index{attack\-List@{attack\-List}!get\-Full@{get\-Full}}
+\index{get\-Full@{get\-Full}!attackList@{attack\-List}}
+\subsubsection[{get\-Full}]{\setlength{\rightskip}{0pt plus 5cm}int attack\-List\-::get\-Full (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classattack_list_a75067d40efdb02cc7011ccd3feb519b9}
+
+
+\hyperlink{classattack_list_a75067d40efdb02cc7011ccd3feb519b9}{attack\-List\-::get\-Full} 
+
+\begin{DoxyReturn}{Returns}
+number of list when full 
+\end{DoxyReturn}
+\hypertarget{classattack_list_a251544ca7d79dcaf59e064e6a48480cc}{\index{attack\-List@{attack\-List}!is\-Used\-At@{is\-Used\-At}}
+\index{is\-Used\-At@{is\-Used\-At}!attackList@{attack\-List}}
+\subsubsection[{is\-Used\-At}]{\setlength{\rightskip}{0pt plus 5cm}bool attack\-List\-::is\-Used\-At (
+\begin{DoxyParamCaption}
+\item[{int}]{pos}
+\end{DoxyParamCaption}
+)}}\label{classattack_list_a251544ca7d79dcaf59e064e6a48480cc}
+
+
+\hyperlink{classattack_list_a251544ca7d79dcaf59e064e6a48480cc}{attack\-List\-::is\-Used\-At} 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pos} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+is attack used at pos 
+\end{DoxyReturn}
+\hypertarget{classattack_list_aa18c2e5fa916658ca18e2d6c94c6fd25}{\index{attack\-List@{attack\-List}!take\-Move\-At@{take\-Move\-At}}
+\index{take\-Move\-At@{take\-Move\-At}!attackList@{attack\-List}}
+\subsubsection[{take\-Move\-At}]{\setlength{\rightskip}{0pt plus 5cm}{\bf attackmove} $\ast$ attack\-List\-::take\-Move\-At (
+\begin{DoxyParamCaption}
+\item[{int}]{pos}
+\end{DoxyParamCaption}
+)}}\label{classattack_list_aa18c2e5fa916658ca18e2d6c94c6fd25}
+
+
+\hyperlink{classattack_list_aa18c2e5fa916658ca18e2d6c94c6fd25}{attack\-List\-::take\-Move\-At} used for taking moves specifically, should take out moves using used 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pos} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+attacklist.\-h\item 
+attacklist.\-cpp\end{DoxyCompactItemize}

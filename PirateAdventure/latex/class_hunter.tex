@@ -1,0 +1,84 @@
+\hypertarget{class_hunter}{\section{Hunter Class Reference}
+\label{class_hunter}\index{Hunter@{Hunter}}
+}
+Inheritance diagram for Hunter\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_hunter}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_hunter_a6516ea26662db6188fa2102ae768eca2}{{\bfseries Hunter} (int clev, int cx, int cy, bool cup)}\label{class_hunter_a6516ea26662db6188fa2102ae768eca2}
+
+\item 
+virtual void \hyperlink{class_hunter_a910f2c34961a3d7fb1caa91e65b5d743}{do\-Turn} (\hyperlink{class_character}{Character} $\ast$Hero)
+\begin{DoxyCompactList}\small\item\em \hyperlink{class_enemy_a56e4b9b07e8cd2a4e5ecfa8ff5b9265a}{Enemy\-::do\-Turn} based on hero's panel, does it's move. \end{DoxyCompactList}\item 
+\hypertarget{class_hunter_adc1727098c026b726430a638d4536970}{bool {\bfseries get\-Lef} ()}\label{class_hunter_adc1727098c026b726430a638d4536970}
+
+\item 
+\hypertarget{class_hunter_ac1cb95a730a5af30d4fe50b1ff296696}{void {\bfseries set\-Lef} (bool clef)}\label{class_hunter_ac1cb95a730a5af30d4fe50b1ff296696}
+
+\item 
+\hypertarget{class_hunter_a407e130c2e904630fd501c329eaeac77}{virtual Q\-Image {\bfseries get\-Pic} ()}\label{class_hunter_a407e130c2e904630fd501c329eaeac77}
+
+\item 
+virtual void \hyperlink{class_hunter_a765f282edf2fd27998740d33ed81a423}{draw\-Self} (Q\-Painter $\ast$g, int gx, int gy)
+\begin{DoxyCompactList}\small\item\em \hyperlink{class_enemy_a3251244e8e7ac657687d6be5a8da71bb}{Enemy\-::draw\-Self} draws itself using painter, includes title and hp. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_hunter_a910f2c34961a3d7fb1caa91e65b5d743}{\index{Hunter@{Hunter}!do\-Turn@{do\-Turn}}
+\index{do\-Turn@{do\-Turn}!Hunter@{Hunter}}
+\subsubsection[{do\-Turn}]{\setlength{\rightskip}{0pt plus 5cm}void Hunter\-::do\-Turn (
+\begin{DoxyParamCaption}
+\item[{{\bf Character} $\ast$}]{Hero}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_hunter_a910f2c34961a3d7fb1caa91e65b5d743}
+
+
+\hyperlink{class_enemy_a56e4b9b07e8cd2a4e5ecfa8ff5b9265a}{Enemy\-::do\-Turn} based on hero's panel, does it's move. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Hero} & \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{class_enemy_a56e4b9b07e8cd2a4e5ecfa8ff5b9265a}{Enemy}.
+
+\hypertarget{class_hunter_a765f282edf2fd27998740d33ed81a423}{\index{Hunter@{Hunter}!draw\-Self@{draw\-Self}}
+\index{draw\-Self@{draw\-Self}!Hunter@{Hunter}}
+\subsubsection[{draw\-Self}]{\setlength{\rightskip}{0pt plus 5cm}void Hunter\-::draw\-Self (
+\begin{DoxyParamCaption}
+\item[{Q\-Painter $\ast$}]{g, }
+\item[{int}]{gx, }
+\item[{int}]{gy}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_hunter_a765f282edf2fd27998740d33ed81a423}
+
+
+\hyperlink{class_enemy_a3251244e8e7ac657687d6be5a8da71bb}{Enemy\-::draw\-Self} draws itself using painter, includes title and hp. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em g} & \\
+\hline
+{\em gx} & \\
+\hline
+{\em gy} & \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{class_enemy_a3251244e8e7ac657687d6be5a8da71bb}{Enemy}.
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+hunter.\-h\item 
+hunter.\-cpp\end{DoxyCompactItemize}
